@@ -74,7 +74,8 @@ function fbak_process_auth_login() {
     $email = isset($me_data['email']) ? $me_data['email']['address'] : '';
     $id = isset($me_data['id']) ? $me_data['id'] : 0;
     
-    $login_url = add_query_arg( 'fbak_login_error', 'true', wp_login_url() );
+    $login_error_url = add_query_arg( 'fbak_login_error', 'true', wp_login_url() );
+    $login_error_url = apply_filters( 'fbak/account_kit_login_error_url', $login_error_url );
 
     if ( $email ) {
         $user = fbak_handle_email_login( $email, $id );
@@ -83,16 +84,20 @@ function fbak_process_auth_login() {
             wp_set_current_user( $user->ID );
             wp_set_auth_cookie( $user->ID, true );
 
+            do_action( 'wp_login', $user->user_login, $user );
+
             // update the account kit reference
             update_user_meta( $user->ID, '_fb_accountkit_id', $id );
             update_user_meta( $user->ID, '_fb_accountkit_auth_mode', 'email' );
+
+            do_action( 'fbak_user_login_via_email', $user );
 
             wp_send_json_success( array(
                 'redirect' => fbak_redirect_after_email_login()
             ) );
         } else {
             wp_send_json_error( array(
-                'redirect' => esc_url( $login_url )
+                'redirect' => esc_url( $login_error_url )
             ) );
         }
     }
@@ -104,16 +109,20 @@ function fbak_process_auth_login() {
             wp_set_current_user( $user->ID );
             wp_set_auth_cookie( $user->ID, true );
 
+            do_action( 'wp_login', $user->user_login, $user );
+
             // update the account kit reference
             update_user_meta( $user->ID, '_fb_accountkit_id', $id );
             update_user_meta( $user->ID, '_fb_accountkit_auth_mode', 'phone' );
+
+            do_action( 'fbak_user_login_via_sms', $user );
 
             wp_send_json_success( array(
                 'redirect' => fbak_redirect_after_sms_login()
             ) );
         } else {
             wp_send_json_error( array(
-                'redirect' => esc_url( $login_url )
+                'redirect' => esc_url( $login_error_url )
             ) );
         }
     }

@@ -19,8 +19,8 @@ function fbak_login_register_button_shortcode( $atts ) {
 		array(
             'sms_login'    => isset($fbak_settings['fbak_enable_sms_login']) ? $fbak_settings['fbak_enable_sms_login'] : 1,
             'email_login'  => isset($fbak_settings['fbak_enable_email_login']) ? $fbak_settings['fbak_enable_email_login'] : 1,
-            'sms_class'    => !empty($fbak_settings['fbak_sms_btn_class']) ? $fbak_settings['fbak_sms_btn_class'] : 'button',
-            'email_class'  => !empty($fbak_settings['fbak_email_btn_class']) ? $fbak_settings['fbak_email_btn_class'] : 'button',
+            'sms_class'    => !empty($fbak_settings['fbak_sms_btn_class']) ? $fbak_settings['fbak_sms_btn_class'] : 'button btn',
+            'email_class'  => !empty($fbak_settings['fbak_email_btn_class']) ? $fbak_settings['fbak_email_btn_class'] : 'button btn',
             'sms_label'    => !empty($fbak_settings['fbak_sms_label_text']) ? $fbak_settings['fbak_sms_label_text'] : 'Login with SMS',
             'email_label'  => !empty($fbak_settings['fbak_email_label_text']) ? $fbak_settings['fbak_email_label_text'] : 'Login with Email',
             'description'  => !empty($fbak_settings['fbak_login_description']) ? $fbak_settings['fbak_login_description'] : 'Save time by logging-in with your Phone number or Email address, without password.',

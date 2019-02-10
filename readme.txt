@@ -13,11 +13,11 @@ The easiest solution for login or register to WordPress by using SMS or Email Ve
 
 == Description ==
 
-The Facebook Account Kit Login plugin brings a lightweight, flexible and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
+The Facebook Account Kit Login plugin brings a lightweight, flexible and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
 
 #### Features
 
- * Login with SMS (phone)
+ * Login with SMS (Phone)
  * Login with WhatsApp
  * Login with Email
  
@@ -85,6 +85,8 @@ Facebook account and the account kit authentication is fully separated and there
 * Added: An option to redirect on custom page after a successful login.
 * Added: An settings to set custom error text if an unregistered user tries to login to website.
 * Tweak: Now Administrator can link phone to email to the other existing account from their account.
+* Tweak: Now every login via this plugin will be treated with wp_login action.
+* Added: Some filters for future releases.
 
 = 1.0.2 =
 
