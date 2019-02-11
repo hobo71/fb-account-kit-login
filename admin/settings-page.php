@@ -161,7 +161,7 @@
                 <div class="postbox">
                     <h3 class="hndle fbak-hndle" style="text-align: center;"><?php _e( 'My Other Plugins!', 'fb-account-kit-login' ); ?></h3>
                     <div class="inside">
-                    <div class="misc-pub-section">
+                        <div class="misc-pub-section">
                             <span class="dashicons dashicons-clock"></span>
                             <label>
                                 <strong><a href="https://wordpress.org/plugins/wp-last-modified-info/" target="_blank">WP Last Modified Info</a>: </strong>

@@ -291,7 +291,7 @@ function fbak_login_form_type_display() {
 
 function fbak_disable_user_reg_message_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
-    ?>  <input id="fbak-disablereg" name="fbak_plugin_settings[fbak_disable_user_reg_message]" type="text" size="90" style="width:90%;" placeholder="<?php _e( 'You are not a registered user of this website.', 'fb-account-kit-login' ); ?>" required value="<?php if (isset($fbak_settings['fbak_disable_user_reg_message'])) { echo $fbak_settings['fbak_disable_user_reg_message']; } ?>" />
+    ?>  <input id="fbak-disablereg" name="fbak_plugin_settings[fbak_disable_user_reg_message]" type="text" size="90" style="width:90%;" placeholder="<?php _e( 'You are not a registered user of this website.', 'fb-account-kit-login' ); ?>" value="<?php if (isset($fbak_settings['fbak_disable_user_reg_message'])) { echo $fbak_settings['fbak_disable_user_reg_message']; } ?>" />
     <?php
 }
 
