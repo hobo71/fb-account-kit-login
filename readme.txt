@@ -1,10 +1,10 @@
-=== Facebook Account Kit Login ===
+=== Passwordless Login with SMS & Email - Account Kit ===
 Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
-Tested up to: 5.0
-Stable tag: 1.0.3
-Requires PHP: 5.4
+Tested up to: 5.1
+Stable tag: 1.0.4
+Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -17,9 +17,12 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
 
 #### Features
 
- * Login with SMS (Phone)
- * Login with WhatsApp
- * Login with Email
+ * Login with SMS (Phone).
+ * Login with WhatsApp.
+ * Login with Email.
+ * WooCommerce Support.
+ * Totally Free of Cost SMS Service.
+ * Shortcode Compatible.
  
 Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
 
@@ -80,7 +83,17 @@ Facebook account and the account kit authentication is fully separated and there
 
 == Changelog ==
 
+= 1.0.4 =
+Release Date: March 15, 2019
+
+* Added: WooCommerce Support.
+* Added: Account Kit Login Widget.
+* Added: `fbak-sms-login` class for SMS Login and `fbak-email-login` class for Email Login from Nevigation Menu directly.
+* Added: An option to disacle Account Kit Login on WordPress Login Page.
+* Tweak: Now Account Kit SDK Loaded asyncronously to imporve page loading speed.
+
 = 1.0.3 =
+Release Date: February 11, 2019
 
 * Added: An option to redirect on custom page after a successful login.
 * Added: An settings to set custom error text if an unregistered user tries to login to website.
@@ -89,14 +102,17 @@ Facebook account and the account kit authentication is fully separated and there
 * Added: Some filters for future releases.
 
 = 1.0.2 =
+Release Date: January 27, 2019
 
 * Fixed: Shortcode Issue.
 
 = 1.0.1 =
+Release Date: January 24, 2019
 
 * Fixed: Image Paths.
 * Fixed: Localization strings.
 
 = 1.0.0 =
+Release Date: January 23, 2019
 
 * Initial release.

@@ -3,9 +3,9 @@
  * Plugin Name: Facebook Account Kit Login
  * Plugin URI: https://wordpress.org/plugins/fb-account-kit-login/
  * Description: Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using SMS or Email Verification without any password.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Sayan Datta
- * Author URI: https://www.sayandatta.com/
+ * Author URI: https://sayandatta.com/
  * License: GPLv3
  * Text Domain: fb-account-kit-login
  * Domain Path: /languages
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define ( 'FBAK_PLUGIN_VERSION', '1.0.3' );
+define ( 'FBAK_PLUGIN_VERSION', '1.0.4' );
 
 // debug scripts
 //define ( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
@@ -94,10 +94,10 @@ function fbak_plugin_register_scripts() {
         $ver = time();
     }
 
-    wp_register_style( 'fbak-admin-css', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), $ver );
-    wp_register_style( 'fbak-lightbox-css', plugins_url( 'admin/css/jquery.fancybox.min.css', __FILE__ ), array(), $ver );
-    wp_register_style( 'fbak-frontend-css', plugins_url( 'includes/public/css/frontend.min.css', __FILE__ ), array(), $ver );
-    wp_register_style( 'fbak-login-css', plugins_url( 'includes/public/css/wp-login.min.css', __FILE__ ), array(), $ver );
+    wp_register_style( 'fbak-admin', plugins_url( 'admin/css/admin.min.css', __FILE__ ), array(), $ver );
+    wp_register_style( 'fbak-lightbox', plugins_url( 'admin/css/jquery.fancybox.min.css', __FILE__ ), array(), $ver );
+    wp_register_style( 'fbak-frontend', plugins_url( 'includes/public/css/frontend.min.css', __FILE__ ), array(), $ver );
+    wp_register_style( 'fbak-login', plugins_url( 'includes/public/css/wp-login.min.css', __FILE__ ), array(), $ver );
 
     wp_register_script( 'fbak-admin-js', plugins_url( 'admin/js/admin.min.js', __FILE__ ), array( 'jquery' ), $ver );
     wp_register_script( 'fbak-lightbox-js', plugins_url( 'admin/js/jquery.fancybox.min.js', __FILE__ ), array( 'jquery' ), $ver );
@@ -123,8 +123,8 @@ function fbak_load_admin_assets( $hook ) {
     // get current screen
     $current_screen = get_current_screen();
     if ( strpos( $current_screen->base, 'fb-account-kit-login') !== false ) {
-        wp_enqueue_style( 'fbak-admin-css' );
-        wp_enqueue_style( 'fbak-lightbox-css' );
+        wp_enqueue_style( 'fbak-admin' );
+        wp_enqueue_style( 'fbak-lightbox' );
 
         wp_enqueue_script( 'fbak-admin-js' );
         wp_enqueue_script( 'fbak-lightbox-js' );
@@ -135,7 +135,25 @@ function fbak_load_admin_assets( $hook ) {
     }
 }
 
+function fbak_add_account_kit_scripts() {
+    wp_enqueue_style( 'fbak-frontend' );
+    
+    wp_enqueue_script( 'fbak-fb-account-kit' );
+    wp_enqueue_script( 'fbak-fb-account-kit-js' );
+}
+
+function fbak_add_async_defer_attribute( $tag, $handle ) {
+    // if the unique handle/name of the registered script has 'async' in it
+    if ( $handle === 'fbak-fb-account-kit' ) {
+        return str_replace( '<script ', '<script async defer ', $tag );
+    } else {
+        return $tag;
+    }
+}
+
 add_action( 'admin_enqueue_scripts', 'fbak_load_admin_assets' );
+add_action( 'wp_enqueue_scripts', 'fbak_add_account_kit_scripts' );
+add_filter( 'script_loader_tag', 'fbak_add_async_defer_attribute', 10, 2 );
 
 function fbak_ajax_save_admin_scripts() {
     if ( is_admin() ) { 
@@ -166,6 +184,7 @@ function fbak_plugin_settings_page() {
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';
+require_once plugin_dir_path( __FILE__ ) . 'admin/donate.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
 
 // add action links

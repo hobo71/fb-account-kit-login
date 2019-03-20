@@ -20,7 +20,6 @@ add_filter( 'user_contactmethods', 'fbak_add_phone_contact_info' );
  * @return void
  */
 function fbak_show_connect_button_on_profile( $user ) {
-
     $fbak_settings = get_option( 'fbak_plugin_settings' );
 
     $connected = get_user_meta( $user->ID, '_fb_accountkit_id', true );
@@ -32,7 +31,7 @@ function fbak_show_connect_button_on_profile( $user ) {
     } elseif ( $mode === 'email' ) {
         $success = __( 'Connected via Email', 'fb-account-kit-login' );
     } ?>
-    <?php if ( fbak_enable_both_login_method() ) { ?>
+    <?php if ( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) { ?>
         <table class="form-table">
             <tbody>
                 <tr>

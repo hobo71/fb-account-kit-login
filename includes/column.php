@@ -17,7 +17,7 @@ add_action( 'admin_print_styles-users.php', 'fbak_print_admin_users_css' );
 function fbak_auth_status_to_user_table( $columns ) {
 
 	// build custom columns
-	$columns['fbak-login'] = '<span class="dashicons dashicons-facebook" title="Account Kit Status"><span class="screen-reader-text">' . __( 'Account Kit Status', 'fb-account-kit-login' ) . '</span></span>';
+	$columns['fbak-login'] = '<span class="dashicons dashicons-facebook" title="' . __( 'Account Kit Status', 'fb-account-kit-login' ) . '"><span class="screen-reader-text">' . __( 'Account Kit Status', 'fb-account-kit-login' ) . '</span></span>';
 	
 	return $columns;
 }

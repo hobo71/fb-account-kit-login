@@ -41,6 +41,7 @@
         <div id="post-body" class="metabox-holder columns-2">
             <div id="post-body-content">
                 <form id="main-form" method="post" action="options.php">
+                <?php settings_fields('fbak_plugin_settings_fields'); ?>
 			        <div id="fbak-general" class="postbox">
 				        <h3 class="hndle fbak-hndle">
                             <span class="fbak-heading">
@@ -48,9 +49,8 @@
                             </span>
                         </h3>
 				        <div class="inside fbak-inside">
-                            <?php settings_fields('fbak_plugin_settings_fields'); ?>
                             <?php do_settings_sections('fbak_plugin_general_option'); ?>
-                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings' ); ?>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-general' ); ?>
                         </div>
                     </div>
                     <div id="fbak-sms" class="postbox" style="display: none;">
@@ -60,9 +60,8 @@
                             </span>
                         </h3>
 				        <div class="inside fbak-inside">
-                            <?php settings_fields('fbak_plugin_settings_fields'); ?>
                             <?php do_settings_sections('fbak_plugin_sms_option'); ?>
-                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings' ); ?>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-sms' ); ?>
                         </div>
                     </div>
                     <div id="fbak-email" class="postbox" style="display: none;">
@@ -72,9 +71,8 @@
                             </span>
                         </h3>
 				        <div class="inside fbak-inside">
-                            <?php settings_fields('fbak_plugin_settings_fields'); ?>
                             <?php do_settings_sections('fbak_plugin_email_option'); ?>
-                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings' ); ?>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-email' ); ?>
                         </div>
                     </div>
                     <div id="fbak-misc" class="postbox" style="display: none;">
@@ -84,9 +82,8 @@
                             </span>
                         </h3>
 				        <div class="inside fbak-inside">
-                            <?php settings_fields('fbak_plugin_settings_fields'); ?>
                             <?php do_settings_sections('fbak_plugin_misc_option'); ?>
-                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings' ); ?>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-misc' ); ?>
                         </div>
                     </div>
                     <div id="fbak-shortcode" class="postbox" style="display: none;">
@@ -98,10 +95,10 @@
 				        <div class="inside fbak-inside" style="padding-bottom: 15px;">
                             <p><?php printf( __( 'You can insert the login buttons manually in any page or post or template by simply using the shortcode %1$s. To enter the shortcode directly into templates using PHP, enter %2$s', 'fb-account-kit-login' ), '<code>[fbak-account-kit]</code>', '<code>echo do_shortcode(&#39;[fbak-account-kit]&#39;);</code>' ); ?></strong></p>
                             <p><?php _e( 'You can also use the options or attributes below to override the default settings.', 'fb-account-kit-login' ); ?></p>
-                            <li><strong>sms_login</strong> - <?php _e( 'can be', 'fb-account-kit-login' ); ?> <strong>1/0</strong></li>
-                            <li><strong>email_login</strong> - <?php _e( 'can be', 'fb-account-kit-login' ); ?> <strong>1/0</strong></li>
-                            <li><strong>sms_class</strong> - <?php _e( 'set the sms button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button</strong></li>
-                            <li><strong>email_class</strong> - <?php _e( 'set the email button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button</strong></li>
+                            <li><strong>sms_login</strong> - <?php _e( 'can be', 'fb-account-kit-login' ); ?> <strong>yes/no</strong></li>
+                            <li><strong>email_login</strong> - <?php _e( 'can be', 'fb-account-kit-login' ); ?> <strong>yes/no</strong></li>
+                            <li><strong>sms_class</strong> - <?php _e( 'set the sms button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button btn</strong></li>
+                            <li><strong>email_class</strong> - <?php _e( 'set the email button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button btn</strong></li>
                             <li><strong>sms_label</strong> - <?php _e( 'set the sms button text, defaults to <strong>Login with SMS</strong>', 'fb-account-kit-login' ); ?></li>
                             <li><strong>email_label</strong> - <?php _e( 'set the email button text, defaults to <strong>Login with Email</strong>', 'fb-account-kit-login' ); ?></li>
                             <li><strong>description</strong> - <?php _e( 'set the description text to show on login page.', 'fb-account-kit-login' ); ?></li>
@@ -127,7 +124,7 @@
                         </div>
                         <span class="coffee-heading"><?php _e( 'Buy me a coffee!', 'fb-account-kit-login' ); ?></span>
                         <p style="text-align: justify;"><?php printf( __( 'Thank you for using %s. If you found the plugin useful buy me a coffee! Your donation will motivate and make me happy for all the efforts. You can donate via PayPal.', 'fb-account-kit-login' ), '<strong>Facebook Account Kit Login v' . FBAK_PLUGIN_VERSION . '</strong>' ); ?></strong></p>
-                        <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://www.sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/fb-account-kit-login" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/fb-account-kit-login" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
+                        <p style="text-align: justify; font-size: 12px; font-style: italic;">Developed with <span style="color:#e25555;">♥</span> by <a href="https://sayandatta.com" target="_blank" style="font-weight: 500;">Sayan Datta</a> | <a href="https://github.com/iamsayan/fb-account-kit-login" target="_blank" style="font-weight: 500;">GitHub</a> | <a href="https://wordpress.org/support/plugin/fb-account-kit-login" target="_blank" style="font-weight: 500;">Support</a> | <a href="https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post" target="_blank" style="font-weight: 500;">Rate it</a> (<span style="color:#ffa000;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>) on WordPress.org, if you like this plugin.</p>
                     </div>
                     <div id="progressMessage" class="progressModal" style="display:none;">
                         <?php _e( 'Please wait...', 'fb-account-kit-login' ); ?>

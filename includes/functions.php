@@ -11,10 +11,12 @@
 
 require_once plugin_dir_path( __FILE__ ) . 'ajax.php';
 require_once plugin_dir_path( __FILE__ ) . 'column.php';
-require_once plugin_dir_path( __FILE__ ) . 'login.php';
-require_once plugin_dir_path( __FILE__ ) . 'misc.php';
 require_once plugin_dir_path( __FILE__ ) . 'profile.php';
-require_once plugin_dir_path( __FILE__ ) . 'shortcode.php';
+require_once plugin_dir_path( __FILE__ ) . 'widget.php';
+require_once plugin_dir_path( __FILE__ ) . 'public/login.php';
+require_once plugin_dir_path( __FILE__ ) . 'public/misc.php';
+require_once plugin_dir_path( __FILE__ ) . 'public/shortcode.php';
+require_once plugin_dir_path( __FILE__ ) . 'public/woocommerce.php';
 
 function fbak_guess_username_by_email( $email ) {
     $username = sanitize_user( current( explode( '@', $email ) ), true );
@@ -27,7 +29,6 @@ function fbak_guess_username_by_email( $email ) {
         $username = $o_username . $append;
         $append++;
     }
-
     return $username;
 }
 
@@ -42,7 +43,6 @@ function fbak_guess_username_by_phone( $phone ) {
         $username = $o_username . $append;
         $append++;
     }
-
     return $username;
 }
 
@@ -59,7 +59,6 @@ function fbak_redirect_after_sms_login() {
     }
 
     $redirect = apply_filters( 'fbak/account_kit_sms_login_success_url', $redirect );
-
     return $redirect;
 }
 
@@ -76,7 +75,6 @@ function fbak_redirect_after_email_login() {
     }
 
     $redirect = apply_filters( 'fbak/account_kit_email_login_success_url', $redirect );
-
     return $redirect;
 }
 
@@ -113,7 +111,6 @@ function fbak_get_email_login_redirect_url() {
     }
 
     $redir_url = apply_filters( 'fbak/account_kit_email_login_redirect_url', $redir_url );
-
     return $redir_url;
 }
 
@@ -131,7 +128,6 @@ function fbak_get_sms_new_user_role() {
     if ( isset($fbak_settings['fbak_sms_new_register_user_type']) ) {
         $role = $fbak_settings['fbak_sms_new_register_user_type'];
     }
-
     return $role;
 }
 
@@ -142,17 +138,7 @@ function fbak_get_email_new_user_role() {
     if ( isset($fbak_settings['fbak_email_new_register_user_type']) ) {
         $role = $fbak_settings['fbak_email_new_register_user_type'];
     }
-
     return $role;
-}
-
-function fbak_enable_both_login_method() {
-    $fbak_settings = get_option( 'fbak_plugin_settings' );
-
-    if ( ( isset($fbak_settings['fbak_enable_sms_login']) && $fbak_settings['fbak_enable_sms_login'] == 1 ) || ( isset($fbak_settings['fbak_enable_email_login']) && $fbak_settings['fbak_enable_email_login'] == 1 ) ) {
-        return true;
-    }
-    return false;
 }
 
 function fbak_enable_sms_login_method() {
@@ -173,8 +159,17 @@ function fbak_enable_email_login_method() {
     return false;
 }
 
+function fbak_enable_on_wp_login_form() {
+    $fbak_settings = get_option( 'fbak_plugin_settings' );
+
+    if ( isset($fbak_settings['fbak_enable_login_form']) && $fbak_settings['fbak_enable_login_form'] == 'enable' ) {
+        return true;
+    }
+    return false;
+}
+
 function fbak_get_site_http_protocol() {
-    if ( ( isset( $_SERVER['HTTPS'] ) && !empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ) || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) ) {
+    if ( is_ssl() || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) ) {
         return 'https://';
     } else {
         return 'http://';

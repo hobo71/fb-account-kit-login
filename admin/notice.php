@@ -21,8 +21,8 @@ function fbak_rating_admin_notice() {
         return;
     }
 
-    $dismiss = wp_nonce_url( add_query_arg( 'fbak_rating_notice_action', 'dismiss_rating_true' ), 'dismiss_rating_true' ); 
-    $no_thanks = wp_nonce_url( add_query_arg( 'fbak_rating_notice_action', 'no_thanks_rating_true' ), 'no_thanks_rating_true' ); ?>
+    $dismiss = wp_nonce_url( add_query_arg( 'fbak_rating_notice_action', 'fbak_dismiss_rating_true' ), 'fbak_dismiss_rating_true' ); 
+    $no_thanks = wp_nonce_url( add_query_arg( 'fbak_rating_notice_action', 'fbak_no_thanks_rating_true' ), 'fbak_no_thanks_rating_true' ); ?>
     
     <div class="notice notice-success">
         <p><?php _e( 'Hey, I noticed you\'ve been using Facebook Account Kit Login for more than 1 week – that’s awesome! Could you please do me a BIG favor and give it a <strong>5-star</strong> rating on WordPress? Just to help me spread the word and boost my motivation.', 'fb-account-kit-login' ); ?><p>
@@ -47,13 +47,13 @@ function fbak_dismiss_rating_admin_notice() {
         return;
     }
 
-    if ( 'dismiss_rating_true' === $_GET['fbak_rating_notice_action'] ) {
-        check_admin_referer( 'dismiss_rating_true' );
+    if ( 'fbak_dismiss_rating_true' === $_GET['fbak_rating_notice_action'] ) {
+        check_admin_referer( 'fbak_dismiss_rating_true' );
         update_option( 'fbak_plugin_dismiss_rating_notice', '1' );
     }
 
-    if ( 'no_thanks_rating_true' === $_GET['fbak_rating_notice_action'] ) {
-        check_admin_referer( 'no_thanks_rating_true' );
+    if ( 'fbak_no_thanks_rating_true' === $_GET['fbak_rating_notice_action'] ) {
+        check_admin_referer( 'fbak_no_thanks_rating_true' );
         update_option( 'fbak_plugin_no_thanks_rating_notice', '1' );
         update_option( 'fbak_plugin_dismiss_rating_notice', '1' );
         update_option( 'fbak_plugin_dismissed_time', time() );

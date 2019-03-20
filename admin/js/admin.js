@@ -96,6 +96,16 @@ jQuery(document).ready(function($) {
     });
     $("#fbak-email-success").trigger('change');
 
+    $("#fbak-form").change(function() {
+        if ($('#fbak-form').val() == 'enable') {
+            $('.fbak-loginform').show();
+        }
+        if ($('#fbak-form').val() != 'enable') {
+            $('.fbak-loginform').hide();
+        }
+    });
+    $("#fbak-form").trigger('change');
+
     $(".coffee-amt").change(function() {
         var btn = $('.buy-coffee-btn');
         btn.attr('href', btn.data('link') + $(this).val());

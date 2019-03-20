@@ -37,7 +37,6 @@ function fbak_send_remote_request_url( $url ) {
  * @return array
  */
 function fbak_authorize_with_account_kit( $code ) {
-
     $fbak_settings = get_option( 'fbak_plugin_settings' );
 
     $app_id  = $fbak_settings['fbak_app_id'];
@@ -68,6 +67,9 @@ function fbak_authorize_with_account_kit( $code ) {
  * @return void
  */
 function fbak_process_auth_login() {
+    // Check the referrer for the AJAX call.
+    check_ajax_referer( 'fbak_fb_account_kit', 'csrf' );
+    
     $me_data = fbak_authorize_with_account_kit( $_POST['code'] );
 
     $phone = isset($me_data['phone']) ? $me_data['phone']['number'] : '';
@@ -126,6 +128,8 @@ function fbak_process_auth_login() {
             ) );
         }
     }
+
+    die();
 }
 
 /**
@@ -136,6 +140,9 @@ function fbak_process_auth_login() {
  * @return void
  */
 function fbak_associate_phone_number_email() {
+    // Check the referrer for the AJAX call.
+    check_ajax_referer( 'fbak_fb_account_kit', 'csrf' );
+
     $me_data = fbak_authorize_with_account_kit( $_POST['code'] );
 
     $phone = isset($me_data['phone']) ? $me_data['phone']['number'] : '';
@@ -159,6 +166,8 @@ function fbak_associate_phone_number_email() {
     }
 
     wp_send_json_success();
+
+    die();
 }
 
 /**
@@ -169,6 +178,8 @@ function fbak_associate_phone_number_email() {
  * @return void
  */
 function fbak_disconnect_phone_number_email() {
+    // Check the referrer for the AJAX call.
+    check_ajax_referer( 'fbak_fb_account_kit', 'csrf' );
 
     $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : get_current_user_id();
 
@@ -176,6 +187,8 @@ function fbak_disconnect_phone_number_email() {
     delete_user_meta( $user_id, '_fb_accountkit_auth_mode' );
 
     wp_send_json_success();
+
+    die();
 }
 
 /**

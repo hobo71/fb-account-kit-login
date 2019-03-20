@@ -39,7 +39,11 @@ function fbak_register_plugin_settings() {
         
     add_settings_section('fbak_plugin_misc_section', '', null, 'fbak_plugin_misc_option');
         add_settings_field('fbak_login_form_type', __( 'Login Form Display Type:', 'fb-account-kit-login' ), 'fbak_login_form_type_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-form-type' ));
-        add_settings_field('fbak_hide_default_login_form', __( 'Hide WordPress Login Form:', 'fb-account-kit-login' ), 'fbak_hide_default_login_form_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-hide-form' ));
+        add_settings_field('fbak_enable_login_form', __( 'Enable on WP Login Form:', 'fb-account-kit-login' ), 'fbak_enable_login_form_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-form' ));
+        add_settings_field('fbak_hide_default_login_form', __( 'Default WP Login Form:', 'fb-account-kit-login' ), 'fbak_hide_default_login_form_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-hide-form', 'class' => 'fbak-loginform' ));
+        if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+            add_settings_field('fbak_woocommerce_login_element', __( 'WooCommerce Support:', 'fb-account-kit-login' ), 'fbak_woocommerce_login_element_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-woo' ));
+        }
         add_settings_field('fbak_disable_user_reg_message', __( 'Registration Disable Message:', 'fb-account-kit-login' ), 'fbak_disable_user_reg_message_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-disablereg' ));
         add_settings_field('fbak_login_description', __( 'Login Form Description:', 'fb-account-kit-login' ), 'fbak_login_description_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-description' ));
         add_settings_field('fbak_custom_css', __( 'Custom CSS Code:', 'fb-account-kit-login' ), 'fbak_custom_css_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-css' ));

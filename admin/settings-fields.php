@@ -29,7 +29,7 @@ function fbak_app_id_display() {
 
 function fbak_accountkit_secret_key_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
-    ?>  <input id="fbak-seckey" name="fbak_plugin_settings[fbak_accountkit_secret_key]" type="text" size="60" style="width:60%;" placeholder="<?php _e( 'Enter account kit secret key', 'fb-account-kit-login' ); ?>" required value="<?php if (isset($fbak_settings['fbak_accountkit_secret_key'])) { echo $fbak_settings['fbak_accountkit_secret_key']; } ?>" />
+    ?>  <input id="fbak-seckey" name="fbak_plugin_settings[fbak_accountkit_secret_key]" type="password" size="60" style="width:60%;" placeholder="<?php _e( 'Enter account kit secret key', 'fb-account-kit-login' ); ?>" required value="<?php if (isset($fbak_settings['fbak_accountkit_secret_key'])) { echo $fbak_settings['fbak_accountkit_secret_key']; } ?>" />
         &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enter the Account Kit app secret. This is different than the Facebook app secret.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
         <p style="font-size: 12px; font-style:italic;"><a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/secret-key.png' ); ?>" data-fancybox="app-key" data-caption="<?php _e( 'How to get Account Kit Secret Key?', 'fb-account-kit-login' ); ?>"><?php _e( 'How to get Account Kit App Secret?', 'fb-account-kit-login' ); ?></a></p>
     <?php
@@ -254,8 +254,8 @@ function fbak_hide_default_login_form_display() {
         $fbak_settings['fbak_hide_default_login_form'] = 'no';
     }
     $items = array(
-        'yes'   => __( 'Yes, Hide Form', 'fb-account-kit-login' ),
-        'no'    => __( 'No, Show Form', 'fb-account-kit-login' ),
+        'yes'   => __( 'Hide Login Form', 'fb-account-kit-login' ),
+        'no'    => __( 'Show Login Form', 'fb-account-kit-login' ),
     );
     echo '<select id="fbak-hide-form" name="fbak_plugin_settings[fbak_hide_default_login_form]" style="width:30%;">';
     foreach( $items as $item => $label ) {
@@ -286,6 +286,50 @@ function fbak_login_form_type_display() {
     echo '</select>';
     ?>
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose the login box type from here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_enable_login_form_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    
+    if( !isset($fbak_settings['fbak_enable_login_form']) ) {
+        $fbak_settings['fbak_enable_login_form'] = 'enable';
+    }
+    $items = array(
+        'enable'    => __( 'Enable', 'fb-account-kit-login' ),
+        'disable'   => __( 'Disable', 'fb-account-kit-login' ),
+    );
+    echo '<select id="fbak-form" name="fbak_plugin_settings[fbak_enable_login_form]" style="width:30%;">';
+    foreach( $items as $item => $label ) {
+        $selected = ( $fbak_settings['fbak_enable_login_form'] == $item ) ? ' selected="selected"' : '';
+        echo '<option value="' . $item . '"' . $selected . '>' . $label . '</option>';
+    }
+    echo '</select>';
+    ?>
+    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose the login box type from here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_woocommerce_login_element_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    
+    if( !isset($fbak_settings['fbak_woocommerce_login_element']) ) {
+        $fbak_settings['fbak_woocommerce_login_element'] = 'woo_login';
+    }
+    $items = array(
+        'woo_login'  => __( 'Enable on Login', 'fb-account-kit-login' ),
+        'woo_reg'    => __( 'Enable on Registration', 'fb-account-kit-login' ),
+        'woo_both'   => __( 'Enable on Both Form', 'fb-account-kit-login' ),
+        'disable'    => __( 'Disable', 'fb-account-kit-login' ),
+    );
+    echo '<select id="fbak-woo" name="fbak_plugin_settings[fbak_woocommerce_login_element]" style="width:30%;">';
+    foreach( $items as $item => $label ) {
+        $selected = ( $fbak_settings['fbak_woocommerce_login_element'] == $item ) ? ' selected="selected"' : '';
+        echo '<option value="' . $item . '"' . $selected . '>' . $label . '</option>';
+    }
+    echo '</select>';
+    ?>
+    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose where to show the Account Kit Login option in WooCommerce Pages.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
