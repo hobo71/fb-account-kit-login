@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-03-15 12:28+0530\n"
-"PO-Revision-Date: 2019-03-15 12:28+0530\n"
+"POT-Creation-Date: 2019-03-21 14:33+0530\n"
+"PO-Revision-Date: 2019-03-21 14:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Modal Form"
 msgstr ""
 
-#: admin/settings-fields.php:288 admin/settings-fields.php:309
+#: admin/settings-fields.php:288
 msgid "Choose the login box type from here."
 msgstr ""
 
@@ -258,6 +258,12 @@ msgstr ""
 
 #: admin/settings-fields.php:300 admin/settings-fields.php:323
 msgid "Disable"
+msgstr ""
+
+#: admin/settings-fields.php:309
+msgid ""
+"Choose the Enable option if you want to enable account kit login on "
+"WordPress Login Page."
 msgstr ""
 
 #: admin/settings-fields.php:320
@@ -407,7 +413,7 @@ msgstr ""
 msgid "SMS Login"
 msgstr ""
 
-#: admin/settings-page.php:25 admin/settings-page.php:70
+#: admin/settings-page.php:25 admin/settings-page.php:71
 msgid "Email Login"
 msgstr ""
 
@@ -423,21 +429,37 @@ msgstr ""
 msgid "General Options"
 msgstr ""
 
-#: admin/settings-page.php:53 admin/settings-page.php:64
-#: admin/settings-page.php:75 admin/settings-page.php:86
-#: admin/settings-page.php:149
+#: admin/settings-page.php:53 admin/settings-page.php:65
+#: admin/settings-page.php:77 admin/settings-page.php:88
+#: admin/settings-page.php:151
 msgid "Save Settings"
 msgstr ""
 
-#: admin/settings-page.php:81
+#: admin/settings-page.php:64 admin/settings-page.php:76
+msgid "Note:"
+msgstr ""
+
+#: admin/settings-page.php:64
+msgid ""
+"You can use <code>fbak-sms-login</code> CSS Class as Navigation ( Appearence "
+"> Menus > CSS Classes ) Button Class & <code>#</code> as URL."
+msgstr ""
+
+#: admin/settings-page.php:76
+msgid ""
+"You can use <code>fbak-email-login</code> CSS Class as Navigation "
+"( Appearence > Menus > CSS Classes ) Button Class & <code>#</code> as URL."
+msgstr ""
+
+#: admin/settings-page.php:83
 msgid "Miscellaneous Options"
 msgstr ""
 
-#: admin/settings-page.php:92
+#: admin/settings-page.php:94
 msgid "Shortcode Info"
 msgstr ""
 
-#: admin/settings-page.php:96
+#: admin/settings-page.php:98
 #, php-format
 msgid ""
 "You can insert the login buttons manually in any page or post or template by "
@@ -445,46 +467,46 @@ msgid ""
 "templates using PHP, enter %2$s"
 msgstr ""
 
-#: admin/settings-page.php:97
+#: admin/settings-page.php:99
 msgid ""
 "You can also use the options or attributes below to override the default "
 "settings."
 msgstr ""
 
-#: admin/settings-page.php:98 admin/settings-page.php:99
+#: admin/settings-page.php:100 admin/settings-page.php:101
 msgid "can be"
 msgstr ""
 
-#: admin/settings-page.php:100
+#: admin/settings-page.php:102
 msgid "set the sms button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:101
+#: admin/settings-page.php:103
 msgid "set the email button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:102
+#: admin/settings-page.php:104
 msgid "set the sms button text, defaults to <strong>Login with SMS</strong>"
 msgstr ""
 
-#: admin/settings-page.php:103
+#: admin/settings-page.php:105
 msgid ""
 "set the email button text, defaults to <strong>Login with Email</strong>"
 msgstr ""
 
-#: admin/settings-page.php:104
+#: admin/settings-page.php:106
 msgid "set the description text to show on login page."
 msgstr ""
 
-#: admin/settings-page.php:121
+#: admin/settings-page.php:123
 msgid "Custom"
 msgstr ""
 
-#: admin/settings-page.php:123 admin/settings-page.php:125
+#: admin/settings-page.php:125 admin/settings-page.php:127
 msgid "Buy me a coffee!"
 msgstr ""
 
-#: admin/settings-page.php:126
+#: admin/settings-page.php:128
 #, php-format
 msgid ""
 "Thank you for using %s. If you found the plugin useful buy me a coffee! Your "
@@ -492,51 +514,51 @@ msgid ""
 "via PayPal."
 msgstr ""
 
-#: admin/settings-page.php:130
+#: admin/settings-page.php:132
 msgid "Please wait..."
 msgstr ""
 
-#: admin/settings-page.php:134
+#: admin/settings-page.php:136
 msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:143
+#: admin/settings-page.php:145
 msgid "Saving..."
 msgstr ""
 
-#: admin/settings-page.php:159
+#: admin/settings-page.php:161
 msgid "My Other Plugins!"
 msgstr ""
 
-#: admin/settings-page.php:165
+#: admin/settings-page.php:167
 msgid ""
 "Display last update date and time on frontend with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings-page.php:173
+#: admin/settings-page.php:175
 msgid "Ultimate Facebook Comments Solution with instant email notification."
 msgstr ""
 
-#: admin/settings-page.php:181
+#: admin/settings-page.php:183
 msgid ""
 "Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
 "pages."
 msgstr ""
 
-#: admin/settings-page.php:189
+#: admin/settings-page.php:191
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:197
+#: admin/settings-page.php:199
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
 msgstr ""
 
-#: admin/settings-page.php:205
+#: admin/settings-page.php:207
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
@@ -556,15 +578,15 @@ msgstr ""
 msgid "Account Kit"
 msgstr ""
 
-#: fb-account-kit-login.php:193
+#: fb-account-kit-login.php:194
 msgid "Settings"
 msgstr ""
 
-#: fb-account-kit-login.php:202
+#: fb-account-kit-login.php:203
 msgid "Support"
 msgstr ""
 
-#: fb-account-kit-login.php:203
+#: fb-account-kit-login.php:204
 msgid "Donate"
 msgstr ""
 

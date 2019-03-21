@@ -29,11 +29,11 @@ function fbak_add_click_login_support() { ?>
         jQuery(document).ready( function($) {
             $(".fbak-sms-login").click(function (e) {
                 smsLogin();
-                e.preventDefault()
+                e.preventDefault();
             });
             $(".fbak-email-login").click(function (e) {
                 emailLogin();
-                e.preventDefault()
+                e.preventDefault();
             });
         });
     </script> 

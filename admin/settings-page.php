@@ -61,6 +61,7 @@
                         </h3>
 				        <div class="inside fbak-inside">
                             <?php do_settings_sections('fbak_plugin_sms_option'); ?>
+                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <i><?php _e( 'You can use <code>fbak-sms-login</code> CSS Class as Navigation ( Appearence > Menus > CSS Classes ) Button Class & <code>#</code> as URL.', 'fb-account-kit-login' ); ?></i>
                             <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-sms' ); ?>
                         </div>
                     </div>
@@ -72,6 +73,7 @@
                         </h3>
 				        <div class="inside fbak-inside">
                             <?php do_settings_sections('fbak_plugin_email_option'); ?>
+                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <i><?php _e( 'You can use <code>fbak-email-login</code> CSS Class as Navigation ( Appearence > Menus > CSS Classes ) Button Class & <code>#</code> as URL.', 'fb-account-kit-login' ); ?></i>
                             <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-email' ); ?>
                         </div>
                     </div>

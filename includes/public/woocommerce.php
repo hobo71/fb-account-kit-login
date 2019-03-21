@@ -9,10 +9,10 @@
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
-$fbak_settings = get_option( 'fbak_plugin_settings' );
-
-if ( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) {
-    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+    if ( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) {
+        $fbak_settings = get_option( 'fbak_plugin_settings' );
+        
         if ( isset($fbak_settings['fbak_woocommerce_login_element']) && $fbak_settings['fbak_woocommerce_login_element'] == 'woo_login' ) {
     
             add_action( 'woocommerce_login_form_end', 'fbak_add_html_element_to_woo_login_form' );

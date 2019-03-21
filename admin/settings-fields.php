@@ -306,7 +306,7 @@ function fbak_enable_login_form_display() {
     }
     echo '</select>';
     ?>
-    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose the login box type from here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose the Enable option if you want to enable account kit login on WordPress Login Page.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
