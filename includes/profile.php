@@ -20,28 +20,26 @@ add_filter( 'user_contactmethods', 'fbak_add_phone_contact_info' );
  * @return void
  */
 function fbak_show_connect_button_on_profile( $user ) {
-    $fbak_settings = get_option( 'fbak_plugin_settings' );
-
     $connected = get_user_meta( $user->ID, '_fb_accountkit_id', true );
     $mode = get_user_meta( $user->ID, '_fb_accountkit_auth_mode', true );
 
-    $success = '';
+    $success = __( 'Connected', 'fb-account-kit-login' );
     if ( $mode === 'phone' ) {
         $success = __( 'Connected via Phone', 'fb-account-kit-login' );
     } elseif ( $mode === 'email' ) {
         $success = __( 'Connected via Email', 'fb-account-kit-login' );
     } ?>
-    <?php if ( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) { ?>
+    <?php if( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) { ?>
         <table class="form-table">
             <tbody>
                 <tr>
                     <th><?php _e( 'Facebook Account Kit', 'fb-account-kit-login' ); ?></th>
                     <td>
-                        <?php if ( ! $connected ) { ?>
-                            <?php if ( fbak_enable_sms_login_method() ) { ?>
+                        <?php if( ! $connected ) { ?>
+                            <?php if( fbak_enable_sms_login_method() ) { ?>
                                 <button class="button" onclick="smsLogin(); return false;"><span class="dashicons dashicons-testimonial" style="margin-top:3px;"></span> <?php _e( 'Connect with Phone', 'fb-account-kit-login' ); ?></button>
                             <?php } ?>
-                            <?php if ( fbak_enable_email_login_method() ) { ?>
+                            <?php if( fbak_enable_email_login_method() ) { ?>
                                 <button class="button" onclick="emailLogin(); return false;"><span class="dashicons dashicons-email" style="margin-top:3px;"></span> <?php _e( 'Connect with Email', 'fb-account-kit-login' ); ?></button>
                             <?php } ?>
                         <?php } else { ?>

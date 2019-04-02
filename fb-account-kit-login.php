@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Facebook Account Kit Login
  * Plugin URI: https://wordpress.org/plugins/fb-account-kit-login/
- * Description: Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using SMS or Email Verification without any password.
- * Version: 1.0.5
+ * Description: 🔥 Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using Secure SMS and Email Verification without any password.
+ * Version: 1.0.6
  * Author: Sayan Datta
  * Author URI: https://sayandatta.com/
  * License: GPLv3
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define ( 'FBAK_PLUGIN_VERSION', '1.0.5' );
+define ( 'FBAK_PLUGIN_VERSION', '1.0.6' );
 
 // debug scripts
 //define ( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
@@ -62,6 +62,8 @@ function fbak_plugin_activation() {
         return;
     }
     set_transient( 'fbak-admin-notice-on-activation', true, 5 );
+    
+    flush_rewrite_rules();
 }
 
 function fbak_plugin_deactivation() {
@@ -72,6 +74,8 @@ function fbak_plugin_deactivation() {
     delete_option( 'fbak_plugin_dismiss_rating_notice' );
     delete_option( 'fbak_plugin_no_thanks_rating_notice' );
     delete_option( 'fbak_plugin_installed_time' );
+    
+    flush_rewrite_rules();
 }
 
 function fbak_plugin_install_notice() { 
@@ -106,12 +110,14 @@ function fbak_plugin_register_scripts() {
     wp_register_script( 'fbak-fb-account-kit-js', plugins_url( 'includes/public/js/account-kit.min.js', __FILE__ ), array( 'jquery', 'fbak-fb-account-kit' ), $ver, true );
     wp_register_script( 'fbak-fb-account-kit-login', plugins_url( 'includes/public/js/wp-login.min.js', __FILE__ ), array( 'jquery', 'fbak-fb-account-kit' ), $ver, true );
     wp_localize_script( 'fbak-fb-account-kit', 'FBAccountKitLogin', array(
-        'ajaxurl'  => admin_url( 'admin-ajax.php' ),
-        'app_id'   => $fbak_settings['fbak_app_id'],
-        'version'  => fbak_get_fb_app_api_version(),
-        'display'  => $fbak_settings['fbak_login_form_type'],
-        'nonce'    => wp_create_nonce( 'fbak_fb_account_kit' ),
-        'redirect' => fbak_get_email_login_redirect_url(),
+        'ajaxurl'      => admin_url( 'admin-ajax.php' ),
+        'app_id'       => $fbak_settings['fbak_app_id'],
+        'version'      => fbak_get_fb_app_api_version(),
+        'display'      => $fbak_settings['fbak_login_form_type'],
+        'nonce'        => wp_create_nonce( 'fbak_fb_account_kit' ),
+        'redirect'     => fbak_get_email_login_redirect_url(),
+        'sms_redir'    => fbak_redirect_after_sms_login(),
+        'email_redir'  => fbak_redirect_after_email_login(),
     ) );
 }
 
@@ -137,9 +143,18 @@ function fbak_load_admin_assets( $hook ) {
 
 function fbak_add_account_kit_scripts() {
     wp_enqueue_style( 'fbak-frontend' );
-    
-    wp_enqueue_script( 'fbak-fb-account-kit' );
-    wp_enqueue_script( 'fbak-fb-account-kit-js' );
+
+    // don't display if already logged in
+    if ( ! is_user_logged_in() ) {
+        wp_enqueue_script( 'fbak-fb-account-kit' );
+        wp_enqueue_script( 'fbak-fb-account-kit-js' );
+    }
+
+    // check if woocommerce my account page
+    if ( function_exists( 'is_account_page' ) && is_account_page() ) {
+        wp_enqueue_script( 'fbak-fb-account-kit' );
+        wp_enqueue_script( 'fbak-fb-account-kit-admin' );
+    }
 }
 
 function fbak_add_async_defer_attribute( $tag, $handle ) {
@@ -187,6 +202,15 @@ require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';
 require_once plugin_dir_path( __FILE__ ) . 'admin/donate.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/auth.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/column.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/profile.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/widget.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/public/login.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/public/misc.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/public/shortcode.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/public/woocommerce.php';
 
 // add action links
 function fbak_add_action_links ( $links ) {

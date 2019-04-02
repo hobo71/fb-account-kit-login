@@ -17,6 +17,8 @@
             var data = {
                 code: response.code,
                 csrf: response.state,
+                sms_redir: FBAccountKitLogin.sms_redir,
+                email_redir: FBAccountKitLogin.email_redir,
                 action: 'fbak_fb_account_kit_auth_login'
             };
 

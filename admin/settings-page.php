@@ -23,8 +23,10 @@
         <a href="#general" class="nav-tab active" id="btn1"><span class="dashicons dashicons-admin-generic" style="padding-top: 2px;"></span> <?php _e( 'General', 'fb-account-kit-login' ); ?></a>
         <a href="#sms" class="nav-tab" id="btn2"><span class="dashicons dashicons-admin-comments" style="padding-top: 2px;"></span> <?php _e( 'SMS Login', 'fb-account-kit-login' ); ?></a>
         <a href="#email" class="nav-tab" id="btn3"><span class="dashicons dashicons-email" style="padding-top: 2px;"></span> <?php _e( 'Email Login', 'fb-account-kit-login' ); ?></a>
-        <a href="#others" class="nav-tab" id="btn4"><span class="dashicons dashicons-screenoptions" style="padding-top: 2px;"></span> <?php _e( 'Others', 'fb-account-kit-login' ); ?></a>
-        <a href="#shortcode" class="nav-tab" id="btn5"><span class="dashicons dashicons-editor-code" style="padding-top: 2px;"></span> <?php _e( 'Shortcode', 'fb-account-kit-login' ); ?></a>
+        <a href="#display" class="nav-tab" id="btn4"><span class="dashicons dashicons-visibility" style="padding-top: 2px;"></span> <?php _e( 'Display', 'fb-account-kit-login' ); ?></a>
+        <?php if( class_exists( 'WooCommerce' ) ) { ?><a href="#woocommerce" class="nav-tab" id="btn5"><span class="dashicons dashicons-cart" style="padding-top: 2px;"></span> <?php _e( 'WooCommerce', 'fb-account-kit-login' ); ?></a><?php } ?>
+        <a href="#others" class="nav-tab" id="btn6"><span class="dashicons dashicons-screenoptions" style="padding-top: 2px;"></span> <?php _e( 'Others', 'fb-account-kit-login' ); ?></a>
+        <a href="#shortcode" class="nav-tab" id="btn7"><span class="dashicons dashicons-editor-code" style="padding-top: 2px;"></span> <?php _e( 'Shortcode', 'fb-account-kit-login' ); ?></a>
     </div>
     <script>
         var header = document.getElementById("nav-container");
@@ -77,6 +79,31 @@
                             <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-email' ); ?>
                         </div>
                     </div>
+                    <div id="fbak-display" class="postbox" style="display: none;">
+				        <h3 class="hndle fbak-hndle">
+                            <span class="fbak-heading">
+                                <?php _e( 'Display Options', 'fb-account-kit-login' ); ?>
+                            </span>
+                        </h3>
+				        <div class="inside fbak-inside">
+                            <?php do_settings_sections('fbak_plugin_display_option'); ?>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-display' ); ?>
+                        </div>
+                    </div>
+                    <?php if( class_exists( 'WooCommerce' ) ) { ?>
+                    <div id="fbak-woo" class="postbox" style="display: none;">
+				        <h3 class="hndle fbak-hndle">
+                            <span class="fbak-heading">
+                                <?php _e( 'WooCommerce Options', 'fb-account-kit-login' ); ?>
+                            </span>
+                        </h3>
+				        <div class="inside fbak-inside">
+                            <?php do_settings_sections('fbak_plugin_woo_option'); ?>
+                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <i><?php _e( 'Please re-save your permalinks from <strong>Settings > Permalinks</strong> if you make any changes here.', 'fb-account-kit-login' ); ?></i>
+                            <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-woo' ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
                     <div id="fbak-misc" class="postbox" style="display: none;">
 				        <h3 class="hndle fbak-hndle">
                             <span class="fbak-heading">

@@ -244,7 +244,7 @@ function fbak_email_login_success_page_display() {
 }
 
 /* ============================================================================================== 
-                                           misc options
+                                           display options
 ============================================================================================== */
 
 function fbak_hide_default_login_form_display() {
@@ -310,38 +310,77 @@ function fbak_enable_login_form_display() {
     <?php
 }
 
-function fbak_woocommerce_login_element_display() {
+function fbak_login_description_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
-    
-    if( !isset($fbak_settings['fbak_woocommerce_login_element']) ) {
-        $fbak_settings['fbak_woocommerce_login_element'] = 'woo_login';
-    }
-    $items = array(
-        'woo_login'  => __( 'Enable on Login', 'fb-account-kit-login' ),
-        'woo_reg'    => __( 'Enable on Registration', 'fb-account-kit-login' ),
-        'woo_both'   => __( 'Enable on Both Form', 'fb-account-kit-login' ),
-        'disable'    => __( 'Disable', 'fb-account-kit-login' ),
-    );
-    echo '<select id="fbak-woo" name="fbak_plugin_settings[fbak_woocommerce_login_element]" style="width:30%;">';
-    foreach( $items as $item => $label ) {
-        $selected = ( $fbak_settings['fbak_woocommerce_login_element'] == $item ) ? ' selected="selected"' : '';
-        echo '<option value="' . $item . '"' . $selected . '>' . $label . '</option>';
-    }
-    echo '</select>';
-    ?>
-    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose where to show the Account Kit Login option in WooCommerce Pages.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    ?> <textarea id="fbak-description" placeholder="<?php _e( 'Enter the text to show on login page.', 'fb-account-kit-login' ); ?>" name="fbak_plugin_settings[fbak_login_description]" rows="3" cols="90" style="width:90%;"><?php if (isset($fbak_settings['fbak_login_description'])) { echo $fbak_settings['fbak_login_description']; } ?></textarea>
     <?php
 }
+
+/* ============================================================================================== 
+                                           woocommerce options
+============================================================================================== */
+
+function fbak_enable_woo_login_form_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    ?>  <label class="switch"><input type="checkbox" id="fbak-woo-login" name="fbak_plugin_settings[fbak_enable_woo_login_form]" value="1" <?php checked(isset($fbak_settings['fbak_enable_woo_login_form']), 1); ?> /> 
+        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Login Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_enable_woo_reg_form_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    ?>  <label class="switch"><input type="checkbox" id="fbak-woo-reg" name="fbak_plugin_settings[fbak_enable_woo_reg_form]" value="1" <?php checked(isset($fbak_settings['fbak_enable_woo_reg_form']), 1); ?> /> 
+        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Registration Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_redirect_to_checkout_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    ?>  <label class="switch"><input type="checkbox" id="fbak-woo-redir" name="fbak_plugin_settings[fbak_redirect_to_checkout]" value="1" <?php checked(isset($fbak_settings['fbak_redirect_to_checkout']), 1); ?> /> 
+        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to redirect to Checkout Page when a customer logs in from Checkout Page directly.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_allow_customer_auth_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    ?>  <label class="switch"><input type="checkbox" id="fbak-woo-cus" name="fbak_plugin_settings[fbak_allow_customer_auth]" value="1" <?php checked(isset($fbak_settings['fbak_allow_customer_auth']), 1); ?> /> 
+        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to allow customers to link their email or mobile number to login to their account without password.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_account_kit_endpoint_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    if( empty($fbak_settings['fbak_account_kit_endpoint']) ) {
+        $fbak_settings['fbak_account_kit_endpoint'] = 'account-kit';
+    } ?>  <input id="fbak-woo-ep" name="fbak_plugin_settings[fbak_account_kit_endpoint]" type="text" size="40" style="width:40%;" placeholder="account-kit" required value="<?php if (isset($fbak_settings['fbak_account_kit_endpoint'])) { echo $fbak_settings['fbak_account_kit_endpoint']; } ?>" />
+        &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set the authentication url endpoint here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_account_kit_endpoint_label_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    if( empty($fbak_settings['fbak_account_kit_endpoint_label']) ) {
+        $fbak_settings['fbak_account_kit_endpoint_label'] = __( 'Authentication', 'fb-account-kit-login' );
+    } ?>  <input id="fbak-woo-ep-label" name="fbak_plugin_settings[fbak_account_kit_endpoint_label]" type="text" size="40" style="width:40%;" placeholder="Authentication" required value="<?php if (isset($fbak_settings['fbak_account_kit_endpoint_label'])) { echo $fbak_settings['fbak_account_kit_endpoint_label']; } ?>" />
+        &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set the authentication url endpoint label here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_woo_auth_description_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    if( empty($fbak_settings['fbak_woo_auth_description']) ) {
+        $fbak_settings['fbak_woo_auth_description'] = __( 'Facebook Account Kit Login', 'fb-account-kit-login' );
+    } ?> <textarea id="fbak-woo-des" placeholder="<?php _e( 'Enter the text to show before authentication buttons.', 'fb-account-kit-login' ); ?>" name="fbak_plugin_settings[fbak_woo_auth_description]" rows="3" cols="90" style="width:90%;"><?php if (isset($fbak_settings['fbak_woo_auth_description'])) { echo $fbak_settings['fbak_woo_auth_description']; } ?></textarea>
+    <?php
+}
+
+/* ============================================================================================== 
+                                           misc options
+============================================================================================== */
 
 function fbak_disable_user_reg_message_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <input id="fbak-disablereg" name="fbak_plugin_settings[fbak_disable_user_reg_message]" type="text" size="90" style="width:90%;" placeholder="<?php _e( 'You are not a registered user of this website.', 'fb-account-kit-login' ); ?>" value="<?php if (isset($fbak_settings['fbak_disable_user_reg_message'])) { echo $fbak_settings['fbak_disable_user_reg_message']; } ?>" />
-    <?php
-}
-
-function fbak_login_description_display() {
-    $fbak_settings = get_option('fbak_plugin_settings');
-    ?> <textarea id="fbak-description" placeholder="<?php _e( 'Enter the text to show on login page.', 'fb-account-kit-login' ); ?>" name="fbak_plugin_settings[fbak_login_description]" rows="3" cols="90" style="width:90%;"><?php if (isset($fbak_settings['fbak_login_description'])) { echo $fbak_settings['fbak_login_description']; } ?></textarea>
     <?php
 }
 
@@ -358,6 +397,5 @@ function fbak_delete_data_display() {
         <label for="fbak-delete-data" style="font-size: 12px;"><?php _e( 'Yes, I want to delete all plugin data at the time of uninstallation.', 'fb-account-kit-login' ); ?></label>
     <?php
 }
-
 
 ?>

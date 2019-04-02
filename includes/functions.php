@@ -9,15 +9,6 @@
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
-require_once plugin_dir_path( __FILE__ ) . 'ajax.php';
-require_once plugin_dir_path( __FILE__ ) . 'column.php';
-require_once plugin_dir_path( __FILE__ ) . 'profile.php';
-require_once plugin_dir_path( __FILE__ ) . 'widget.php';
-require_once plugin_dir_path( __FILE__ ) . 'public/login.php';
-require_once plugin_dir_path( __FILE__ ) . 'public/misc.php';
-require_once plugin_dir_path( __FILE__ ) . 'public/shortcode.php';
-require_once plugin_dir_path( __FILE__ ) . 'public/woocommerce.php';
-
 function fbak_guess_username_by_email( $email ) {
     $username = sanitize_user( current( explode( '@', $email ) ), true );
 

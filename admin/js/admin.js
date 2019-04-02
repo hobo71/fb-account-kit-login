@@ -4,6 +4,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").fadeIn("slow");
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     });
@@ -12,6 +14,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").fadeIn("slow");
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     });
@@ -20,6 +24,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").fadeIn("slow");
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     });
@@ -28,7 +34,9 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
-        $("#fbak-misc").fadeIn("slow");
+        $("#fbak-display").fadeIn("slow");
+        $("#fbak-woo").hide();
+        $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     });
 
@@ -36,6 +44,28 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").fadeIn("slow");
+        $("#fbak-misc").hide();
+        $("#fbak-shortcode").hide();
+    });
+
+    $("#btn6").click(function () {
+        $("#fbak-general").hide();
+        $("#fbak-sms").hide();
+        $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
+        $("#fbak-misc").fadeIn("slow");
+        $("#fbak-shortcode").hide();
+    });
+
+    $("#btn7").click(function () {
+        $("#fbak-general").hide();
+        $("#fbak-sms").hide();
+        $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").fadeIn("slow");
     });
@@ -116,6 +146,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").show();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     } else if ( location.href.match(/page\=fb-account-kit-login#sms/ig) ) {
@@ -124,6 +156,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").show();
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
     } else if( location.href.match(/page\=fb-account-kit-login#email/ig) ) {
@@ -132,14 +166,38 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").show();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").hide();
-    } else if( location.href.match(/page\=fb-account-kit-login#others/ig) ) {
+    } else if( location.href.match(/page\=fb-account-kit-login#display/ig) ) {
         $("#btn1").removeClass("active");
         $("#btn4").addClass("active");
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
+        $("#fbak-display").show();
+        $("#fbak-woo").hide();
+        $("#fbak-misc").hide();
+        $("#fbak-shortcode").hide();
+    } else if( location.href.match(/page\=fb-account-kit-login#woocommerce/ig) ) {
+        $("#btn1").removeClass("active");
+        $("#btn5").addClass("active");
+        $("#fbak-general").hide();
+        $("#fbak-sms").hide();
+        $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").show();
+        $("#fbak-misc").hide();
+        $("#fbak-shortcode").hide();
+    } else if( location.href.match(/page\=fb-account-kit-login#others/ig) ) {
+        $("#btn1").removeClass("active");
+        $("#btn5").addClass("active");
+        $("#fbak-general").hide();
+        $("#fbak-sms").hide();
+        $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").show();
         $("#fbak-shortcode").hide();
     } else if( location.href.match(/page\=fb-account-kit-login#shortcode/ig) ) {
@@ -148,6 +206,8 @@ jQuery(document).ready(function($) {
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
+        $("#fbak-display").hide();
+        $("#fbak-woo").hide();
         $("#fbak-misc").hide();
         $("#fbak-shortcode").show();
     } 

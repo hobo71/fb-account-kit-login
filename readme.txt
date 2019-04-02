@@ -1,19 +1,19 @@
-=== Passwordless Login with SMS & Email - Account Kit ===
+=== Passwordless Login with SMS & Email - Facebook Account Kit ===
 Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-The easiest solution for login or register to WordPress by using SMS or Email Verification without any password.
+🔥 The easiest and secure solution for login or register to WordPress by using SMS or Email Verification without any password using Facebook's Secure Authentication.
 
 == Description ==
 
-The Facebook Account Kit Login plugin brings a lightweight, flexible, free and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
+The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, free and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
 
 #### Features
 
@@ -83,6 +83,12 @@ Facebook account and the account kit authentication is fully separated and there
 
 == Changelog ==
 
+= 1.0.6 =
+Release Date: April 2, 2019
+
+* Added: Complete WooCommerce Support.
+* Removed: Some unwanted codes.
+
 = 1.0.5 =
 Release Date: March 21, 2019
 
@@ -91,7 +97,6 @@ Release Date: March 21, 2019
 = 1.0.4 =
 Release Date: March 15, 2019
 
-* Added: WooCommerce Support.
 * Added: Account Kit Login Widget.
 * Added: `fbak-sms-login` class for SMS Login and `fbak-email-login` class for Email Login from Nevigation Menu directly.
 * Added: An option to disable Account Kit Login on WordPress Login Page.

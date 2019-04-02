@@ -37,15 +37,25 @@ function fbak_register_plugin_settings() {
         add_settings_field('fbak_email_login_redirect', __( 'After Login Redirect to:', 'fb-account-kit-login' ), 'fbak_email_login_redirect_display', 'fbak_plugin_email_option', 'fbak_plugin_email_section', array( 'label_for' => 'fbak-email-redirect' ));
         add_settings_field('fbak_email_login_success_page', __( 'Authentication Success URL:', 'fb-account-kit-login' ), 'fbak_email_login_success_page_display', 'fbak_plugin_email_option', 'fbak_plugin_email_section', array( 'label_for' => 'fbak-email-success' ));
         
+    add_settings_section('fbak_plugin_display_section', '', null, 'fbak_plugin_display_option');
+        add_settings_field('fbak_login_form_type', __( 'Login Form Display Type:', 'fb-account-kit-login' ), 'fbak_login_form_type_display', 'fbak_plugin_display_option', 'fbak_plugin_display_section', array( 'label_for' => 'fbak-form-type' ));
+        add_settings_field('fbak_enable_login_form', __( 'Enable on WP Login Form:', 'fb-account-kit-login' ), 'fbak_enable_login_form_display', 'fbak_plugin_display_option', 'fbak_plugin_display_section', array( 'label_for' => 'fbak-form' ));
+        add_settings_field('fbak_hide_default_login_form', __( 'Default WP Login Form:', 'fb-account-kit-login' ), 'fbak_hide_default_login_form_display', 'fbak_plugin_display_option', 'fbak_plugin_display_section', array( 'label_for' => 'fbak-hide-form', 'class' => 'fbak-loginform' ));
+        add_settings_field('fbak_login_description', __( 'Login Form Description:', 'fb-account-kit-login' ), 'fbak_login_description_display', 'fbak_plugin_display_option', 'fbak_plugin_display_section', array( 'label_for' => 'fbak-description' ));
+        
+    if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+        add_settings_section('fbak_plugin_woo_section', '', null, 'fbak_plugin_woo_option');
+            add_settings_field('fbak_enable_woo_login_form', __( 'Enable on Login Form:', 'fb-account-kit-login' ), 'fbak_enable_woo_login_form_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-login' ));
+            add_settings_field('fbak_enable_woo_reg_form', __( 'Enable on Registration Form:', 'fb-account-kit-login' ), 'fbak_enable_woo_reg_form_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-reg' ));
+            add_settings_field('fbak_redirect_to_checkout', __( 'Auto Redirect to Checkout:', 'fb-account-kit-login' ), 'fbak_redirect_to_checkout_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-redir' ));
+            add_settings_field('fbak_allow_customer_auth', __( 'Customer Authentication:', 'fb-account-kit-login' ), 'fbak_allow_customer_auth_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-cus' ));
+            add_settings_field('fbak_account_kit_endpoint', __( 'Account Kit Auth Endpoint:', 'fb-account-kit-login' ), 'fbak_account_kit_endpoint_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-ep' ));
+            add_settings_field('fbak_account_kit_endpoint_label', __( 'Account Kit Endpoint Label:', 'fb-account-kit-login' ), 'fbak_account_kit_endpoint_label_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-ep-label' ));
+            add_settings_field('fbak_woo_auth_description', __( 'Authentication Description:', 'fb-account-kit-login' ), 'fbak_woo_auth_description_display', 'fbak_plugin_woo_option', 'fbak_plugin_woo_section', array( 'label_for' => 'fbak-woo-des' ));
+    }
+
     add_settings_section('fbak_plugin_misc_section', '', null, 'fbak_plugin_misc_option');
-        add_settings_field('fbak_login_form_type', __( 'Login Form Display Type:', 'fb-account-kit-login' ), 'fbak_login_form_type_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-form-type' ));
-        add_settings_field('fbak_enable_login_form', __( 'Enable on WP Login Form:', 'fb-account-kit-login' ), 'fbak_enable_login_form_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-form' ));
-        add_settings_field('fbak_hide_default_login_form', __( 'Default WP Login Form:', 'fb-account-kit-login' ), 'fbak_hide_default_login_form_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-hide-form', 'class' => 'fbak-loginform' ));
-        if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-            add_settings_field('fbak_woocommerce_login_element', __( 'WooCommerce Support:', 'fb-account-kit-login' ), 'fbak_woocommerce_login_element_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-woo' ));
-        }
         add_settings_field('fbak_disable_user_reg_message', __( 'Registration Disable Message:', 'fb-account-kit-login' ), 'fbak_disable_user_reg_message_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-disablereg' ));
-        add_settings_field('fbak_login_description', __( 'Login Form Description:', 'fb-account-kit-login' ), 'fbak_login_description_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-description' ));
         add_settings_field('fbak_custom_css', __( 'Custom CSS Code:', 'fb-account-kit-login' ), 'fbak_custom_css_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-css' ));
         add_settings_field('fbak_delete_data', __( 'Delete Plugin Data?', 'fb-account-kit-login' ), 'fbak_delete_data_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-delete-data' ));
         

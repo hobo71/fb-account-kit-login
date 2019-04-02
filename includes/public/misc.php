@@ -21,12 +21,16 @@ function fbak_add_custom_css_to_head() {
     if( !empty( $fbak_settings['fbak_custom_css'] ) ) {
         $style .= '<style type="text/css">' . $fbak_settings['fbak_custom_css'] . '</style>'."\n";
     }
+    if( is_user_logged_in() ) {
+        $style .= '<style type="text/css"> .fbak-sms-login, .fbak-email-login { display: none !important; } </style>'."\n";
+    }
     echo $style;
 }
 
 function fbak_add_click_login_support() { ?>
     <script type="text/javascript">
         jQuery(document).ready( function($) {
+            <?php if( ! is_user_logged_in() ) { ?>
             $(".fbak-sms-login").click(function (e) {
                 smsLogin();
                 e.preventDefault();
@@ -35,6 +39,7 @@ function fbak_add_click_login_support() { ?>
                 emailLogin();
                 e.preventDefault();
             });
+            <?php } ?>
         });
     </script> 
 <?php

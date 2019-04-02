@@ -37,5 +37,7 @@ function fbak_login_register_button_shortcode( $atts ) {
         $html .= '</div>';
     $html .= '</div>';
 
-    echo $html;
+    if( ! is_user_logged_in() ) {
+        echo $html;
+    }
 }
