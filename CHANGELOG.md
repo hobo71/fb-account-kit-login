@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.6
+Release Date: April 2, 2019
+
+* Added: Complete WooCommerce Support.
+* Removed: Some unwanted codes.
+
 ## 1.0.5
 Release Date: March 21, 2019
 
