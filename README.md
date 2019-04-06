@@ -2,13 +2,13 @@
 
 # Facebook Account Kit Login
 
-The easiest solution for login or register to WordPress by using SMS or Email Verification without any password.
+🔥 The easiest and secure solution for login or register to WordPress by using SMS or Email Verification without any password using Facebook's Secure Authentication.
 
 ## Description
 
 The Facebook Account Kit Login plugin brings a lightweight, flexible and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
 
-#### Features
+### Features
 
  * Login with SMS (Phone).
  * Login with WhatsApp.
@@ -16,8 +16,19 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
  * WooCommerce Support.
  * Totally Free of Cost SMS Service.
  * Shortcode Compatible.
+ * Dedicated Widget.
  
-Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
+![alt text](https://github.com/iamsayan/fb-account-kit-login/raw/master/how-it-works.jpeg "How it Works")
+
+### This is How It Works:
+
+* Instead of asking users for a username and password when they try to log in to your website, it simply asks them for their phone number or email.
+* Account Kit servers send an SMS with a confirmation code to the phone number (or WhatsApp Account) or send an email with a confirmation link to the email address to continue the login.
+* If users fail to receive the SMS code, it offers two other methods that people can choose from the Phone call or Facebook notification.
+* The SDK verifies the SMS confirmation code or monitors the status of the confirmation email. Account Kit may also verify the phone number directly without sending an SMS code.
+* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user.
+
+For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
 
 #### Compatibility
 
@@ -26,6 +37,8 @@ Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https
 #### Support
 
 * Community support via the [support forums](https://wordpress.org/support/plugin/fb-account-kit-login) at wordpress.org.
+
+Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
 
 ## Installation ##
 
