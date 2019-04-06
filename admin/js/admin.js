@@ -192,7 +192,7 @@ jQuery(document).ready(function($) {
         $("#fbak-shortcode").hide();
     } else if( location.href.match(/page\=fb-account-kit-login#others/ig) ) {
         $("#btn1").removeClass("active");
-        $("#btn5").addClass("active");
+        $("#btn6").addClass("active");
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();
@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
         $("#fbak-shortcode").hide();
     } else if( location.href.match(/page\=fb-account-kit-login#shortcode/ig) ) {
         $("#btn1").removeClass("active");
-        $("#btn5").addClass("active");
+        $("#btn7").addClass("active");
         $("#fbak-general").hide();
         $("#fbak-sms").hide();
         $("#fbak-email").hide();

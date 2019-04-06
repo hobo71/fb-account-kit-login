@@ -62,11 +62,13 @@
     z-index: 9;
 }
 
-.woocommerce-form-login .fb-ackit-wrap {
+.woocommerce-form-login .fb-ackit-wrap,
+.woocommerce-form-register .fb-ackit-wrap {
     text-align: center;
 }
 
-.woocommerce-form-login .fb-ackit-wrap button {
+.woocommerce-form-login .fb-ackit-wrap button,
+.woocommerce-form-register .fb-ackit-wrap button {
     display: inline-block;
 }
 

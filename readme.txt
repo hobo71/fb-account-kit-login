@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -13,9 +13,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, free and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to wordpress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
+The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, free and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to WordPress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
 
-#### Features
+### Features
 
  * Login with SMS (Phone).
  * Login with WhatsApp.
@@ -23,7 +23,18 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
  * WooCommerce Support.
  * Totally Free of Cost SMS Service.
  * Shortcode Compatible.
+ * Dedicated Widget.
  
+### This is how it works:
+
+* Instead of asking users for a username and password when they try to log in to your website, it simply asks them for their phone number or email.
+* Account Kit servers send an SMS with a confirmation code to the phone number (or WhatsApp Account) or send an email with a confirmation link to the email address to continue the login.
+* If users fail to receive the SMS code, it offers two other methods that people can choose from the Phone call or Facebook notification.
+* The SDK verifies the SMS confirmation code or monitors the status of the confirmation email. Account Kit may also verify the phone number directly without sending an SMS code.
+* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user.
+
+For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
+
 Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
 
 #### Compatibility
@@ -67,7 +78,7 @@ Account Kit works with [233 country codes](https://developers.facebook.com/docs/
 
 = Is there any link between my Facebook Account? =
 
-Facebook account and the account kit authentication is fully separated and there is no connection between your facebook account.
+Facebook account and the account kit authentication is fully separated and there is no connection between your Facebook account.
 
 == Screenshots ==
 
@@ -79,9 +90,24 @@ Facebook account and the account kit authentication is fully separated and there
 6. General Settings
 7. SMS Login Settings
 8. Email Login Settings
-9. Others Settings
+9. Display Settings
+10. WooCommerce Settings
+11. WooCommerce My Account
+12. WooCommerce Checkout Page
+13. WooCommerce Login Form
+14. WooCommerce Profile Section
+15. Others Settings
+16. How it Works
 
 == Changelog ==
+
+= 1.0.7 =
+Release Date: April 6, 2019
+
+* Tweak: Added a notice if a user account is not linked with Facebook Account Kit.
+* Fixed: Some JS errors in Plugin Settings Page.
+* Fixed: Delete Account option in user profile does not really disconnect from Account Kit.
+* Fixed: CSS issue in WooCommerce register form.
 
 = 1.0.6 =
 Release Date: April 2, 2019
@@ -98,16 +124,16 @@ Release Date: March 21, 2019
 Release Date: March 15, 2019
 
 * Added: Account Kit Login Widget.
-* Added: `fbak-sms-login` class for SMS Login and `fbak-email-login` class for Email Login from Nevigation Menu directly.
+* Added: `fbak-sms-login` class for SMS Login and `fbak-email-login` class for Email Login from Navigation Menu directly.
 * Added: An option to disable Account Kit Login on WordPress Login Page.
-* Tweak: Now Account Kit SDK Loaded asyncronously to imporve page loading speed.
+* Tweak: Now Account Kit SDK Loaded asynchronously to improve page loading speed.
 
 = 1.0.3 =
 Release Date: February 11, 2019
 
 * Added: An option to redirect on custom page after a successful login.
-* Added: An settings to set custom error text if an unregistered user tries to login to website.
-* Tweak: Now Administrator can link phone to email to the other existing account from their account.
+* Added: An settings to set custom error text if an unregistered user tries to log in to the website.
+* Tweak: Now Administrator can link the phone to email to the other existing account from their account.
 * Tweak: Now every login via this plugin will be treated with wp_login action.
 * Added: Some filters for future releases.
 

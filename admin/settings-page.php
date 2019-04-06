@@ -99,7 +99,7 @@
                         </h3>
 				        <div class="inside fbak-inside">
                             <?php do_settings_sections('fbak_plugin_woo_option'); ?>
-                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <i><?php _e( 'Please re-save your permalinks from <strong>Settings > Permalinks</strong> if you make any changes here.', 'fb-account-kit-login' ); ?></i>
+                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <i><?php _e( 'Please re-save your permalinks from <strong>Settings > Permalinks</strong> if you make any changes in Account Kit Authentication Endpoint URL.', 'fb-account-kit-login' ); ?></i>
                             <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-woo' ); ?>
                         </div>
                     </div>

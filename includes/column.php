@@ -15,7 +15,6 @@ add_action( 'admin_print_styles-users.php', 'fbak_print_admin_users_css' );
 
   // create custom column
 function fbak_auth_status_to_user_table( $columns ) {
-
 	// build custom columns
 	$columns['fbak-login'] = '<span class="dashicons dashicons-facebook" title="' . __( 'Account Kit Status', 'fb-account-kit-login' ) . '"><span class="screen-reader-text">' . __( 'Account Kit Status', 'fb-account-kit-login' ) . '</span></span>';
 	
@@ -23,7 +22,6 @@ function fbak_auth_status_to_user_table( $columns ) {
 }
 
 function fbak_manage_users_custom_column( $value, $column_name, $user_id ) {
-	
 	// get author meta
 	$chk_login = get_user_meta( $user_id, '_fb_accountkit_id', true );
 	$chk_mode = get_user_meta( $user_id, '_fb_accountkit_auth_mode', true );

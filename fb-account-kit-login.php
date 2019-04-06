@@ -3,7 +3,7 @@
  * Plugin Name: Facebook Account Kit Login
  * Plugin URI: https://wordpress.org/plugins/fb-account-kit-login/
  * Description: 🔥 Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using Secure SMS and Email Verification without any password.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Sayan Datta
  * Author URI: https://sayandatta.com/
  * License: GPLv3
@@ -35,10 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define ( 'FBAK_PLUGIN_VERSION', '1.0.6' );
+define( 'FBAK_PLUGIN_VERSION', '1.0.7' );
 
 // debug scripts
-//define ( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
+//define( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
 
 // Internationalization
 add_action( 'plugins_loaded', 'fbak_plugin_load_textdomain' );
@@ -77,18 +77,6 @@ function fbak_plugin_deactivation() {
     
     flush_rewrite_rules();
 }
-
-function fbak_plugin_install_notice() { 
-
-    if( get_transient( 'fbak-admin-notice-on-activation' ) ) { ?>
-        <div class="notice notice-success">
-            <p><strong><?php printf( __( 'Thanks for installing %1$s v%2$s plugin. Click <a href="%3$s">here</a> to configure plugin settings.', 'fb-account-kit-login' ), 'Facebook Account Kit Login', FBAK_PLUGIN_VERSION, admin_url( 'admin.php?page=fb-account-kit-login' ) ); ?></strong></p>
-        </div> <?php
-        delete_transient( 'fbak-admin-notice-on-activation' );
-    }
-}
-
-add_action( 'admin_notices', 'fbak_plugin_install_notice' ); 
 
 function fbak_plugin_register_scripts() {
 
@@ -206,6 +194,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/auth.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/column.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/profile.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/widget.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/notice.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/public/login.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/public/misc.php';
