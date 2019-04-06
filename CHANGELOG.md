@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.7
+Release Date: April 6, 2019
+
+* Tweak: Added a notice if a user account is not linked with Facebook Account Kit.
+* Fixed: Some JS errors in Plugin Settings Page.
+* Fixed: Delete Account option in user profile does not really disconnect from Account Kit.
+* Fixed: CSS issue in WooCommerce register form.
+
 ## 1.0.6
 Release Date: April 2, 2019
 
