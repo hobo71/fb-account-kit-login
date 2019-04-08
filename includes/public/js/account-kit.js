@@ -29,6 +29,10 @@
                 window.location.href = response.data.redirect;
             });
         }
+        else if (response.status === "BAD_PARAMS") {
+            // handle bad parameters
+            alert( FBAccountKitLogin.bad_params );
+        }
     }
 
     // phone form submission handler

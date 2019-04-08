@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.8
+Release Date: April 8, 2019
+
+* Tweak: Reduced plugin size.
+* Removed: Some JS Files.
+* Fixed: Some JS errors.
+
 ## 1.0.7
 Release Date: April 6, 2019
 

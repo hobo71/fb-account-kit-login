@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -17,13 +17,14 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
 
 ### Features
 
- * Login with SMS (Phone).
- * Login with WhatsApp.
- * Login with Email.
- * WooCommerce Support.
- * Totally Free of Cost SMS Service.
+ * **Login with SMS** (Phone).
+ * **Login with WhatsApp**.
+ * **Login with Email**.
+ * **WooCommerce Support.**
+ * Totally **Free of Cost SMS Service**.
  * Shortcode Compatible.
  * Dedicated Widget.
+ * **Compatible with Custom Login URL**
  
 ### This is how it works:
 
@@ -100,6 +101,13 @@ Facebook account and the account kit authentication is fully separated and there
 16. How it Works
 
 == Changelog ==
+
+= 1.0.8 =
+Release Date: April 8, 2019
+
+* Tweak: Reduced plugin size.
+* Removed: Some JS Files.
+* Fixed: Some JS errors.
 
 = 1.0.7 =
 Release Date: April 6, 2019

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Runs on Uninstall of Facebook Account Kit Login
  *

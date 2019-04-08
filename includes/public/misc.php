@@ -11,7 +11,6 @@
 
 add_action( 'wp_head', 'fbak_add_custom_css_to_head' );
 add_action( 'wp_footer', 'fbak_add_click_login_support' );
-
 add_action( 'init', 'fbak_email_login_redirect_to_url' );
 
 function fbak_add_custom_css_to_head() {
@@ -27,22 +26,21 @@ function fbak_add_custom_css_to_head() {
     echo $style;
 }
 
-function fbak_add_click_login_support() { ?>
-    <script type="text/javascript">
-        jQuery(document).ready( function($) {
-            <?php if( ! is_user_logged_in() ) { ?>
-            $(".fbak-sms-login").click(function (e) {
-                smsLogin();
-                e.preventDefault();
+function fbak_add_click_login_support() { 
+    if( ! is_user_logged_in() ) { ?>
+        <script type="text/javascript">
+            jQuery(document).ready( function($) {
+                $(".fbak-sms-login").click(function (e) {
+                    smsLogin();
+                    e.preventDefault();
+                });
+                $(".fbak-email-login").click(function (e) {
+                    emailLogin();
+                    e.preventDefault();
+                });
             });
-            $(".fbak-email-login").click(function (e) {
-                emailLogin();
-                e.preventDefault();
-            });
-            <?php } ?>
-        });
-    </script> 
-<?php
+        </script> 
+    <?php }
 }
 
 function fbak_email_login_redirect_to_url() {

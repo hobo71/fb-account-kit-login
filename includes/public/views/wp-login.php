@@ -25,11 +25,11 @@ $email_btn_class = !empty($fbak_settings['fbak_email_btn_class']) ? $fbak_settin
             <?php echo $description; ?>
         </p>
         <?php if ( fbak_enable_sms_login_method() ) : ?>
-            <a href="#" onclick="smsLogin(); return false;" class="<?php echo $sms_btn_class; ?>" style="text-align: center;"><span class="dashicons dashicons-testimonial"></span> <?php echo $sms_label; ?></a>
+            <a href="#" onclick="smsLogin(); return false;" class="<?php echo $sms_btn_class; ?>" style="text-align: center;"><span class="fback-icon"><span class="fback-icon dashicons dashicons-testimonial"></span> </span><?php echo $sms_label; ?></a>
         <?php endif; ?>
 
         <?php if ( fbak_enable_email_login_method() ) : ?>
-            <a href="#" onclick="emailLogin(); return false;" class="<?php echo $email_btn_class; ?>" style="text-align: center;"><span class="dashicons dashicons-email"></span> <?php echo $email_label; ?></a>
+            <a href="#" onclick="emailLogin(); return false;" class="<?php echo $email_btn_class; ?>" style="text-align: center;"><span class="fback-icon"><span class="dashicons dashicons-email"></span> </span><?php echo $email_label; ?></a>
         <?php endif; ?>
     </div>
 

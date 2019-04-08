@@ -26,8 +26,8 @@ function fbak_new_plugin_install_notice() {
         if ( '1' !== get_user_meta( get_current_user_id(), '_fbak_link_notice_hide', true ) && ( fbak_enable_sms_login_method() || fbak_enable_email_login_method() ) ) {
             $dismiss = wp_nonce_url( add_query_arg( 'fbak_profile_link_action', 'fbak_pl_hide_true' ), 'fbak_pl_hide_true' ); ?>
             <div class="notice notice-warning is-dismissible">
-                <p><strong><?php printf( __( 'Your Account is not linked with Facebook Account Kit yet. Please connect your account with Facebook Account Kit from your <a href="%s" target="_blank">profile</a> for a secure and passwordless login.', 'fb-account-kit-login' ), admin_url( 'profile.php' ) ); ?></strong>
-                <span style="float: right;"><a href="<?php echo $dismiss; ?>" class="already-did"><strong><?php _e( 'Hide', 'fb-account-kit-login' ); ?></strong></a><span></p>
+                <p><strong><?php printf( __( 'Your Account is not linked with Facebook Account Kit yet. Please connect your account with Facebook Account Kit from your <a href="%s">profile</a> for a secure and passwordless login.', 'fb-account-kit-login' ), admin_url( 'profile.php' ) ); ?></strong>
+                <span style="float: right;"><a href="<?php echo $dismiss; ?>"><strong><?php _e( 'Hide', 'fb-account-kit-login' ); ?></strong></a><span></p>
             </div> <?php
         }
     }

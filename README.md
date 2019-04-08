@@ -10,13 +10,14 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
 
 ### Features
 
- * Login with SMS (Phone).
- * Login with WhatsApp.
- * Login with Email.
- * WooCommerce Support.
- * Totally Free of Cost SMS Service.
+ * **Login with SMS** (Phone).
+ * **Login with WhatsApp**.
+ * **Login with Email**.
+ * **WooCommerce Support.**
+ * Totally **Free of Cost SMS Service**.
  * Shortcode Compatible.
  * Dedicated Widget.
+ * **Compatible with Custom Login URL**
  
 ![alt text](https://github.com/iamsayan/fb-account-kit-login/raw/master/how-it-works.jpeg "How it Works")
 

@@ -13,9 +13,7 @@
     // login callback
     function loginCallback(response) {
         if (response.status === "PARTIALLY_AUTHENTICATED") {
-
             var userid = $("span#fbak-user-id").text();
-            
             var data = {
                 code: response.code,
                 csrf: response.state,
@@ -27,6 +25,10 @@
             $.post(FBAccountKitLogin.ajaxurl, data, function() {
                 window.location.reload();
             });
+        }
+        else if (response.status === "BAD_PARAMS") {
+            // handle bad parameters
+            alert( FBAccountKitLogin.bad_params );
         }
     }
 

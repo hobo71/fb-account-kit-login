@@ -19,10 +19,10 @@ function fbak_app_id_display() {
         &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enter the facebook app id you have created here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
         <p style="font-size: 12px; font-style:italic;">
             <a href="https://developers.facebook.com/apps/" target="_blank"><?php _e( 'Create a new Facebook App', 'fb-account-kit-login' ); ?></a> | 
-            <a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/enable-account-kit-step-1.png' ); ?>" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 1', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit?', 'fb-account-kit-login' ); ?></a>
-            <a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/enable-account-kit-step-2.png' ); ?>" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 2', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 2', 'fb-account-kit-login' ); ?></a>
-            <a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/enable-account-kit-step-3.png' ); ?>" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?></a>
-            <a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/enable-account-kit-step-4.png' ); ?>" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 4', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?></a>
+            <a href="https://ps.w.org/fb-account-kit-login/assets/enable-account-kit-step-1.png" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 1', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit?', 'fb-account-kit-login' ); ?></a>
+            <a href="https://ps.w.org/fb-account-kit-login/assets/enable-account-kit-step-2.png" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 2', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 2', 'fb-account-kit-login' ); ?></a>
+            <a href="https://ps.w.org/fb-account-kit-login/assets/enable-account-kit-step-3.png" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?></a>
+            <a href="https://ps.w.org/fb-account-kit-login/assets/enable-account-kit-step-4.png" style="display: none;" data-fancybox="enable-ak" data-caption="<?php _e( 'How to enable Account Kit? - Step 4', 'fb-account-kit-login' ); ?>"><?php _e( 'How to enable Account Kit? - Step 3', 'fb-account-kit-login' ); ?></a>
         </p>
     <?php
 }
@@ -31,7 +31,7 @@ function fbak_accountkit_secret_key_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <input id="fbak-seckey" name="fbak_plugin_settings[fbak_accountkit_secret_key]" type="password" size="60" style="width:60%;" placeholder="<?php _e( 'Enter account kit secret key', 'fb-account-kit-login' ); ?>" required value="<?php if (isset($fbak_settings['fbak_accountkit_secret_key'])) { echo $fbak_settings['fbak_accountkit_secret_key']; } ?>" />
         &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enter the Account Kit app secret. This is different than the Facebook app secret.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
-        <p style="font-size: 12px; font-style:italic;"><a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/secret-key.png' ); ?>" data-fancybox="app-key" data-caption="<?php _e( 'How to get Account Kit Secret Key?', 'fb-account-kit-login' ); ?>"><?php _e( 'How to get Account Kit App Secret?', 'fb-account-kit-login' ); ?></a></p>
+        <p style="font-size: 12px; font-style:italic;"><a href="https://ps.w.org/fb-account-kit-login/assets/secret-key.png" data-fancybox="app-key" data-caption="<?php _e( 'How to get Account Kit Secret Key?', 'fb-account-kit-login' ); ?>"><?php _e( 'How to get Account Kit App Secret?', 'fb-account-kit-login' ); ?></a></p>
     <?php
 }
 
@@ -48,7 +48,7 @@ function fbak_ac_locale_display() {
 function fbak_ac_res_url_display() { ?>
     <input id="fbak-resurl" type="text" size="60" style="width:60%;" readonly value="<?php echo esc_url( home_url( '/fbak-auth/?fbak_check_auth=true' ) ); ?>" />
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'It is the url where facebook app redirects after a successful email login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
-    <p style="font-size: 12px; font-style:italic;"><a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/enable-account-kit-step-5.png' ); ?>" data-fancybox="enable-ak" data-caption="<?php _e( 'Where to add this Redirect URL? - Step 5', 'fb-account-kit-login' ); ?>"><?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?></a></p>
+    <p style="font-size: 12px; font-style:italic;"><a href="https://ps.w.org/fb-account-kit-login/assets/enable-account-kit-step-5.png" data-fancybox="enable-ak" data-caption="<?php _e( 'Where to add this Redirect URL? - Step 5', 'fb-account-kit-login' ); ?>"><?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?></a></p>
     <?php
 }
 
@@ -239,7 +239,7 @@ function fbak_email_login_success_page_display() {
     <span class="custom-email-url" style="display: none;">&nbsp;&nbsp;<label for="fbak-email-success-url" style="vertical-align: baseline;font-size: 14px;font-weight: 600;"><?php _e( 'URL:', 'fb-account-kit-login' ); ?></label>&nbsp;
     <input id="fbak-email-success-url" name="fbak_plugin_settings[fbak_email_login_success_page_url]" type="text" size="50" style="width:50%;" placeholder="<?php echo home_url( '/auth-success/' ); ?>" value="<?php if (isset($fbak_settings['fbak_email_login_success_page_url'])) { echo $fbak_settings['fbak_email_login_success_page_url']; } ?>" />
     </span>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Select the email authentication success URL freom here. Plugin Default uses this URL '.esc_url( home_url( '/fbak-auth/?fbak_check_auth=true' ) ), 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
-    <p class="custom-email-url" style="font-size: 12px; font-style: italic;display: none;"><a href="<?php echo plugins_url( 'fb-account-kit-login/admin/images/email-success.png' ); ?>" data-fancybox="email-success" data-caption="<?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?>"><?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?></a></p>
+    <p class="custom-email-url" style="font-size: 12px; font-style: italic;display: none;"><a href="https://ps.w.org/fb-account-kit-login/assets/email-success.png" data-fancybox="email-success" data-caption="<?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?>"><?php _e( 'Where to add this Redirect URL?', 'fb-account-kit-login' ); ?></a></p>
     <?php
 }
 
