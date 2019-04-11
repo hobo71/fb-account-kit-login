@@ -136,6 +136,20 @@ jQuery(document).ready(function($) {
     });
     $("#fbak-form").trigger('change');
 
+    $("#fbak-woo-cus").change(function () {
+        if ($('#fbak-woo-cus').is(':checked')) {
+            $('.fbak-woo-ep').show();
+            $('.fbak-woo-ep-label').show();
+            $('.fbak-woo-des').show();
+        }
+        if (!$('#fbak-woo-cus').is(':checked')) {
+            $('.fbak-woo-ep').hide();
+            $('.fbak-woo-ep-label').hide();
+            $('.fbak-woo-des').hide();
+        }
+    });
+    $("#fbak-woo-cus").trigger('change');
+
     $(".coffee-amt").change(function() {
         var btn = $('.buy-coffee-btn');
         btn.attr('href', btn.data('link') + $(this).val());

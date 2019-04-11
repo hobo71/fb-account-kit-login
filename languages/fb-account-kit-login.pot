@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-04-08 21:54+0530\n"
-"PO-Revision-Date: 2019-04-08 21:54+0530\n"
+"POT-Creation-Date: 2019-04-11 11:15+0530\n"
+"PO-Revision-Date: 2019-04-11 11:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgstr ""
 
 #: admin/settings-fields.php:99 admin/settings-fields.php:182
 #: includes/public/shortcode.php:23 includes/public/woocommerce.php:46
-#: includes/widget.php:73 includes/widget.php:160
+#: includes/widget.php:74 includes/widget.php:167
 msgid "Login with SMS"
 msgstr ""
 
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Set the authentication url endpoint here."
 msgstr ""
 
-#: admin/settings-fields.php:363 includes/public/woocommerce.php:75
+#: admin/settings-fields.php:363 includes/public/woocommerce.php:83
 msgid "Authentication"
 msgstr ""
 
@@ -305,26 +305,32 @@ msgstr ""
 msgid "Set the authentication url endpoint label here."
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-#: admin/settings-fields.php:372 fb-account-kit-login.php:181
-#: includes/widget.php:29
-msgid "Facebook Account Kit Login"
+#: admin/settings-fields.php:372 includes/public/woocommerce.php:94
+msgid ""
+"If your Account is not linked with Facebook Account Kit, please connect your "
+"account with Facebook Account Kit for a secure and passwordless login."
 msgstr ""
 
 #: admin/settings-fields.php:373
 msgid "Enter the text to show before authentication buttons."
 msgstr ""
 
-#: admin/settings-fields.php:383 includes/public/login.php:69
+#: admin/settings-fields.php:383 includes/public/login.php:75
+#: includes/public/shortcode.php:26 includes/public/woocommerce.php:57
+#: includes/widget.php:79
+msgid "Please wait until we authenticate you."
+msgstr ""
+
+#: admin/settings-fields.php:389 includes/public/login.php:69
 msgid "You are not a registered user of this website."
 msgstr ""
 
-#: admin/settings-fields.php:390
+#: admin/settings-fields.php:396
 #, php-format
 msgid "Do not add %s tag. This tag is not required, as it is already added."
 msgstr ""
 
-#: admin/settings-fields.php:397
+#: admin/settings-fields.php:403
 msgid "Yes, I want to delete all plugin data at the time of uninstallation."
 msgstr ""
 
@@ -413,7 +419,7 @@ msgid "Auto Redirect to Checkout:"
 msgstr ""
 
 #: admin/settings-loader.php:51
-msgid "Customer Authentication:"
+msgid "Allow User Authentication:"
 msgstr ""
 
 #: admin/settings-loader.php:52
@@ -421,22 +427,26 @@ msgid "Account Kit Auth Endpoint:"
 msgstr ""
 
 #: admin/settings-loader.php:53
-msgid "Account Kit Endpoint Label:"
+msgid "WooCommerce Menu Label:"
 msgstr ""
 
 #: admin/settings-loader.php:54
-msgid "Authentication Description:"
+msgid "Menu Item/Page Description:"
 msgstr ""
 
 #: admin/settings-loader.php:58
-msgid "Registration Disable Message:"
+msgid "Authentication Waiting Text:"
 msgstr ""
 
 #: admin/settings-loader.php:59
-msgid "Custom CSS Code:"
+msgid "Registration Disable Message:"
 msgstr ""
 
 #: admin/settings-loader.php:60
+msgid "Custom CSS Code:"
+msgstr ""
+
+#: admin/settings-loader.php:61
 msgid "Delete Plugin Data?"
 msgstr ""
 
@@ -492,13 +502,12 @@ msgstr ""
 
 #: admin/settings-page.php:55 admin/settings-page.php:67
 #: admin/settings-page.php:79 admin/settings-page.php:90
-#: admin/settings-page.php:103 admin/settings-page.php:115
-#: admin/settings-page.php:178
+#: admin/settings-page.php:102 admin/settings-page.php:114
+#: admin/settings-page.php:177
 msgid "Save Settings"
 msgstr ""
 
 #: admin/settings-page.php:66 admin/settings-page.php:78
-#: admin/settings-page.php:102
 msgid "Note:"
 msgstr ""
 
@@ -522,21 +531,15 @@ msgstr ""
 msgid "WooCommerce Options"
 msgstr ""
 
-#: admin/settings-page.php:102
-msgid ""
-"Please re-save your permalinks from <strong>Settings > Permalinks</strong> "
-"if you make any changes in Account Kit Authentication Endpoint URL."
-msgstr ""
-
-#: admin/settings-page.php:110
+#: admin/settings-page.php:109
 msgid "Miscellaneous Options"
 msgstr ""
 
-#: admin/settings-page.php:121
+#: admin/settings-page.php:120
 msgid "Shortcode Info"
 msgstr ""
 
-#: admin/settings-page.php:125
+#: admin/settings-page.php:124
 #, php-format
 msgid ""
 "You can insert the login buttons manually in any page or post or template by "
@@ -544,46 +547,46 @@ msgid ""
 "templates using PHP, enter %2$s"
 msgstr ""
 
-#: admin/settings-page.php:126
+#: admin/settings-page.php:125
 msgid ""
 "You can also use the options or attributes below to override the default "
 "settings."
 msgstr ""
 
-#: admin/settings-page.php:127 admin/settings-page.php:128
+#: admin/settings-page.php:126 admin/settings-page.php:127
 msgid "can be"
 msgstr ""
 
-#: admin/settings-page.php:129
+#: admin/settings-page.php:128
 msgid "set the sms button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:130
+#: admin/settings-page.php:129
 msgid "set the email button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:131
+#: admin/settings-page.php:130
 msgid "set the sms button text, defaults to <strong>Login with SMS</strong>"
 msgstr ""
 
-#: admin/settings-page.php:132
+#: admin/settings-page.php:131
 msgid ""
 "set the email button text, defaults to <strong>Login with Email</strong>"
 msgstr ""
 
-#: admin/settings-page.php:133
+#: admin/settings-page.php:132
 msgid "set the description text to show on login page."
 msgstr ""
 
-#: admin/settings-page.php:150
+#: admin/settings-page.php:149
 msgid "Custom"
 msgstr ""
 
-#: admin/settings-page.php:152 admin/settings-page.php:154
+#: admin/settings-page.php:151 admin/settings-page.php:153
 msgid "Buy me a coffee!"
 msgstr ""
 
-#: admin/settings-page.php:155
+#: admin/settings-page.php:154
 #, php-format
 msgid ""
 "Thank you for using %s. If you found the plugin useful buy me a coffee! Your "
@@ -591,71 +594,72 @@ msgid ""
 "via PayPal."
 msgstr ""
 
-#: admin/settings-page.php:159
+#: admin/settings-page.php:158
 msgid "Please wait..."
 msgstr ""
 
-#: admin/settings-page.php:163
+#: admin/settings-page.php:162
 msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:172
+#: admin/settings-page.php:171
 msgid "Saving..."
 msgstr ""
 
-#: admin/settings-page.php:188
+#: admin/settings-page.php:200
 msgid "My Other Plugins!"
 msgstr ""
 
-#: admin/settings-page.php:194
+#: admin/settings-page.php:206
 msgid ""
 "Display last update date and time on frontend with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings-page.php:202
+#: admin/settings-page.php:214
 msgid "Ultimate Facebook Comments Solution with instant email notification."
 msgstr ""
 
-#: admin/settings-page.php:210
+#: admin/settings-page.php:222
 msgid ""
 "Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
 "pages."
 msgstr ""
 
-#: admin/settings-page.php:218
+#: admin/settings-page.php:230
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:226
+#: admin/settings-page.php:238
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
 msgstr ""
 
-#: admin/settings-page.php:234
+#: admin/settings-page.php:246
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
-#: fb-account-kit-login.php:108
-msgid "Something Wrong! Please check your plugin settings."
+#. Plugin Name of the plugin/theme
+#: fb-account-kit-login.php:180 includes/widget.php:29
+msgid "Facebook Account Kit Login"
 msgstr ""
 
-#: fb-account-kit-login.php:181
+#: fb-account-kit-login.php:180
 msgid "Account Kit"
 msgstr ""
 
-#: fb-account-kit-login.php:207
+#: fb-account-kit-login.php:212
 msgid "Settings"
 msgstr ""
 
-#: fb-account-kit-login.php:216
+#: fb-account-kit-login.php:221
 msgid "Support"
 msgstr ""
 
-#: fb-account-kit-login.php:217
+#: fb-account-kit-login.php:222
 msgid "Donate"
 msgstr ""
 
@@ -702,15 +706,15 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: includes/profile.php:26 includes/public/woocommerce.php:92
+#: includes/profile.php:26 includes/public/woocommerce.php:100
 msgid "Connected"
 msgstr ""
 
-#: includes/profile.php:28 includes/public/woocommerce.php:94
+#: includes/profile.php:28 includes/public/woocommerce.php:102
 msgid "Connected via Phone"
 msgstr ""
 
-#: includes/profile.php:30 includes/public/woocommerce.php:96
+#: includes/profile.php:30 includes/public/woocommerce.php:104
 msgid "Connected via Email"
 msgstr ""
 
@@ -718,15 +722,15 @@ msgstr ""
 msgid "Facebook Account Kit"
 msgstr ""
 
-#: includes/profile.php:40 includes/public/woocommerce.php:102
+#: includes/profile.php:40 includes/public/woocommerce.php:110
 msgid "Connect with Phone"
 msgstr ""
 
-#: includes/profile.php:43 includes/public/woocommerce.php:105
+#: includes/profile.php:43 includes/public/woocommerce.php:113
 msgid "Connect with Email"
 msgstr ""
 
-#: includes/profile.php:47 includes/public/woocommerce.php:109
+#: includes/profile.php:47 includes/public/woocommerce.php:117
 msgid "Disconnect"
 msgstr ""
 
@@ -756,7 +760,7 @@ msgid "Authentication Successful - "
 msgstr ""
 
 #: includes/public/shortcode.php:24 includes/public/woocommerce.php:47
-#: includes/widget.php:76 includes/widget.php:163
+#: includes/widget.php:77 includes/widget.php:170
 msgid "Login with Email"
 msgstr ""
 
@@ -766,7 +770,7 @@ msgid ""
 "password."
 msgstr ""
 
-#: includes/public/views/wp-login.php:38 includes/public/woocommerce.php:58
+#: includes/public/views/wp-login.php:38 includes/public/woocommerce.php:55
 msgid "Or"
 msgstr ""
 
@@ -782,44 +786,48 @@ msgstr ""
 msgid "Facebook Account Kit Login Widget."
 msgstr ""
 
-#: includes/widget.php:70
+#: includes/widget.php:71
 msgid "Account Login"
 msgstr ""
 
-#: includes/widget.php:71
+#: includes/widget.php:72
 msgid "Account Kit Login description"
 msgstr ""
 
-#: includes/widget.php:90
+#: includes/widget.php:93
 msgid "Title:"
 msgstr ""
 
-#: includes/widget.php:94
+#: includes/widget.php:97
 msgid "Description:"
 msgstr ""
 
-#: includes/widget.php:99
+#: includes/widget.php:102
 msgid "Enable SMS Login?"
 msgstr ""
 
-#: includes/widget.php:102
+#: includes/widget.php:105
 msgid "SMS Button Label:"
 msgstr ""
 
-#: includes/widget.php:106
+#: includes/widget.php:109
 msgid "SMS Button CSS Class:"
 msgstr ""
 
-#: includes/widget.php:111
+#: includes/widget.php:114
 msgid "Enable Email Login?"
 msgstr ""
 
-#: includes/widget.php:114
+#: includes/widget.php:117
 msgid "Email Button Label:"
 msgstr ""
 
-#: includes/widget.php:118
+#: includes/widget.php:121
 msgid "Email Button CSS Class:"
+msgstr ""
+
+#: includes/widget.php:125
+msgid "Waiting Message:"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

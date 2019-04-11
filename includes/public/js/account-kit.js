@@ -23,15 +23,12 @@
             };
 
             $('.fb-ackit-wrap').addClass('loading');
+            $('.fb-ackit-wait').show();
 
             // Send code to server to exchange for access token
             $.post(FBAccountKitLogin.ajaxurl, data, function(response, textStatus, xhr) {
                 window.location.href = response.data.redirect;
             });
-        }
-        else if (response.status === "BAD_PARAMS") {
-            // handle bad parameters
-            alert( FBAccountKitLogin.bad_params );
         }
     }
 

@@ -222,7 +222,7 @@ function fbak_handle_email_login( $email, $account_id ) {
                     );
         
                     $user_id = wp_insert_user( $userdata );
-                    do_action( 'fbak_create_new_user_via_email', $user_id );
+                    do_action( 'fbak_create_new_user_via_email', $user_id, $username, $user_pass, $email );
                     $user = get_user_by( 'id', $user_id );
                 }
             }
@@ -248,7 +248,8 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
     $user = get_user_by( 'id', $get_user );
 
     if ( ! $user ) {
-        $phone = substr( $phone_no, 1 ); // remove the '+' sign
+        $phone = str_replace( '+', '', $phone_no ); // remove the '+' sign
+        $phone = apply_filters( 'fbak/custom_phone_number_format', $phone );
         $user = get_user_by( 'login', $phone );
 
         if ( isset($fbak_settings['fbak_sms_new_register']) && $fbak_settings['fbak_sms_new_register'] == 1 ) {
@@ -267,7 +268,7 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
                 $user_id = wp_insert_user( $userdata );
                 update_user_meta( $user_id, 'phone_number', $phone_no );
                 update_user_meta( $user_id, 'billing_phone', $phone_no ); // update woocommerce phone number
-                do_action( 'fbak_create_new_user_via_sms', $user_id );
+                do_action( 'fbak_create_new_user_via_sms', $user_id, $username, $user_pass, $email );
                 $user = get_user_by( 'id', $user_id );
             }
         }

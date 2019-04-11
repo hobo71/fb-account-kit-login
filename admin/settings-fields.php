@@ -59,14 +59,14 @@ function fbak_ac_res_url_display() { ?>
 function fbak_enable_sms_login_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-enablesms" name="fbak_plugin_settings[fbak_enable_sms_login]" value="1" <?php checked(isset($fbak_settings['fbak_enable_sms_login']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to use SMS Login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to use SMS Login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function fbak_sms_new_register_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-sms-reg" name="fbak_plugin_settings[fbak_sms_new_register]" value="1" <?php checked(isset($fbak_settings['fbak_sms_new_register']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to register new users if user a not exists with provided phone number.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to register new users if user a not exists with provided phone number.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
@@ -142,14 +142,14 @@ function fbak_sms_login_redirect_display() {
 function fbak_enable_email_login_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-enableemail" name="fbak_plugin_settings[fbak_enable_email_login]" value="1" <?php checked(isset($fbak_settings['fbak_enable_email_login']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to use Email Login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to use Email Login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function fbak_email_new_register_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-email-reg" name="fbak_plugin_settings[fbak_email_new_register]" value="1" <?php checked(isset($fbak_settings['fbak_email_new_register']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to register new users if user a not exists with provided email address.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to register new users if user a not exists with provided email address.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
@@ -323,28 +323,28 @@ function fbak_login_description_display() {
 function fbak_enable_woo_login_form_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-woo-login" name="fbak_plugin_settings[fbak_enable_woo_login_form]" value="1" <?php checked(isset($fbak_settings['fbak_enable_woo_login_form']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Login Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Login Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function fbak_enable_woo_reg_form_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-woo-reg" name="fbak_plugin_settings[fbak_enable_woo_reg_form]" value="1" <?php checked(isset($fbak_settings['fbak_enable_woo_reg_form']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Registration Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to add passwordless login on WooCommerce Registration Form.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function fbak_redirect_to_checkout_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-woo-redir" name="fbak_plugin_settings[fbak_redirect_to_checkout]" value="1" <?php checked(isset($fbak_settings['fbak_redirect_to_checkout']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to redirect to Checkout Page when a customer logs in from Checkout Page directly.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to redirect to Checkout Page when a customer logs in from Checkout Page directly.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
 function fbak_allow_customer_auth_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <label class="switch"><input type="checkbox" id="fbak-woo-cus" name="fbak_plugin_settings[fbak_allow_customer_auth]" value="1" <?php checked(isset($fbak_settings['fbak_allow_customer_auth']), 1); ?> /> 
-        <span class="slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to allow customers to link their email or mobile number to login to their account without password.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+        <span class="cb-slider round"></span></label>&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Enable this if you want to allow customers to link their email or mobile number to login to their account without password.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
@@ -353,7 +353,7 @@ function fbak_account_kit_endpoint_display() {
     if( empty($fbak_settings['fbak_account_kit_endpoint']) ) {
         $fbak_settings['fbak_account_kit_endpoint'] = 'account-kit';
     } ?>  <input id="fbak-woo-ep" name="fbak_plugin_settings[fbak_account_kit_endpoint]" type="text" size="40" style="width:40%;" placeholder="account-kit" required value="<?php if (isset($fbak_settings['fbak_account_kit_endpoint'])) { echo $fbak_settings['fbak_account_kit_endpoint']; } ?>" />
-        &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set the authentication url endpoint here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <input type="hidden" id="changetrigger" value="no">&nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Set the authentication url endpoint here.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 
@@ -369,7 +369,7 @@ function fbak_account_kit_endpoint_label_display() {
 function fbak_woo_auth_description_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     if( empty($fbak_settings['fbak_woo_auth_description']) ) {
-        $fbak_settings['fbak_woo_auth_description'] = __( 'Facebook Account Kit Login', 'fb-account-kit-login' );
+        $fbak_settings['fbak_woo_auth_description'] = __( 'If your Account is not linked with Facebook Account Kit, please connect your account with Facebook Account Kit for a secure and passwordless login.', 'fb-account-kit-login' );
     } ?> <textarea id="fbak-woo-des" placeholder="<?php _e( 'Enter the text to show before authentication buttons.', 'fb-account-kit-login' ); ?>" name="fbak_plugin_settings[fbak_woo_auth_description]" rows="3" cols="90" style="width:90%;"><?php if (isset($fbak_settings['fbak_woo_auth_description'])) { echo $fbak_settings['fbak_woo_auth_description']; } ?></textarea>
     <?php
 }
@@ -377,6 +377,12 @@ function fbak_woo_auth_description_display() {
 /* ============================================================================================== 
                                            misc options
 ============================================================================================== */
+
+function fbak_auth_waiting_message_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    ?>  <input id="fbak-waiting" name="fbak_plugin_settings[fbak_auth_waiting_message]" type="text" size="90" style="width:90%;" placeholder="<?php _e( 'Please wait until we authenticate you.', 'fb-account-kit-login' ); ?>" value="<?php if (isset($fbak_settings['fbak_auth_waiting_message'])) { echo $fbak_settings['fbak_auth_waiting_message']; } ?>" />
+    <?php
+}
 
 function fbak_disable_user_reg_message_display() {
     $fbak_settings = get_option('fbak_plugin_settings');

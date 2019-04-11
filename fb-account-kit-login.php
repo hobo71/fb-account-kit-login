@@ -3,7 +3,7 @@
  * Plugin Name: Facebook Account Kit Login
  * Plugin URI: https://wordpress.org/plugins/fb-account-kit-login/
  * Description: 🔥 Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using Secure SMS and Email Verification without any password.
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: Sayan Datta
  * Author URI: https://sayandatta.com/
  * License: GPLv3
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FBAK_PLUGIN_VERSION', '1.0.8' );
+define( 'FBAK_PLUGIN_VERSION', '1.0.9' );
 
 // debug scripts
 //define( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
@@ -105,7 +105,6 @@ function fbak_plugin_register_scripts() {
         'redirect'     => fbak_get_email_login_redirect_url(),
         'sms_redir'    => fbak_redirect_after_sms_login(),
         'email_redir'  => fbak_redirect_after_email_login(),
-        'bad_params'   => __( 'Something Wrong! Please check your plugin settings.', 'fb-account-kit-login' ),
     ) );
 }
 
@@ -184,6 +183,12 @@ function fbak_admin_menu() {
 function fbak_plugin_settings_page() { 
     $fbak_settings = get_option( 'fbak_plugin_settings' ); 
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
+}
+
+add_action( 'wp_ajax_fbak_trigger_flush_rewrite_rules', 'fbak_trigger_flush_rewrite_rules' );
+
+function fbak_trigger_flush_rewrite_rules() {
+    flush_rewrite_rules();
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/notice.php';

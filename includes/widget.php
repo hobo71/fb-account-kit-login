@@ -56,6 +56,7 @@ class FBAK_Login_Widget extends WP_Widget {
                 <?php endif; ?>
             </div>
         </div>
+        <div class="fb-ackit-wait" style="display: none;"><?php echo $instance['wait_msg']; ?></div>
         <?php
         echo $args['after_widget'];
     }
@@ -75,6 +76,7 @@ class FBAK_Login_Widget extends WP_Widget {
             'email_on' => 'on',
             'email_label' => __( 'Login with Email', 'fb-account-kit-login' ),
             'email_class' => 'button btn',
+            'wait_msg' => __( 'Please wait until we authenticate you.', 'fb-account-kit-login' )
         ) );
 
         $title = sanitize_text_field( $instance['title'] );
@@ -85,6 +87,7 @@ class FBAK_Login_Widget extends WP_Widget {
         $email_on = $instance['email_on'];
         $email_label = sanitize_text_field( $instance['email_label'] );
         $email_class = sanitize_text_field( $instance['email_class'] );
+        $wait_msg = sanitize_text_field( $instance['wait_msg'] );
         ?>
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'fb-account-kit-login' ); ?></label>
@@ -117,6 +120,10 @@ class FBAK_Login_Widget extends WP_Widget {
         <p class="email-on-main">
             <label for="<?php echo esc_attr( $this->get_field_id( 'email_class' ) ); ?>"><?php esc_attr_e( 'Email Button CSS Class:', 'fb-account-kit-login' ); ?></label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email_class' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email_class' ) ); ?>" type="text" value="<?php echo esc_attr( $email_class ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'wait_msg' ) ); ?>"><?php esc_attr_e( 'Waiting Message:', 'fb-account-kit-login' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'wait_msg' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'wait_msg' ) ); ?>" type="text" value="<?php echo esc_attr( $wait_msg ); ?>">
         </p>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
@@ -162,6 +169,7 @@ class FBAK_Login_Widget extends WP_Widget {
         $instance['email_on'] = ( isset( $new_instance['email_on'] ) ) ? $new_instance['email_on'] : '';
         $instance['email_label'] = ( ! empty( $new_instance['email_label'] ) ) ? strip_tags( $new_instance['email_label'] ) : __( 'Login with Email', 'fb-account-kit-login' );
         $instance['email_class'] = ( ! empty( $new_instance['email_class'] ) ) ? strip_tags( $new_instance['email_class'] ) : '';
+        $instance['wait_msg'] = ( ! empty( $new_instance['wait_msg'] ) ) ? strip_tags( $new_instance['wait_msg'] ) : '';
     
         return $instance;
     }

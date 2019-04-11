@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.9
+Release Date: April 11, 2019
+
+* Added: A filter `fbak/custom_phone_number_format` to customize the phone number format which was used by **DIGITS** plugin to create WordPress Accounts.
+* Added: A message to the users that shows until facebook account kit will authenticate them.
+* Tweak: This plugin now automatically regenerate permalinks if any changes made in account kit endpoint url.
+* Tweak: Changed some plugin settings label.
+* Fixed: Conflict with Bootstrap CSS Class.
+* Fixed: Missing HTML Tags in Admin Notice.
+
 ## 1.0.8
 Release Date: April 8, 2019
 

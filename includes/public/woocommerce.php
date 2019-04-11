@@ -51,11 +51,18 @@ function fbak_add_html_element_to_woo_login_form() {
     $sms_label = apply_filters( 'fbak/woocommerce_sms_label', $sms_label );
     $email_label = apply_filters( 'fbak/woocommerce_email_label', $email_label );
     $sms_class = apply_filters( 'fbak/woocommerce_sms_class', $sms_class );
-    $email_class = apply_filters( 'fbak/woocommerce_email_class', $email_class ); ?>
+    $email_class = apply_filters( 'fbak/woocommerce_email_class', $email_class );
+    $sep = apply_filters( 'fbak/woocommerce_form_separator', __( 'Or', 'fb-account-kit-login' ) ); 
+    
+    $notice_text = __( 'Please wait until we authenticate you.', 'fb-account-kit-login' );
+    if( !empty($fbak_settings['fbak_auth_waiting_message']) ) {
+        $notice_text = strip_tags( $fbak_settings['fbak_auth_waiting_message'] );
+    }
+    $notice_text = apply_filters( 'fbak/account_kit_woo_login_notice_message', $notice_text ); ?>
 
     <div class="fb-ackit-wrap">
         <div class="fb-ackit-or">
-            <span><?php _e( 'Or', 'fb-account-kit' ); ?></span>
+            <span class="fb-ackit-or-sep"><?php echo $sep; ?></span>
         </div>
         <div class="fb-ackit-buttons">
             <?php if( fbak_enable_sms_login_method() ) : ?>
@@ -66,6 +73,7 @@ function fbak_add_html_element_to_woo_login_form() {
             <?php endif; ?>
         </div>
     </div>
+    <div class="fb-ackit-wait" style="text-align: center;display: none;"><?php echo $notice_text; ?></div>
     <?php
 }
 
@@ -83,7 +91,7 @@ function fbak_add_custom_account_kit_link( $menu_links ) {
 
 function fbak_my_account_endpoint_content() {
     $fbak_settings = get_option( 'fbak_plugin_settings' );
-    $description = !empty($fbak_settings['fbak_woo_auth_description']) ? $fbak_settings['fbak_woo_auth_description'] : '';
+    $description = !empty($fbak_settings['fbak_woo_auth_description']) ? $fbak_settings['fbak_woo_auth_description'] : __( 'If your Account is not linked with Facebook Account Kit, please connect your account with Facebook Account Kit for a secure and passwordless login.', 'fb-account-kit-login' );
     $button = apply_filters( 'fbak/account_kit_woocommerce_button_css_class', 'button' );
 
     $connected = get_user_meta( get_current_user_id(), '_fb_accountkit_id', true );

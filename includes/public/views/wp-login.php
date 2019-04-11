@@ -35,7 +35,7 @@ $email_btn_class = !empty($fbak_settings['fbak_email_btn_class']) ? $fbak_settin
 
     <?php if ( isset($fbak_settings['fbak_hide_default_login_form']) && $fbak_settings['fbak_hide_default_login_form'] == 'no' ) : ?>
         <div class="fb-ackit-or">
-            <span><?php _e( 'Or', 'fb-account-kit-login' ); ?></span>
+            <span class="fb-ackit-or-sep"><?php _e( 'Or', 'fb-account-kit-login' ); ?></span>
         </div>
         <div class="fb-ackit-toggle">
             <a href="#" class="default"><?php _e( 'Login with Username and Password', 'fb-account-kit-login' ); ?></a>

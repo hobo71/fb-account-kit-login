@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -15,6 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, free and easy way to configure Password Less Login to WordPress website. This plugin helps to easily login or register to WordPress by using SMS on Phone or WhatsApp or Email Verification without any password. You can customize every setting of this plugin in the admin dashboard.
 
+> GDPR compliant: does not collect any user data or does not send any data to any 3rd party website
+
 ### Features
 
  * **Login with SMS** (Phone).
@@ -22,8 +24,8 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
  * **Login with Email**.
  * **WooCommerce Support.**
  * Totally **Free of Cost SMS Service**.
- * Shortcode Compatible.
- * Dedicated Widget.
+ * **Shortcode** Compatible.
+ * Dedicated **Widget**.
  * **Compatible with Custom Login URL**
  
 ### This is how it works:
@@ -32,11 +34,13 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
 * Account Kit servers send an SMS with a confirmation code to the phone number (or WhatsApp Account) or send an email with a confirmation link to the email address to continue the login.
 * If users fail to receive the SMS code, it offers two other methods that people can choose from the Phone call or Facebook notification.
 * The SDK verifies the SMS confirmation code or monitors the status of the confirmation email. Account Kit may also verify the phone number directly without sending an SMS code.
-* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user.
+* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user if the user alredy exists. Otherwise it will create a new user which depends upon plugin settings.
 
 For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
 
-Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
+####   Plugin Demo
+
+> For Demo: [Click Here](https://demo.sayandatta.com/login)
 
 #### Compatibility
 
@@ -49,6 +53,8 @@ Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https
 #### Contribute
 * Active development of this plugin is handled [on GitHub](https://github.com/iamsayan/fb-account-kit-login/).
 * Feel free to [fork the project on GitHub](https://github.com/iamsayan/fb-account-kit-login/) and submit your contributions via pull request.
+
+Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
 
 == Installation ==
 
@@ -81,6 +87,16 @@ Account Kit works with [233 country codes](https://developers.facebook.com/docs/
 
 Facebook account and the account kit authentication is fully separated and there is no connection between your Facebook account.
 
+= How to migrate from DIGITS plugin? =
+
+Migration from DIGITS plugin is very easy. If the username of your user is their phone number which is created by DIGITS plugin, then you can migrate from DIGITS to this plugin. Suppose your have 5 users and their country codes are +91, +880, +1, +856 and +86. Then you need to just add this code snippets to the end of your active theme's functions.php file:
+
+`add_filter( 'fbak/custom_phone_number_format', 'fbak_add_digit_phone_support' );
+
+function fbak_add_digit_phone_support( $phone ) {
+    return str_replace( array( '91', '1' ), '', $phone ); // country codes without + sign
+}`
+
 == Screenshots ==
 
 1. Login Page
@@ -101,6 +117,16 @@ Facebook account and the account kit authentication is fully separated and there
 16. How it Works
 
 == Changelog ==
+
+= 1.0.9 =
+Release Date: April 11, 2019
+
+* Added: A filter `fbak/custom_phone_number_format` to customize the phone number format which was used by **DIGITS** plugin to create WordPress Accounts.
+* Added: A message to the users that shows until facebook account kit will authenticate them.
+* Tweak: This plugin now automatically regenerate permalinks if any changes made in account kit endpoint url.
+* Tweak: Changed some plugin settings label.
+* Fixed: Conflict with Bootstrap CSS Class.
+* Fixed: Missing HTML Tags in Admin Notice.
 
 = 1.0.8 =
 Release Date: April 8, 2019

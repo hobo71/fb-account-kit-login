@@ -15,8 +15,8 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
  * **Login with Email**.
  * **WooCommerce Support.**
  * Totally **Free of Cost SMS Service**.
- * Shortcode Compatible.
- * Dedicated Widget.
+ * **Shortcode** Compatible.
+ * Dedicated **Widget**.
  * **Compatible with Custom Login URL**
  
 ![alt text](https://github.com/iamsayan/fb-account-kit-login/raw/master/how-it-works.jpeg "How it Works")
@@ -27,9 +27,13 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
 * Account Kit servers send an SMS with a confirmation code to the phone number (or WhatsApp Account) or send an email with a confirmation link to the email address to continue the login.
 * If users fail to receive the SMS code, it offers two other methods that people can choose from the Phone call or Facebook notification.
 * The SDK verifies the SMS confirmation code or monitors the status of the confirmation email. Account Kit may also verify the phone number directly without sending an SMS code.
-* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user.
+* After successful verification of that authentication this plugin creates the log in WordPress cookie, successfully authenticating the user if the user alredy exists. Otherwise it will create a new user which depends upon plugin settings.
 
 For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
+
+####   Plugin Demo
+
+> For Demo: [Click Here](https://demo.sayandatta.com/login)
 
 #### Compatibility
 
@@ -41,24 +45,24 @@ For more information about Facebook Account Kit please [click here](https://deve
 
 Like Facebook Account Kit Login plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post).
 
-## Installation ##
+## Installation
 
-### From within WordPress ###
+### From within WordPress
 1. Visit 'Plugins > Add New'.
 1. Search for 'Facebook Account Kit Login'.
 1. Activate Facebook Account Kit Login from your Plugins page.
 1. Go to "after activation" below.
 
-### Manually ###
+### Manually
 1. Upload the `fb-account-kit-login` folder to the `/wp-content/plugins/` directory.
 1. Activate Facebook Account Kit Login plugin through the 'Plugins' menu in WordPress.
 1. Go to "after activation" below.
 
-### After activation ###
+### After activation
 1. After activation go to 'Account Kit' from Side Panel.
 1. Properly configure plugin settings and save changes.
 
-### Frequently Asked Questions ###
+### Frequently Asked Questions
 
 #### What is Facebook Account Kit?
 
@@ -76,13 +80,22 @@ Facebook provides it for free.
 
 Account Kit works with [233 country codes](https://developers.facebook.com/docs/accountkit/languagescountries/) and in over [48 languages](https://developers.facebook.com/docs/accountkit/languages).
 
-#### Is there any link between my Facebook Account? =
+#### Is there any link between my Facebook Account?
 
 Facebook account and the account kit authentication is fully separated and there is no connection between your facebook account and account kit.
 
-#### The plugin isn't working or have a bug? ####
+#### How to migrate from DIGITS plugin?
+
+Migration from DIGITS plugin is very easy. If the username of your user is their phone number which is created by DIGITS plugin, then you can migrate from DIGITS to this plugin. Suppose your have 5 users and their country codes are +91, +880, +1, +856 and +86. Then you need to just add this code snippets to the end of your active theme's functions.php file:
+
+`add_filter( 'fbak/custom_phone_number_format', 'fbak_add_digit_phone_support' );
+function fbak_add_digit_phone_support( $phone ) {
+    return str_replace( array( '91', '1' ), '', $phone ); // country codes without + sign
+}`
+
+#### The plugin isn't working or have a bug?
 
 Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/fb-account-kit-login) and I will work to fix it.
 
-## Changelog ##
+## Changelog
 [View Changelog](CHANGELOG.md)

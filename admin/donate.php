@@ -25,10 +25,10 @@ function fbak_donate_admin_notice() {
     $no_thanks = wp_nonce_url( add_query_arg( 'fbak_donate_notice_action', 'fbak_no_thanks_donate_true' ), 'fbak_no_thanks_donate_true' ); ?>
     
     <div class="notice notice-success">
-        <p><?php _e( 'Hey, I noticed you\'ve been using Facebook Account Kit Login for more than 2 week – that’s awesome! If you like Facebook Account Kit Login and you are satisfied with the plugin, isn’t that worth a coffee or two? Please consider donating. Donations help me to continue support and development of this free plugin! Thank you very much!', 'fb-account-kit-login' ); ?><p>
-        <a href="https://www.paypal.me/iamsayan" target="_blank" class="button button-secondary"><?php _e( 'Donate Now', 'fb-account-kit-login' ); ?></a>&nbsp;
+        <p><?php _e( 'Hey, I noticed you\'ve been using Facebook Account Kit Login for more than 2 week – that’s awesome! If you like Facebook Account Kit Login and you are satisfied with the plugin, isn’t that worth a coffee or two? Please consider donating. Donations help me to continue support and development of this free plugin! Thank you very much!', 'fb-account-kit-login' ); ?></p>
+        <p><a href="https://www.paypal.me/iamsayan" target="_blank" class="button button-secondary"><?php _e( 'Donate Now', 'fb-account-kit-login' ); ?></a>&nbsp;
         <a href="<?php echo $dismiss; ?>" class="already-did"><strong><?php _e( 'I already donated', 'fb-account-kit-login' ); ?></strong></a>&nbsp;<strong>|</strong>
-        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'fb-account-kit-login' ); ?></strong></a>
+        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'fb-account-kit-login' ); ?></strong></a></p>
     </div>
 <?php
 }

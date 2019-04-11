@@ -72,8 +72,17 @@ function fbak_auth_fail_login_message() {
     }
     $text = apply_filters( 'fbak/account_kit_login_error_message', $text );
 
-    if ( fbak_enable_on_wp_login_form() && isset($_GET['fbak_login_error']) && $_GET['fbak_login_error'] === 'true' ) {
-        $message = '<div id="login_error">' . $text . '</div>';
-        return $message;
+    $notice_text = __( 'Please wait until we authenticate you.', 'fb-account-kit-login' );
+    if( !empty($fbak_settings['fbak_auth_waiting_message']) ) {
+        $notice_text = strip_tags( $fbak_settings['fbak_auth_waiting_message'] );
     }
+    $notice_text = apply_filters( 'fbak/account_kit_login_notice_message', $notice_text );
+
+    $message = '';
+    if ( fbak_enable_on_wp_login_form() && isset($_GET['fbak_login_error']) && $_GET['fbak_login_error'] === 'true' ) {
+        $message .= '<div id="login_error">' . $text . '</div>';
+    }
+    $message .= '<div class="message fb-ackit-wait" style="display: none;">' . $notice_text . '</div>';
+    
+    return $message;
 }

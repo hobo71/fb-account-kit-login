@@ -23,6 +23,7 @@ function fbak_login_register_button_shortcode( $atts ) {
             'sms_label'    => !empty($fbak_settings['fbak_sms_label_text']) ? $fbak_settings['fbak_sms_label_text'] : __( 'Login with SMS', 'fb-account-kit-login' ),
             'email_label'  => !empty($fbak_settings['fbak_email_label_text']) ? $fbak_settings['fbak_email_label_text'] : __( 'Login with Email', 'fb-account-kit-login' ),
             'description'  => !empty($fbak_settings['fbak_login_description']) ? $fbak_settings['fbak_login_description'] : __( 'Save time by logging-in with your Phone number or Email address, without password.', 'fb-account-kit-login' ),
+            'notice_text'  => !empty($fbak_settings['fbak_auth_waiting_message']) ? $fbak_settings['fbak_auth_waiting_message'] : __( 'Please wait until we authenticate you.', 'fb-account-kit-login' ),
         ), $atts, 'fbak-account-kit' );
 
     $html = '<div class="fb-ackit-wrap ackit-shortcode">';
@@ -36,6 +37,7 @@ function fbak_login_register_button_shortcode( $atts ) {
         }
         $html .= '</div>';
     $html .= '</div>';
+    $html .= '<div class="fb-ackit-wait" style="text-align: center;display: none;">' . $atts['notice_text'] . '</div>';
 
     if( ! is_user_logged_in() ) {
         echo $html;
