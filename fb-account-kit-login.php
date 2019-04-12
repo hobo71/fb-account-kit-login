@@ -35,10 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//define( 'FBAK_PLUGIN_VERSION', '1.0.10' );
+define( 'FBAK_PLUGIN_VERSION', '1.0.10' );
 
 // debug scripts
-define( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
+//define( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
 
 // Internationalization
 add_action( 'plugins_loaded', 'fbak_plugin_load_textdomain' );
