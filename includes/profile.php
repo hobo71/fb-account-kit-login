@@ -46,7 +46,7 @@ function fbak_show_connect_button_on_profile( $user ) {
                             <button class="button" disabled><span class="dashicons dashicons-admin-links" style="margin-top:3px;"></span> <?php echo $success; ?></button>
                             <button class="button button-danger" onclick="fbAcDisconnect(); return false;"><span class="dashicons dashicons-trash" style="margin-top:3px;"></span> <?php _e( 'Disconnect', 'fb-account-kit-login' ); ?></button>
                         <?php } ?>
-                        <span id="fbak-user-id" style="display: none;"><?php echo $user->ID; ?></span><span id="fbak-check-msg" style="display: none;"><?php echo fbak_get_disconnect_confirm_message(); ?></span>
+                        <span class="fb-ackit-wait spinner" style="float: none;"></span><span id="fbak-user-id" style="display: none;"><?php echo $user->ID; ?></span><span id="fbak-check-msg" style="display: none;"><?php echo fbak_get_disconnect_confirm_message(); ?></span>
                     </td>
                 </tr>
             </tbody>

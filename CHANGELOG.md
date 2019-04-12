@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.10
+Release Date: April 13, 2019
+
+* Tweak: Added a loader icon in profile page
+* Fixed: Jetpack Login JS issue.
+* Fixed: All in One WP Security reCaptcha CSS issue.
+* Fixed: Advanced noCaptcha & invisible Captcha CSS issue.
+* Fixed: Login No Captcha reCAPTCHA CSS issue.
+* Fixed: Login Message not displayed.
+
 ## 1.0.9
 Release Date: April 11, 2019
 

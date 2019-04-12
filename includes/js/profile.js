@@ -21,6 +21,8 @@
                 action: 'fbak_fb_account_kit_associate'
             };
 
+            $('.fb-ackit-wait').addClass('is-active');
+            
             // Send code to server to exchange for access token
             $.post(FBAccountKitLogin.ajaxurl, data, function() {
                 window.location.reload();

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-04-11 11:15+0530\n"
+"POT-Creation-Date: 2019-04-12 23:26+0530\n"
 "PO-Revision-Date: 2019-04-11 11:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -315,13 +315,13 @@ msgstr ""
 msgid "Enter the text to show before authentication buttons."
 msgstr ""
 
-#: admin/settings-fields.php:383 includes/public/login.php:75
+#: admin/settings-fields.php:383 includes/public/login.php:60
 #: includes/public/shortcode.php:26 includes/public/woocommerce.php:57
 #: includes/widget.php:79
 msgid "Please wait until we authenticate you."
 msgstr ""
 
-#: admin/settings-fields.php:389 includes/public/login.php:69
+#: admin/settings-fields.php:389 includes/public/login.php:54
 msgid "You are not a registered user of this website."
 msgstr ""
 
@@ -643,23 +643,23 @@ msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: fb-account-kit-login.php:180 includes/widget.php:29
+#: fb-account-kit-login.php:181 includes/widget.php:29
 msgid "Facebook Account Kit Login"
 msgstr ""
 
-#: fb-account-kit-login.php:180
+#: fb-account-kit-login.php:181
 msgid "Account Kit"
 msgstr ""
 
-#: fb-account-kit-login.php:212
+#: fb-account-kit-login.php:213
 msgid "Settings"
 msgstr ""
 
-#: fb-account-kit-login.php:221
+#: fb-account-kit-login.php:222
 msgid "Support"
 msgstr ""
 
-#: fb-account-kit-login.php:222
+#: fb-account-kit-login.php:223
 msgid "Donate"
 msgstr ""
 

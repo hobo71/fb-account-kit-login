@@ -17,6 +17,7 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
  * Totally **Free of Cost SMS Service**.
  * **Shortcode** Compatible.
  * Dedicated **Widget**.
+ * **Compatible with Jetpack**
  * **Compatible with Custom Login URL**
  
 ![alt text](https://github.com/iamsayan/fb-account-kit-login/raw/master/how-it-works.jpeg "How it Works")
@@ -31,7 +32,7 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
 
 For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
 
-####   Plugin Demo
+#### Plugin Demo
 
 > For Demo: [Click Here](https://demo.sayandatta.com/login)
 

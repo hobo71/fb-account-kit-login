@@ -69,6 +69,10 @@
 
 .fb-ackit-wrap .fb-ackit-toggle .default { display: none; }
 .fb-ackit-form-display #loginform > p { display: none; }
+.fb-ackit-form-display #loginform .jetpack-sso-clear > p { display: none; }
+.fb-ackit-form-display #loginform > div.aiowps-captcha-equation { display: none; }
+.fb-ackit-form-display #loginform > div.g-recaptcha { display: none; }
+.fb-ackit-form-display #loginform > div.anr_captcha_field { display: none; }
 .fb-ackit-form-display .fb-ackit-toggle .ackit { display: none; }
 .fb-ackit-form-display .fb-ackit-toggle .default { display: block; }
 .fb-ackit-form-display .fb-ackit-wrap { margin-top: 0; }

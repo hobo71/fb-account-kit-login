@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -26,6 +26,7 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
  * Totally **Free of Cost SMS Service**.
  * **Shortcode** Compatible.
  * Dedicated **Widget**.
+ * **Compatible with Jetpack**
  * **Compatible with Custom Login URL**
  
 ### This is how it works:
@@ -38,7 +39,7 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
 
 For more information about Facebook Account Kit please [click here](https://developers.facebook.com/docs/accountkit/overview).
 
-####   Plugin Demo
+#### Plugin Demo
 
 > For Demo: [Click Here](https://demo.sayandatta.com/login)
 
@@ -117,6 +118,16 @@ function fbak_add_digit_phone_support( $phone ) {
 16. How it Works
 
 == Changelog ==
+
+= 1.0.10 =
+Release Date: April 13, 2019
+
+* Tweak: Added a loader icon in profile page
+* Fixed: Jetpack Login JS issue.
+* Fixed: All in One WP Security reCaptcha CSS issue.
+* Fixed: Advanced noCaptcha & invisible Captcha CSS issue.
+* Fixed: Login No Captcha reCAPTCHA CSS issue.
+* Fixed: Login Message not displayed.
 
 = 1.0.9 =
 Release Date: April 11, 2019
