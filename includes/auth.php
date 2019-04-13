@@ -95,7 +95,7 @@ function fbak_process_auth_login() {
             do_action( 'fbak_user_login_via_email', $user );
 
             wp_send_json_success( array(
-                'redirect' => $_POST['email_redir']
+                'redirect' => esc_url( $_POST['email_redir'] )
             ) );
         } else {
             wp_send_json_error( array(
@@ -120,7 +120,7 @@ function fbak_process_auth_login() {
             do_action( 'fbak_user_login_via_sms', $user );
 
             wp_send_json_success( array(
-                'redirect' => $_POST['sms_redir']
+                'redirect' => esc_url( $_POST['sms_redir'] )
             ) );
         } else {
             wp_send_json_error( array(

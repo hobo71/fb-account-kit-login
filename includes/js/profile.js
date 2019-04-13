@@ -52,6 +52,8 @@
                 action: 'fbak_fb_account_kit_disconnect'
             };
 
+            $('.fb-ackit-wait').addClass('is-active');
+
             $.post(FBAccountKitLogin.ajaxurl, data, function() {
                 window.location.reload();
             });

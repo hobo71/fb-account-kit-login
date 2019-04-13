@@ -122,12 +122,14 @@ function fbak_add_digit_phone_support( $phone ) {
 = 1.0.10 =
 Release Date: April 13, 2019
 
-* Tweak: Added a loader icon in profile page
+* Improved: Added a loader icon in profile page.
+* Imporved: Login Message not displayed.
+* Improved: Use of `esc_url()` in authentication redirect url.
 * Fixed: Jetpack Login JS issue.
 * Fixed: All in One WP Security reCaptcha CSS issue.
 * Fixed: Advanced noCaptcha & invisible Captcha CSS issue.
 * Fixed: Login No Captcha reCAPTCHA CSS issue.
-* Fixed: Login Message not displayed.
+* Fixed: Undefined plugin version constant error.
 
 = 1.0.9 =
 Release Date: April 11, 2019
