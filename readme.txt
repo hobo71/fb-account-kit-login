@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -41,7 +41,7 @@ For more information about Facebook Account Kit please [click here](https://deve
 
 #### Plugin Demo
 
-> For Demo: [Click Here](https://demo.sayandatta.com/login)
+> For Demo Login: [Click Here](https://demo.sayandatta.com/login)
 
 #### Compatibility
 
@@ -118,6 +118,12 @@ function fbak_add_digit_phone_support( $phone ) {
 16. How it Works
 
 == Changelog ==
+
+= 1.0.11 =
+Release Date: April 18, 2019
+
+* Added: Shortcode `[fbak-account-kit-associate]` to link existing account with Account Kit from anywhere.
+* Fixed: Shortcode output issue.
 
 = 1.0.10 =
 Release Date: April 13, 2019

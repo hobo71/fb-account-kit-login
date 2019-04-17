@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-04-13 21:28+0530\n"
+"POT-Creation-Date: 2019-04-18 00:06+0530\n"
 "PO-Revision-Date: 2019-04-11 11:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -144,7 +144,7 @@ msgid "Select the role for the new users of SMS Login."
 msgstr ""
 
 #: admin/settings-fields.php:99 admin/settings-fields.php:182
-#: includes/public/shortcode.php:23 includes/public/woocommerce.php:46
+#: includes/public/shortcode.php:24 includes/public/woocommerce.php:46
 #: includes/widget.php:74 includes/widget.php:167
 msgid "Login with SMS"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "Enter the text to show before authentication buttons."
 msgstr ""
 
 #: admin/settings-fields.php:383 includes/public/login.php:60
-#: includes/public/shortcode.php:26 includes/public/woocommerce.php:57
+#: includes/public/shortcode.php:27 includes/public/woocommerce.php:57
 #: includes/widget.php:79
 msgid "Please wait until we authenticate you."
 msgstr ""
@@ -706,15 +706,18 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: includes/profile.php:26 includes/public/woocommerce.php:100
+#: includes/profile.php:26 includes/public/shortcode.php:54
+#: includes/public/woocommerce.php:100
 msgid "Connected"
 msgstr ""
 
-#: includes/profile.php:28 includes/public/woocommerce.php:102
+#: includes/profile.php:28 includes/public/shortcode.php:56
+#: includes/public/woocommerce.php:102
 msgid "Connected via Phone"
 msgstr ""
 
-#: includes/profile.php:30 includes/public/woocommerce.php:104
+#: includes/profile.php:30 includes/public/shortcode.php:58
+#: includes/public/woocommerce.php:104
 msgid "Connected via Email"
 msgstr ""
 
@@ -722,15 +725,18 @@ msgstr ""
 msgid "Facebook Account Kit"
 msgstr ""
 
-#: includes/profile.php:40 includes/public/woocommerce.php:110
+#: includes/profile.php:40 includes/public/shortcode.php:65
+#: includes/public/woocommerce.php:110
 msgid "Connect with Phone"
 msgstr ""
 
-#: includes/profile.php:43 includes/public/woocommerce.php:113
+#: includes/profile.php:43 includes/public/shortcode.php:66
+#: includes/public/woocommerce.php:113
 msgid "Connect with Email"
 msgstr ""
 
-#: includes/profile.php:47 includes/public/woocommerce.php:117
+#: includes/profile.php:47 includes/public/shortcode.php:82
+#: includes/public/woocommerce.php:117
 msgid "Disconnect"
 msgstr ""
 
@@ -759,12 +765,12 @@ msgstr ""
 msgid "Authentication Successful - "
 msgstr ""
 
-#: includes/public/shortcode.php:24 includes/public/woocommerce.php:47
+#: includes/public/shortcode.php:25 includes/public/woocommerce.php:47
 #: includes/widget.php:77 includes/widget.php:170
 msgid "Login with Email"
 msgstr ""
 
-#: includes/public/shortcode.php:25
+#: includes/public/shortcode.php:26 includes/public/shortcode.php:67
 msgid ""
 "Save time by logging-in with your Phone number or Email address, without "
 "password."

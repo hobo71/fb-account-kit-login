@@ -34,7 +34,7 @@ For more information about Facebook Account Kit please [click here](https://deve
 
 #### Plugin Demo
 
-> For Demo: [Click Here](https://demo.sayandatta.com/login)
+> For Demo Login: [Click Here](https://demo.sayandatta.com/login)
 
 #### Compatibility
 

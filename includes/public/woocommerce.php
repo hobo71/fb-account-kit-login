@@ -104,7 +104,7 @@ function fbak_my_account_endpoint_content() {
         $success = __( 'Connected via Email', 'fb-account-kit-login' );
     } ?>
     <div class="fbak-woocommerce-main"><p class="fbak-woocommerce-description"><?php echo $description; ?></p></div>
-    <div class="fbak-woocommerce-content">
+    <div class="fbak-woocommerce-buttons">
         <?php if( ! $connected ) { ?>
             <?php if( fbak_enable_sms_login_method() ) { ?>
                 <button class="<?php echo $button; ?>" onclick="smsLogin(); return false;"><?php _e( 'Connect with Phone', 'fb-account-kit-login' ); ?></button>

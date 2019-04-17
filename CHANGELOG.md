@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.11
+Release Date: April 18, 2019
+
+* Added: Shortcode `[fbak-account-kit-associate]` to link existing account with Account Kit from anywhere.
+* Fixed: Shortcode output issue.
+
 ## 1.0.10
 Release Date: April 13, 2019
 
