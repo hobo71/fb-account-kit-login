@@ -3,7 +3,7 @@ Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 Requires PHP: 5.6
 Donate link: http://bit.ly/2I0Gj60
 License: GPLv3
@@ -22,12 +22,13 @@ The Facebook Account Kit Login plugin brings a lightweight, secure, flexible, fr
  * **Login with SMS** (Phone).
  * **Login with WhatsApp**.
  * **Login with Email**.
- * **WooCommerce Support.**
+ * **WooCommerce Support**.
  * Totally **Free of Cost SMS Service**.
  * **Shortcode** Compatible.
  * Dedicated **Widget**.
- * **Compatible with Jetpack**
- * **Compatible with Custom Login URL**
+ * **Compatible with Jetpack** Login.
+ * **Compatible with Custom Login URL**.
+ * **Easy Migration** from **DIGITS** Plugin.
  
 ### This is how it works:
 
@@ -90,13 +91,7 @@ Facebook account and the account kit authentication is fully separated and there
 
 = How to migrate from DIGITS plugin? =
 
-Migration from DIGITS plugin is very easy. If the username of your user is their phone number which is created by DIGITS plugin, then you can migrate from DIGITS to this plugin. Suppose your have 5 users and their country codes are +91, +880, +1, +856 and +86. Then you need to just add this code snippets to the end of your active theme's functions.php file:
-
-`add_filter( 'fbak/custom_phone_number_format', 'fbak_add_digit_phone_support' );
-
-function fbak_add_digit_phone_support( $phone ) {
-    return str_replace( array( '91', '1' ), '', $phone ); // country codes without + sign
-}`
+Migration from DIGITS plugin is very easy if you were using OTP login in DIGITS. Just go to plugin settings > SMS Login > Handle Country Codes > select remove country codes and save changes.
 
 == Screenshots ==
 
@@ -118,6 +113,11 @@ function fbak_add_digit_phone_support( $phone ) {
 16. How it Works
 
 == Changelog ==
+
+= 1.0.12 =
+Release Date: April 20, 2019
+
+* Added: Option to customize country codes directly from plugin settings.
 
 = 1.0.11 =
 Release Date: April 18, 2019

@@ -52,6 +52,7 @@
                         </h3>
 				        <div class="inside fbak-inside">
                             <?php do_settings_sections('fbak_plugin_general_option'); ?>
+                            <br><b><?php _e( 'Note:', 'fb-account-kit-login' ); ?></b> <span style="line-height: 1.5;"><i><?php _e( 'Please add this URL <code>https://sdk.accountkit.com/<span class="fbaklocale">en_US</span>/sdk.js</code> in exception list of minifier or caching plugin if you are using any of it otherwise Account Kit may stop working as Facebook does not allow to host Account Kit SDK on your server.', 'fb-account-kit-login' ); ?></i></span>
                             <?php submit_button( __( 'Save Settings', 'fb-account-kit-login' ), 'primary save-settings', 'submit-general' ); ?>
                         </div>
                     </div>
@@ -130,6 +131,14 @@
                             <li><strong>sms_label</strong> - <?php _e( 'set the sms button text, defaults to <strong>Login with SMS</strong>', 'fb-account-kit-login' ); ?></li>
                             <li><strong>email_label</strong> - <?php _e( 'set the email button text, defaults to <strong>Login with Email</strong>', 'fb-account-kit-login' ); ?></li>
                             <li><strong>description</strong> - <?php _e( 'set the description text to show on login page.', 'fb-account-kit-login' ); ?></li>
+                            <br>
+                            <p><?php printf( __( 'You can insert the profile association buttons manually in any page or post or template by simply using the shortcode %1$s. PHP Syntax: %2$s', 'fb-account-kit-login' ), '<code>[fbak-account-kit-associate]</code>', '<code>echo do_shortcode(&#39;[fbak-account-kit-associate]&#39;);</code>' ); ?></strong></p>
+                            <p><?php _e( 'You can also use the options or attributes below to override the default settings.', 'fb-account-kit-login' ); ?></p>
+                            <li><strong>sms_class</strong> - <?php _e( 'set the sms button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button btn</strong></li>
+                            <li><strong>email_class</strong> - <?php _e( 'set the email button class, defaults to', 'fb-account-kit-login' ); ?> <strong>button btn</strong></li>
+                            <li><strong>sms_label</strong> - <?php _e( 'set the sms button text, defaults to <strong>Connect with Phone</strong>', 'fb-account-kit-login' ); ?></li>
+                            <li><strong>email_label</strong> - <?php _e( 'set the email button text, defaults to <strong>Connect with Email</strong>', 'fb-account-kit-login' ); ?></li>
+                            <li><strong>description</strong> - <?php _e( 'set the description text to show on custom profile association page.', 'fb-account-kit-login' ); ?></li>
                         </div>
                     </div>
                     <div class="coffee-box">
@@ -188,9 +197,6 @@
                                 }
                             });
                             return false;
-                        });
-                        $("#fbak-woo-ep").change(function() {
-					        $('#changetrigger').val('yes');
                         });
                     });
                 </script>

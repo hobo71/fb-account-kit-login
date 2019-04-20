@@ -27,6 +27,7 @@ function fbak_register_plugin_settings() {
         add_settings_field('fbak_sms_label_text', __( 'SMS Login Button Label:', 'fb-account-kit-login' ), 'fbak_sms_label_text_display', 'fbak_plugin_sms_option', 'fbak_plugin_sms_section', array( 'label_for' => 'fbak-sms-label-text' ));
         add_settings_field('fbak_sms_btn_class', __( 'SMS Login Button Class:', 'fb-account-kit-login' ), 'fbak_sms_btn_class_display', 'fbak_plugin_sms_option', 'fbak_plugin_sms_section', array( 'label_for' => 'fbak-sms-btn-class' ));
         add_settings_field('fbak_sms_login_redirect', __( 'After Login Redirect to:', 'fb-account-kit-login' ), 'fbak_sms_login_redirect_display', 'fbak_plugin_sms_option', 'fbak_plugin_sms_section', array( 'label_for' => 'fbak-sms-redirect' ));
+        add_settings_field('fbak_sms_country_codes', __( 'Handle Country Codes:', 'fb-account-kit-login' ), 'fbak_sms_country_codes_display', 'fbak_plugin_sms_option', 'fbak_plugin_sms_section', array( 'label_for' => 'fbak-country-codes' ));
         
     add_settings_section('fbak_plugin_email_section', '', null, 'fbak_plugin_email_option');
         add_settings_field('fbak_enable_email_login', __( 'Enable Email Login:', 'fb-account-kit-login' ), 'fbak_enable_email_login_display', 'fbak_plugin_email_option', 'fbak_plugin_email_section', array( 'label_for' => 'fbak-enableemail' ));

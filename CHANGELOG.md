@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.12
+Release Date: April 20, 2019
+
+* Added: Option to customize country codes directly from plugin settings.
+
 ## 1.0.11
 Release Date: April 18, 2019
 

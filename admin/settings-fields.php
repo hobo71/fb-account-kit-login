@@ -135,6 +135,27 @@ function fbak_sms_login_redirect_display() {
     <?php
 }
 
+function fbak_sms_country_codes_display() {
+    $fbak_settings = get_option('fbak_plugin_settings');
+    
+    if( !isset($fbak_settings['fbak_sms_country_codes']) ) {
+        $fbak_settings['fbak_sms_country_codes'] = 'keep';
+    }
+    $items = array(
+        'keep'     => __( 'Keep Country Code', 'fb-account-kit-login' ),
+        'remove'   => __( 'Remove Country Code', 'fb-account-kit-login' ),
+    );
+    echo '<select id="fbak-country-codes" name="fbak_plugin_settings[fbak_sms_country_codes]" style="width:30%;">';
+    foreach( $items as $item => $label ) {
+        $selected = ( $fbak_settings['fbak_sms_country_codes'] == $item ) ? ' selected="selected"' : '';
+        echo '<option value="' . $item . '"' . $selected . '>' . $label . '</option>';
+    }
+    echo '</select>';
+    ?>
+    &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Choose the contry code fromat from here. It becomes handy when you are migrating from some SMS login plugin like DIGITS. In this case you need to remove country codes to login to the existing account if the users created by DIGITS plugin.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
 /* ============================================================================================== 
                                            email login
 ============================================================================================== */

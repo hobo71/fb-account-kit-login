@@ -69,10 +69,12 @@ function fbak_authorize_with_account_kit( $code ) {
 function fbak_process_auth_login() {
     // Check the referrer for the AJAX call.
     check_ajax_referer( 'fbak_fb_account_kit', 'csrf' );
+
+    $fbak_settings = get_option( 'fbak_plugin_settings' );
     
     $me_data = fbak_authorize_with_account_kit( $_POST['code'] );
 
-    $phone = isset($me_data['phone']) ? $me_data['phone']['number'] : '';
+    $phone = isset($me_data['phone']) ? ( isset($fbak_settings['fbak_sms_country_codes']) && $fbak_settings['fbak_sms_country_codes'] == 'remove' ? $me_data['phone']['national_number'] : $me_data['phone']['number'] ) : '';
     $email = isset($me_data['email']) ? $me_data['email']['address'] : '';
     $id = isset($me_data['id']) ? $me_data['id'] : 0;
     
@@ -143,9 +145,11 @@ function fbak_associate_phone_number_email() {
     // Check the referrer for the AJAX call.
     check_ajax_referer( 'fbak_fb_account_kit', 'csrf' );
 
+    $fbak_settings = get_option( 'fbak_plugin_settings' );
+
     $me_data = fbak_authorize_with_account_kit( $_POST['code'] );
 
-    $phone = isset($me_data['phone']) ? $me_data['phone']['number'] : '';
+    $phone = isset($me_data['phone']) ? ( isset($fbak_settings['fbak_sms_country_codes']) && $fbak_settings['fbak_sms_country_codes'] == 'remove' ? $me_data['phone']['national_number'] : $me_data['phone']['number'] ) : '';
     $email = isset($me_data['email']) ? $me_data['email']['address'] : '';
     $id = isset($me_data['id']) ? $me_data['id'] : 0;
 
@@ -222,7 +226,7 @@ function fbak_handle_email_login( $email, $account_id ) {
                     );
         
                     $user_id = wp_insert_user( $userdata );
-                    do_action( 'fbak_create_new_user_via_email', $user_id, $username, $user_pass, $email );
+                    do_action( 'fbak_create_new_user_via_email', $user_id );
                     $user = get_user_by( 'id', $user_id );
                 }
             }
@@ -248,7 +252,7 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
     $user = get_user_by( 'id', $get_user );
 
     if ( ! $user ) {
-        $phone = str_replace( '+', '', $phone_no ); // remove the '+' sign
+        $phone = str_replace( '+', '', $phone_no ); // remove the '+' sign if exists
         $phone = apply_filters( 'fbak/custom_phone_number_format', $phone );
         $user = get_user_by( 'login', $phone );
 
@@ -268,7 +272,7 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
                 $user_id = wp_insert_user( $userdata );
                 update_user_meta( $user_id, 'phone_number', $phone_no );
                 update_user_meta( $user_id, 'billing_phone', $phone_no ); // update woocommerce phone number
-                do_action( 'fbak_create_new_user_via_sms', $user_id, $username, $user_pass, $email );
+                do_action( 'fbak_create_new_user_via_sms', $user_id );
                 $user = get_user_by( 'id', $user_id );
             }
         }

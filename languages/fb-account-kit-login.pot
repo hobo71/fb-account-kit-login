@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-04-18 00:06+0530\n"
+"POT-Creation-Date: 2019-04-20 08:40+0530\n"
 "PO-Revision-Date: 2019-04-11 11:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Where to add this Redirect URL? - Step 5"
 msgstr ""
 
-#: admin/settings-fields.php:51 admin/settings-fields.php:242
+#: admin/settings-fields.php:51 admin/settings-fields.php:263
 msgid "Where to add this Redirect URL?"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Select the role for the new users of SMS Login."
 msgstr ""
 
-#: admin/settings-fields.php:99 admin/settings-fields.php:182
+#: admin/settings-fields.php:99 admin/settings-fields.php:203
 #: includes/public/shortcode.php:24 includes/public/woocommerce.php:46
 #: includes/widget.php:74 includes/widget.php:167
 msgid "Login with SMS"
@@ -157,25 +157,25 @@ msgstr ""
 msgid "Set the sms login button's css class from here."
 msgstr ""
 
-#: admin/settings-fields.php:120 admin/settings-fields.php:203
+#: admin/settings-fields.php:120 admin/settings-fields.php:224
 msgid "Dashboard Page"
 msgstr ""
 
-#: admin/settings-fields.php:121 admin/settings-fields.php:204
+#: admin/settings-fields.php:121 admin/settings-fields.php:225
 msgid "Home Page"
 msgstr ""
 
-#: admin/settings-fields.php:122 admin/settings-fields.php:205
+#: admin/settings-fields.php:122 admin/settings-fields.php:226
 msgid "Profile Page"
 msgstr ""
 
-#: admin/settings-fields.php:123 admin/settings-fields.php:206
-#: admin/settings-fields.php:230
+#: admin/settings-fields.php:123 admin/settings-fields.php:227
+#: admin/settings-fields.php:251
 msgid "Custom URL"
 msgstr ""
 
-#: admin/settings-fields.php:132 admin/settings-fields.php:215
-#: admin/settings-fields.php:239
+#: admin/settings-fields.php:132 admin/settings-fields.php:236
+#: admin/settings-fields.php:260
 msgid "URL:"
 msgstr ""
 
@@ -186,151 +186,167 @@ msgid ""
 msgstr ""
 
 #: admin/settings-fields.php:145
+msgid "Keep Country Code"
+msgstr ""
+
+#: admin/settings-fields.php:146
+msgid "Remove Country Code"
+msgstr ""
+
+#: admin/settings-fields.php:155
+msgid ""
+"Choose the contry code fromat from here. It becomes handy when you are "
+"migrating from some SMS login plugin like DIGITS. In this case you need to "
+"remove country codes to login to the existing account if the users created "
+"by DIGITS plugin."
+msgstr ""
+
+#: admin/settings-fields.php:166
 msgid "Enable this if you want to use Email Login."
 msgstr ""
 
-#: admin/settings-fields.php:152
+#: admin/settings-fields.php:173
 msgid ""
 "Enable this if you want to register new users if user a not exists with "
 "provided email address."
 msgstr ""
 
-#: admin/settings-fields.php:174
+#: admin/settings-fields.php:195
 msgid "Select the role for the new users of Email Login."
 msgstr ""
 
-#: admin/settings-fields.php:183
+#: admin/settings-fields.php:204
 msgid "Set the email login button's label from here."
 msgstr ""
 
-#: admin/settings-fields.php:192
+#: admin/settings-fields.php:213
 msgid "Set the email login button's css class from here."
 msgstr ""
 
-#: admin/settings-fields.php:217
+#: admin/settings-fields.php:238
 msgid ""
 "Choose the destination page where a user redirects after a successful Email "
 "Login."
 msgstr ""
 
-#: admin/settings-fields.php:228
+#: admin/settings-fields.php:249
 msgid "Plugin Default"
 msgstr ""
 
-#: admin/settings-fields.php:229
+#: admin/settings-fields.php:250
 msgid "Facebook Default"
 msgstr ""
 
-#: admin/settings-fields.php:241
+#: admin/settings-fields.php:262
 msgid ""
 "Select the email authentication success URL freom here. Plugin Default uses "
 "this URL "
 msgstr ""
 
-#: admin/settings-fields.php:257
+#: admin/settings-fields.php:278
 msgid "Hide Login Form"
 msgstr ""
 
-#: admin/settings-fields.php:258
+#: admin/settings-fields.php:279
 msgid "Show Login Form"
 msgstr ""
 
-#: admin/settings-fields.php:267
+#: admin/settings-fields.php:288
 msgid ""
 "If you want to hide the default native login from, you can set it from here."
 msgstr ""
 
-#: admin/settings-fields.php:278
+#: admin/settings-fields.php:299
 msgid "Popup Form"
 msgstr ""
 
-#: admin/settings-fields.php:279
+#: admin/settings-fields.php:300
 msgid "Modal Form"
 msgstr ""
 
-#: admin/settings-fields.php:288
+#: admin/settings-fields.php:309
 msgid "Choose the login box type from here."
 msgstr ""
 
-#: admin/settings-fields.php:299
+#: admin/settings-fields.php:320
 msgid "Enable"
 msgstr ""
 
-#: admin/settings-fields.php:300
+#: admin/settings-fields.php:321
 msgid "Disable"
 msgstr ""
 
-#: admin/settings-fields.php:309
+#: admin/settings-fields.php:330
 msgid ""
 "Choose the Enable option if you want to enable account kit login on "
 "WordPress Login Page."
 msgstr ""
 
-#: admin/settings-fields.php:315
+#: admin/settings-fields.php:336
 msgid "Enter the text to show on login page."
 msgstr ""
 
-#: admin/settings-fields.php:326
+#: admin/settings-fields.php:347
 msgid ""
 "Enable this if you want to add passwordless login on WooCommerce Login Form."
 msgstr ""
 
-#: admin/settings-fields.php:333
+#: admin/settings-fields.php:354
 msgid ""
 "Enable this if you want to add passwordless login on WooCommerce "
 "Registration Form."
 msgstr ""
 
-#: admin/settings-fields.php:340
+#: admin/settings-fields.php:361
 msgid ""
 "Enable this if you want to redirect to Checkout Page when a customer logs in "
 "from Checkout Page directly."
 msgstr ""
 
-#: admin/settings-fields.php:347
+#: admin/settings-fields.php:368
 msgid ""
 "Enable this if you want to allow customers to link their email or mobile "
 "number to login to their account without password."
 msgstr ""
 
-#: admin/settings-fields.php:356
+#: admin/settings-fields.php:377
 msgid "Set the authentication url endpoint here."
 msgstr ""
 
-#: admin/settings-fields.php:363 includes/public/woocommerce.php:83
+#: admin/settings-fields.php:384 includes/public/woocommerce.php:83
 msgid "Authentication"
 msgstr ""
 
-#: admin/settings-fields.php:365
+#: admin/settings-fields.php:386
 msgid "Set the authentication url endpoint label here."
 msgstr ""
 
-#: admin/settings-fields.php:372 includes/public/woocommerce.php:94
+#: admin/settings-fields.php:393 includes/public/woocommerce.php:94
 msgid ""
 "If your Account is not linked with Facebook Account Kit, please connect your "
 "account with Facebook Account Kit for a secure and passwordless login."
 msgstr ""
 
-#: admin/settings-fields.php:373
+#: admin/settings-fields.php:394
 msgid "Enter the text to show before authentication buttons."
 msgstr ""
 
-#: admin/settings-fields.php:383 includes/public/login.php:60
+#: admin/settings-fields.php:404 includes/public/login.php:60
 #: includes/public/shortcode.php:27 includes/public/woocommerce.php:57
 #: includes/widget.php:79
 msgid "Please wait until we authenticate you."
 msgstr ""
 
-#: admin/settings-fields.php:389 includes/public/login.php:54
+#: admin/settings-fields.php:410 includes/public/login.php:54
 msgid "You are not a registered user of this website."
 msgstr ""
 
-#: admin/settings-fields.php:396
+#: admin/settings-fields.php:417
 #, php-format
 msgid "Do not add %s tag. This tag is not required, as it is already added."
 msgstr ""
 
-#: admin/settings-fields.php:403
+#: admin/settings-fields.php:424
 msgid "Yes, I want to delete all plugin data at the time of uninstallation."
 msgstr ""
 
@@ -354,11 +370,11 @@ msgstr ""
 msgid "Enable SMS Login:"
 msgstr ""
 
-#: admin/settings-loader.php:25 admin/settings-loader.php:33
+#: admin/settings-loader.php:25 admin/settings-loader.php:34
 msgid "New User Registration:"
 msgstr ""
 
-#: admin/settings-loader.php:26 admin/settings-loader.php:34
+#: admin/settings-loader.php:26 admin/settings-loader.php:35
 msgid "New User Default Role:"
 msgstr ""
 
@@ -370,83 +386,87 @@ msgstr ""
 msgid "SMS Login Button Class:"
 msgstr ""
 
-#: admin/settings-loader.php:29 admin/settings-loader.php:37
+#: admin/settings-loader.php:29 admin/settings-loader.php:38
 msgid "After Login Redirect to:"
 msgstr ""
 
-#: admin/settings-loader.php:32
+#: admin/settings-loader.php:30
+msgid "Handle Country Codes:"
+msgstr ""
+
+#: admin/settings-loader.php:33
 msgid "Enable Email Login:"
 msgstr ""
 
-#: admin/settings-loader.php:35
+#: admin/settings-loader.php:36
 msgid "Email Login Button Label:"
 msgstr ""
 
-#: admin/settings-loader.php:36
+#: admin/settings-loader.php:37
 msgid "Email Login Button Class:"
 msgstr ""
 
-#: admin/settings-loader.php:38
+#: admin/settings-loader.php:39
 msgid "Authentication Success URL:"
 msgstr ""
 
-#: admin/settings-loader.php:41
+#: admin/settings-loader.php:42
 msgid "Login Form Display Type:"
 msgstr ""
 
-#: admin/settings-loader.php:42
+#: admin/settings-loader.php:43
 msgid "Enable on WP Login Form:"
 msgstr ""
 
-#: admin/settings-loader.php:43
+#: admin/settings-loader.php:44
 msgid "Default WP Login Form:"
 msgstr ""
 
-#: admin/settings-loader.php:44
+#: admin/settings-loader.php:45
 msgid "Login Form Description:"
 msgstr ""
 
-#: admin/settings-loader.php:48
+#: admin/settings-loader.php:49
 msgid "Enable on Login Form:"
 msgstr ""
 
-#: admin/settings-loader.php:49
+#: admin/settings-loader.php:50
 msgid "Enable on Registration Form:"
 msgstr ""
 
-#: admin/settings-loader.php:50
+#: admin/settings-loader.php:51
 msgid "Auto Redirect to Checkout:"
 msgstr ""
 
-#: admin/settings-loader.php:51
+#: admin/settings-loader.php:52
 msgid "Allow User Authentication:"
 msgstr ""
 
-#: admin/settings-loader.php:52
+#: admin/settings-loader.php:53
 msgid "Account Kit Auth Endpoint:"
 msgstr ""
 
-#: admin/settings-loader.php:53
+#: admin/settings-loader.php:54
 msgid "WooCommerce Menu Label:"
 msgstr ""
 
-#: admin/settings-loader.php:54
+#: admin/settings-loader.php:55
 msgid "Menu Item/Page Description:"
 msgstr ""
 
-#: admin/settings-loader.php:58
+#: admin/settings-loader.php:59
 msgid "Authentication Waiting Text:"
 msgstr ""
 
-#: admin/settings-loader.php:59
+#: admin/settings-loader.php:60
 msgid "Registration Disable Message:"
 msgstr ""
 
-#: admin/settings-loader.php:60
+#: admin/settings-loader.php:61
 msgid "Custom CSS Code:"
 msgstr ""
 
-#: admin/settings-loader.php:61
+#: admin/settings-loader.php:62
 msgid "Delete Plugin Data?"
 msgstr ""
 
@@ -472,11 +492,11 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: admin/settings-page.php:24 admin/settings-page.php:61
+#: admin/settings-page.php:24 admin/settings-page.php:62
 msgid "SMS Login"
 msgstr ""
 
-#: admin/settings-page.php:25 admin/settings-page.php:73
+#: admin/settings-page.php:25 admin/settings-page.php:74
 msgid "Email Login"
 msgstr ""
 
@@ -501,45 +521,54 @@ msgid "General Options"
 msgstr ""
 
 #: admin/settings-page.php:55 admin/settings-page.php:67
-#: admin/settings-page.php:79 admin/settings-page.php:90
-#: admin/settings-page.php:102 admin/settings-page.php:114
-#: admin/settings-page.php:177
-msgid "Save Settings"
-msgstr ""
-
-#: admin/settings-page.php:66 admin/settings-page.php:78
+#: admin/settings-page.php:79
 msgid "Note:"
 msgstr ""
 
-#: admin/settings-page.php:66
+#: admin/settings-page.php:55
+msgid ""
+"Please add this URL <code>https://sdk.accountkit.com/<span class=\"fbaklocale"
+"\">en_US</span>/sdk.js</code> in exception list of minifier or caching "
+"plugin if you are using any of it otherwise Account Kit may stop working as "
+"Facebook does not allow to host Account Kit SDK on your server."
+msgstr ""
+
+#: admin/settings-page.php:56 admin/settings-page.php:68
+#: admin/settings-page.php:80 admin/settings-page.php:91
+#: admin/settings-page.php:103 admin/settings-page.php:115
+#: admin/settings-page.php:186
+msgid "Save Settings"
+msgstr ""
+
+#: admin/settings-page.php:67
 msgid ""
 "You can use <code>fbak-sms-login</code> CSS Class as Navigation ( Appearence "
 "> Menus > CSS Classes ) Button Class & <code>#</code> as URL."
 msgstr ""
 
-#: admin/settings-page.php:78
+#: admin/settings-page.php:79
 msgid ""
 "You can use <code>fbak-email-login</code> CSS Class as Navigation "
 "( Appearence > Menus > CSS Classes ) Button Class & <code>#</code> as URL."
 msgstr ""
 
-#: admin/settings-page.php:85
+#: admin/settings-page.php:86
 msgid "Display Options"
 msgstr ""
 
-#: admin/settings-page.php:97
+#: admin/settings-page.php:98
 msgid "WooCommerce Options"
 msgstr ""
 
-#: admin/settings-page.php:109
+#: admin/settings-page.php:110
 msgid "Miscellaneous Options"
 msgstr ""
 
-#: admin/settings-page.php:120
+#: admin/settings-page.php:121
 msgid "Shortcode Info"
 msgstr ""
 
-#: admin/settings-page.php:124
+#: admin/settings-page.php:125
 #, php-format
 msgid ""
 "You can insert the login buttons manually in any page or post or template by "
@@ -547,46 +576,67 @@ msgid ""
 "templates using PHP, enter %2$s"
 msgstr ""
 
-#: admin/settings-page.php:125
+#: admin/settings-page.php:126 admin/settings-page.php:136
 msgid ""
 "You can also use the options or attributes below to override the default "
 "settings."
 msgstr ""
 
-#: admin/settings-page.php:126 admin/settings-page.php:127
+#: admin/settings-page.php:127 admin/settings-page.php:128
 msgid "can be"
 msgstr ""
 
-#: admin/settings-page.php:128
+#: admin/settings-page.php:129 admin/settings-page.php:137
 msgid "set the sms button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:129
+#: admin/settings-page.php:130 admin/settings-page.php:138
 msgid "set the email button class, defaults to"
 msgstr ""
 
-#: admin/settings-page.php:130
+#: admin/settings-page.php:131
 msgid "set the sms button text, defaults to <strong>Login with SMS</strong>"
 msgstr ""
 
-#: admin/settings-page.php:131
+#: admin/settings-page.php:132
 msgid ""
 "set the email button text, defaults to <strong>Login with Email</strong>"
 msgstr ""
 
-#: admin/settings-page.php:132
+#: admin/settings-page.php:133
 msgid "set the description text to show on login page."
 msgstr ""
 
-#: admin/settings-page.php:149
+#: admin/settings-page.php:135
+#, php-format
+msgid ""
+"You can insert the profile association buttons manually in any page or post "
+"or template by simply using the shortcode %1$s. PHP Syntax: %2$s"
+msgstr ""
+
+#: admin/settings-page.php:139
+msgid ""
+"set the sms button text, defaults to <strong>Connect with Phone</strong>"
+msgstr ""
+
+#: admin/settings-page.php:140
+msgid ""
+"set the email button text, defaults to <strong>Connect with Email</strong>"
+msgstr ""
+
+#: admin/settings-page.php:141
+msgid "set the description text to show on custom profile association page."
+msgstr ""
+
+#: admin/settings-page.php:158
 msgid "Custom"
 msgstr ""
 
-#: admin/settings-page.php:151 admin/settings-page.php:153
+#: admin/settings-page.php:160 admin/settings-page.php:162
 msgid "Buy me a coffee!"
 msgstr ""
 
-#: admin/settings-page.php:154
+#: admin/settings-page.php:163
 #, php-format
 msgid ""
 "Thank you for using %s. If you found the plugin useful buy me a coffee! Your "
@@ -594,72 +644,72 @@ msgid ""
 "via PayPal."
 msgstr ""
 
-#: admin/settings-page.php:158
+#: admin/settings-page.php:167
 msgid "Please wait..."
 msgstr ""
 
-#: admin/settings-page.php:162
+#: admin/settings-page.php:171
 msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:171
+#: admin/settings-page.php:180
 msgid "Saving..."
 msgstr ""
 
-#: admin/settings-page.php:200
+#: admin/settings-page.php:206
 msgid "My Other Plugins!"
 msgstr ""
 
-#: admin/settings-page.php:206
+#: admin/settings-page.php:212
 msgid ""
 "Display last update date and time on frontend with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings-page.php:214
+#: admin/settings-page.php:220
 msgid "Ultimate Facebook Comments Solution with instant email notification."
 msgstr ""
 
-#: admin/settings-page.php:222
+#: admin/settings-page.php:228
 msgid ""
 "Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
 "pages."
 msgstr ""
 
-#: admin/settings-page.php:230
+#: admin/settings-page.php:236
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:238
+#: admin/settings-page.php:244
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
 msgstr ""
 
-#: admin/settings-page.php:246
+#: admin/settings-page.php:252
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: fb-account-kit-login.php:181 includes/widget.php:29
+#: fb-account-kit-login.php:178 includes/widget.php:29
 msgid "Facebook Account Kit Login"
 msgstr ""
 
-#: fb-account-kit-login.php:181
+#: fb-account-kit-login.php:178
 msgid "Account Kit"
 msgstr ""
 
-#: fb-account-kit-login.php:213
+#: fb-account-kit-login.php:210
 msgid "Settings"
 msgstr ""
 
-#: fb-account-kit-login.php:222
+#: fb-account-kit-login.php:219
 msgid "Support"
 msgstr ""
 
-#: fb-account-kit-login.php:223
+#: fb-account-kit-login.php:220
 msgid "Donate"
 msgstr ""
 

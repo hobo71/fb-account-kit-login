@@ -150,6 +150,16 @@ jQuery(document).ready(function($) {
     });
     $("#fbak-woo-cus").trigger('change');
 
+    $("#fbak-woo-ep").change(function() {
+        $('#changetrigger').val('yes');
+    });
+    $("#fbak-woo-ep").trigger('change');
+    
+    $("#fbak-locale").change(function() {
+        $(".fbaklocale").text( $("#fbak-locale").val() );
+    });
+    $("#fbak-locale").trigger('change');
+
     $(".coffee-amt").change(function() {
         var btn = $('.buy-coffee-btn');
         btn.attr('href', btn.data('link') + $(this).val());

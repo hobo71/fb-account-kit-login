@@ -13,12 +13,13 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
  * **Login with SMS** (Phone).
  * **Login with WhatsApp**.
  * **Login with Email**.
- * **WooCommerce Support.**
+ * **WooCommerce Support**.
  * Totally **Free of Cost SMS Service**.
  * **Shortcode** Compatible.
  * Dedicated **Widget**.
- * **Compatible with Jetpack**
- * **Compatible with Custom Login URL**
+ * **Compatible with Jetpack** Login.
+ * **Compatible with Custom Login URL**.
+ * **Easy Migration** from **DIGITS** Plugin.
  
 ![alt text](https://github.com/iamsayan/fb-account-kit-login/raw/master/how-it-works.jpeg "How it Works")
 
@@ -87,12 +88,7 @@ Facebook account and the account kit authentication is fully separated and there
 
 #### How to migrate from DIGITS plugin?
 
-Migration from DIGITS plugin is very easy. If the username of your user is their phone number which is created by DIGITS plugin, then you can migrate from DIGITS to this plugin. Suppose your have 5 users and their country codes are +91, +880, +1, +856 and +86. Then you need to just add this code snippets to the end of your active theme's functions.php file:
-
-`add_filter( 'fbak/custom_phone_number_format', 'fbak_add_digit_phone_support' );
-function fbak_add_digit_phone_support( $phone ) {
-    return str_replace( array( '91', '1' ), '', $phone ); // country codes without + sign
-}`
+Migration from DIGITS plugin is very easy if you were using OTP login in DIGITS. Just go to plugin settings > SMS Login > Handle Country Codes > select remove country codes and save changes.
 
 #### The plugin isn't working or have a bug?
 
