@@ -39,7 +39,7 @@ For more information about Facebook Account Kit please [click here](https://deve
 
 #### Compatibility
 
-* This plugin is fully compatible with WordPress Version 4.0 and beyond and also compatible with any WordPress theme.
+* This plugin is fully compatible with WordPress Version 4.7 and beyond and also compatible with any WordPress theme.
 
 #### Support
 

@@ -85,10 +85,12 @@ function fbak_process_auth_login() {
         $user = fbak_handle_email_login( $email, $id );
 
         if ( $user ) {
-            wp_set_current_user( $user->ID );
+            wp_set_current_user( $user->ID, $user->user_login );
             wp_set_auth_cookie( $user->ID, true );
 
-            do_action( 'wp_login', $user->user_login, $user );
+            if ( apply_filters( 'fbak/account_kit_sync_with_wp_login', true ) ) {
+                do_action( 'wp_login', $user->user_login, $user );
+            }
 
             // update the account kit reference
             update_user_meta( $user->ID, '_fb_accountkit_id', $id );
@@ -110,15 +112,17 @@ function fbak_process_auth_login() {
         $user = fbak_handle_phone_login( $phone, $id );
 
         if ( $user ) {
-            wp_set_current_user( $user->ID );
+            wp_set_current_user( $user->ID, $user->user_login );
             wp_set_auth_cookie( $user->ID, true );
 
-            do_action( 'wp_login', $user->user_login, $user );
+            if ( apply_filters( 'fbak/account_kit_sync_with_wp_login', true ) ) {
+                do_action( 'wp_login', $user->user_login, $user );
+            }
 
             // update the account kit reference
             update_user_meta( $user->ID, '_fb_accountkit_id', $id );
             update_user_meta( $user->ID, '_fb_accountkit_auth_mode', 'phone' );
-
+            
             do_action( 'fbak_user_login_via_sms', $user );
 
             wp_send_json_success( array(
@@ -226,8 +230,9 @@ function fbak_handle_email_login( $email, $account_id ) {
                     );
         
                     $user_id = wp_insert_user( $userdata );
-                    do_action( 'fbak_create_new_user_via_email', $user_id );
                     $user = get_user_by( 'id', $user_id );
+
+                    do_action( 'fbak_create_new_user_via_email', $user );
                 }
             }
         }
@@ -260,7 +265,7 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
             if ( ! $user ) {
                 $username  = fbak_guess_username_by_phone( $phone );
                 $user_pass = wp_generate_password( 12, true );
-                $email = $username . '@' . str_replace( array( 'https://', 'http://', 'www.' ), '', home_url() ); // generate a fake email address
+                $email = $username . '@' . apply_filters( 'fbak/sms_login_email_address', str_replace( array( 'https://', 'http://', 'www.' ), '', home_url() ) ); // generate a fake email address
         
                 $userdata = array(
                     'user_login'  => $username,
@@ -270,10 +275,12 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
                 );
     
                 $user_id = wp_insert_user( $userdata );
-                update_user_meta( $user_id, 'phone_number', $phone_no );
-                update_user_meta( $user_id, 'billing_phone', $phone_no ); // update woocommerce phone number
-                do_action( 'fbak_create_new_user_via_sms', $user_id );
                 $user = get_user_by( 'id', $user_id );
+
+                update_user_meta( $user->ID, 'phone_number', $phone_no );
+                update_user_meta( $user->ID, 'billing_phone', $phone_no ); // update woocommerce phone number
+                
+                do_action( 'fbak_create_new_user_via_sms', $user );
             }
         }
     }

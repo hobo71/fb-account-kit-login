@@ -3,7 +3,7 @@
  * Plugin Name: Facebook Account Kit Login
  * Plugin URI: https://wordpress.org/plugins/fb-account-kit-login/
  * Description: 🔥 Facebook Account Kit Login integration for WordPress. It helps to easily login or register to wordpress by using Secure SMS and Email Verification without any password.
- * Version: 1.0.12
+ * Version: 1.0.13
  * Author: Sayan Datta
  * Author URI: https://sayandatta.com/
  * License: GPLv3
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FBAK_PLUGIN_VERSION', '1.0.12' );
+define( 'FBAK_PLUGIN_VERSION', '1.0.13' );
 
 // debug scripts
 //define( 'FBAK_PLUGIN_ENABLE_DEBUG', 'true' );
@@ -142,10 +142,10 @@ function fbak_add_account_kit_scripts() {
     }
 }
 
-function fbak_add_async_defer_attribute( $tag, $handle ) {
-    // if the unique handle/name of the registered script has 'async' in it
+function fbak_add_defer_attribute( $tag, $handle ) {
+    // if the unique handle/name of the registered script has 'defer' in it
     if ( $handle === 'fbak-fb-account-kit' ) {
-        return str_replace( '<script ', '<script async defer ', $tag );
+        return str_replace( '<script ', '<script defer ', $tag );
     } else {
         return $tag;
     }
@@ -153,7 +153,7 @@ function fbak_add_async_defer_attribute( $tag, $handle ) {
 
 add_action( 'admin_enqueue_scripts', 'fbak_load_admin_assets' );
 add_action( 'wp_enqueue_scripts', 'fbak_add_account_kit_scripts' );
-add_filter( 'script_loader_tag', 'fbak_add_async_defer_attribute', 10, 2 );
+add_filter( 'script_loader_tag', 'fbak_add_defer_attribute', 10, 2 );
 
 function fbak_ajax_save_admin_scripts() {
     if ( is_admin() ) { 
@@ -217,7 +217,7 @@ function fbak_plugin_meta_links( $links, $file ) {
     if ( $file == $plugin ) // only for this plugin
         return array_merge( $links, 
             array( '<a href="https://wordpress.org/support/plugin/fb-account-kit-login" target="_blank">' . __( 'Support', 'fb-account-kit-login' ) . '</a>' ),
-            array( '<a href="http://bit.ly/2I0Gj60" target="_blank">' . __( 'Donate', 'fb-account-kit-login' ) . '</a>' )
+            array( '<a href="https://www.paypal.me/iamsayan/" target="_blank">' . __( 'Donate', 'fb-account-kit-login' ) . '</a>' )
         );
     return $links;
 }
