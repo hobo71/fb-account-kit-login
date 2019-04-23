@@ -421,7 +421,7 @@ function fbak_custom_css_display() {
 function fbak_delete_data_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     ?>  <input type="checkbox" id="fbak-delete-data" name="fbak_plugin_settings[fbak_delete_data]" value="1" <?php checked(isset($fbak_settings['fbak_delete_data']), 1); ?> /> 
-        <label for="fbak-delete-data" style="font-size: 12px;"><?php _e( 'Yes, I want to delete all plugin data at the time of uninstallation.', 'fb-account-kit-login' ); ?></label>
+        <label for="fbak-delete-data" style="font-size: 12px;display: inline-block;"><?php _e( 'Yes, I want to delete all plugin data at the time of uninstallation.', 'fb-account-kit-login' ); ?></label>
     <?php
 }
 
