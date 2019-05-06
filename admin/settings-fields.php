@@ -92,6 +92,13 @@ function fbak_sms_new_register_user_type_display() {
     <?php
 }
 
+function fbak_sms_new_user_dn_display() {
+    $fbak_settings = get_option('fbak_plugin_settings'); ?> 
+    <input id="fbak-sms-label-dn" name="fbak_plugin_settings[fbak_sms_new_user_dn]" type="text" size="30" style="width:30%;" placeholder="<?php _e( 'New User', 'fb-account-kit-login' ); ?>" value="<?php if (isset($fbak_settings['fbak_sms_new_user_dn'])) { echo $fbak_settings['fbak_sms_new_user_dn']; } ?>" />
+        &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'You can set new user\'s display name from here. By default display name will be the phone number.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
 function fbak_sms_label_text_display() {
     $fbak_settings = get_option('fbak_plugin_settings');
     if( empty($fbak_settings['fbak_sms_label_text']) ) {
@@ -193,6 +200,13 @@ function fbak_email_new_register_user_type_display() {
     echo '</select>';
     ?>
     &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'Select the role for the new users of Email Login.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
+    <?php
+}
+
+function fbak_email_new_user_dn_display() {
+    $fbak_settings = get_option('fbak_plugin_settings'); ?> 
+    <input id="fbak-email-label-dn" name="fbak_plugin_settings[fbak_email_new_user_dn]" type="text" size="30" style="width:30%;" placeholder="<?php _e( 'New User', 'fb-account-kit-login' ); ?>" value="<?php if (isset($fbak_settings['fbak_email_new_user_dn'])) { echo $fbak_settings['fbak_email_new_user_dn']; } ?>" />
+        &nbsp;&nbsp;<span class="tooltip" title="<?php _e( 'You can set new user\'s display name from here. By default display name will be generated from the email address.', 'fb-account-kit-login' ); ?>"><span title="" class="dashicons dashicons-editor-help"></span></span>
     <?php
 }
 

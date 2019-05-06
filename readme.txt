@@ -2,8 +2,8 @@
 Contributors: Infosatech
 Tags: login, passwordless login, facebook, account kit, register, no password, auto login
 Requires at least: 4.7
-Tested up to: 5.1
-Stable tag: 1.0.13
+Tested up to: 5.2
+Stable tag: 1.0.14
 Requires PHP: 5.6
 Donate link: https://www.paypal.me/iamsayan/
 License: GPLv3
@@ -113,6 +113,17 @@ Migration from DIGITS plugin is very easy if you were using OTP login in DIGITS.
 16. How it Works
 
 == Changelog ==
+
+*Thank you to everyone who shares feedback for Facebook Account Kit Login!*
+
+If you like Facebook Account Kit Login, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+
+= 1.0.14 =
+Release Date: May 6, 2019
+
+* Added: An option to set user display name for new user registered with Facebook Account Kit.
+* Fixed: Some minor CSS issue.
+* Tested with WordPress 5.2.
 
 = 1.0.13 =
 Release Date: April 23, 2019

@@ -73,9 +73,11 @@ jQuery(document).ready(function($) {
     $("#fbak-sms-reg").change(function () {
         if ($('#fbak-sms-reg').is(':checked')) {
             $('.fbak-sms-user-type').show();
+            $('.fbak-sms-user-dn').show();
         }
         if (!$('#fbak-sms-reg').is(':checked')) {
             $('.fbak-sms-user-type').hide();
+            $('.fbak-sms-user-dn').hide();
         }
     });
     $("#fbak-sms-reg").trigger('change');
@@ -83,9 +85,11 @@ jQuery(document).ready(function($) {
     $("#fbak-email-reg").change(function () {
         if ($('#fbak-email-reg').is(':checked')) {
             $('.fbak-email-user-type').show();
+            $('.fbak-email-user-dn').show();
         }
         if (!$('#fbak-email-reg').is(':checked')) {
             $('.fbak-email-user-type').hide();
+            $('.fbak-email-user-dn').hide();
         }
     });
     $("#fbak-email-reg").trigger('change');
