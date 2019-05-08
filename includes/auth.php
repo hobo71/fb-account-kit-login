@@ -230,7 +230,7 @@ function fbak_handle_email_login( $email, $account_id ) {
                     );
 
                     if ( isset($fbak_settings['fbak_email_new_user_dn']) && !empty($fbak_settings['fbak_email_new_user_dn']) ) {
-                        $userdata['display_name'] = $fbak_settings['fbak_email_new_user_dn'];
+                        $userdata['display_name'] = apply_filters( 'fbak/email_login_new_user_register', esc_html( $fbak_settings['fbak_email_new_user_dn'] ), $username, $email );
                     }
         
                     $user_id = wp_insert_user( $userdata );
@@ -279,7 +279,7 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
                 );
 
                 if ( isset($fbak_settings['fbak_sms_new_user_dn']) && !empty($fbak_settings['fbak_sms_new_user_dn']) ) {
-                    $userdata['display_name'] = $fbak_settings['fbak_sms_new_user_dn'];
+                    $userdata['display_name'] = apply_filters( 'fbak/sms_login_new_user_register', esc_html( $fbak_settings['fbak_sms_new_user_dn'] ), $username, $phone_no );
                 }
     
                 $user_id = wp_insert_user( $userdata );

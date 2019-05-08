@@ -119,10 +119,9 @@ Migration from DIGITS plugin is very easy if you were using OTP login in DIGITS.
 If you like Facebook Account Kit Login, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
 = 1.0.14 =
-Release Date: May 6, 2019
+Release Date: May 8, 2019
 
 * Added: An option to set user display name for new user registered with Facebook Account Kit.
-* Fixed: Some minor CSS issue.
 * Tested with WordPress 5.2.
 
 = 1.0.13 =
