@@ -2,7 +2,7 @@
 
 # Facebook Account Kit Login
 
-🔥 The easiest and secure solution for login or register to WordPress by using SMS or Email Verification without any password using Facebook's Secure Authentication.
+🔥 The easiest and most secure solution for login or register to WordPress by using SMS or Email Verification without any password using Facebook's Secure Authentication. Fully integrated with WooCommerce.
 
 [![WP compatibility](https://plugintests.com/plugins/fb-account-kit-login/wp-badge.svg)](https://plugintests.com/plugins/fb-account-kit-login/latest) [![PHP compatibility](https://plugintests.com/plugins/fb-account-kit-login/php-badge.svg)](https://plugintests.com/plugins/fb-account-kit-login/latest)
 
@@ -15,7 +15,7 @@ The Facebook Account Kit Login plugin brings a lightweight, flexible and easy wa
  * **Login with SMS** (Phone).
  * **Login with WhatsApp**.
  * **Login with Email**.
- * **WooCommerce Support**.
+ * **Full WooCommerce Support**.
  * Totally **Free of Cost SMS Service**.
  * **Shortcode** Compatible.
  * Dedicated **Widget**.
