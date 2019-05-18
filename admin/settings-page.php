@@ -191,6 +191,9 @@
                                             dataType: "json",
                                             data: {
                                                 action: "fbak_trigger_flush_rewrite_rules",
+                                            },
+                                            success:function() {
+                                                $('#changetrigger').val('no');
                                             }
                                         });
                                     }

@@ -149,10 +149,10 @@ function fbak_sms_country_codes_display() {
         $fbak_settings['fbak_sms_country_codes'] = 'keep';
     }
     $items = array(
-        'keep'     => __( 'Keep Country Code', 'fb-account-kit-login' ),
+        'keep'     => __( 'Keep Country Code (Default)', 'fb-account-kit-login' ),
         'remove'   => __( 'Remove Country Code', 'fb-account-kit-login' ),
     );
-    echo '<select id="fbak-country-codes" name="fbak_plugin_settings[fbak_sms_country_codes]" style="width:30%;">';
+    echo '<select id="fbak-country-codes" name="fbak_plugin_settings[fbak_sms_country_codes]" style="width:40%;">';
     foreach( $items as $item => $label ) {
         $selected = ( $fbak_settings['fbak_sms_country_codes'] == $item ) ? ' selected="selected"' : '';
         echo '<option value="' . $item . '"' . $selected . '>' . $label . '</option>';

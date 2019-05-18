@@ -220,7 +220,7 @@ function fbak_handle_email_login( $email, $account_id ) {
             if ( isset($fbak_settings['fbak_email_new_register']) && $fbak_settings['fbak_email_new_register'] == 1 ) {
                 if ( ! $user ) {
                     $username = fbak_guess_username_by_email( $email );
-                    $user_pass = wp_generate_password( 12, true );
+                    $user_pass = apply_filters( 'fbak/auto_generated_user_password', true ) ? wp_generate_password( 12, true ) : $username;
             
                     $userdata = array(
                         'user_login'  => $username,
@@ -267,9 +267,11 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
 
         if ( isset($fbak_settings['fbak_sms_new_register']) && $fbak_settings['fbak_sms_new_register'] == 1 ) {
             if ( ! $user ) {
-                $username  = fbak_guess_username_by_phone( $phone );
-                $user_pass = wp_generate_password( 12, true );
-                $email = $username . '@' . apply_filters( 'fbak/sms_login_email_address', str_replace( array( 'https://', 'http://', 'www.' ), '', home_url() ) ); // generate a fake email address
+                $username  = $phone;
+                $user_pass = apply_filters( 'fbak/auto_generated_user_password', true ) ? wp_generate_password( 12, true ) : $phone;
+                $email = str_replace( array( 'https://', 'http://', 'www.' ), '', home_url() );
+                $email = current( explode( '/', $email ) );
+                $email = $username . '@' . apply_filters( 'fbak/sms_login_email_address', $email ); // generate a fake email address
         
                 $userdata = array(
                     'user_login'  => $username,

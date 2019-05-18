@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-05-08 10:34+0530\n"
+"POT-Creation-Date: 2019-05-18 22:24+0530\n"
 "PO-Revision-Date: 2019-04-11 11:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -196,7 +196,7 @@ msgid ""
 msgstr ""
 
 #: admin/settings-fields.php:152
-msgid "Keep Country Code"
+msgid "Keep Country Code (Default)"
 msgstr ""
 
 #: admin/settings-fields.php:153
@@ -676,39 +676,39 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
-#: admin/settings-page.php:206
+#: admin/settings-page.php:209
 msgid "My Other Plugins!"
 msgstr ""
 
-#: admin/settings-page.php:212
+#: admin/settings-page.php:215
 msgid ""
 "Display last update date and time on frontend with 'dateModified' Schema "
 "Markup."
 msgstr ""
 
-#: admin/settings-page.php:220
+#: admin/settings-page.php:223
 msgid "Ultimate Facebook Comments Solution with instant email notification."
 msgstr ""
 
-#: admin/settings-page.php:228
+#: admin/settings-page.php:231
 msgid ""
 "Add any page extension like .html, .php, .aspx, .htm, .asp, .shtml only to "
 "pages."
 msgstr ""
 
-#: admin/settings-page.php:236
+#: admin/settings-page.php:239
 msgid ""
 "Simple Posts Ticker is a small tool that shows your most recent posts in a "
 "marquee style."
 msgstr ""
 
-#: admin/settings-page.php:244
+#: admin/settings-page.php:247
 msgid ""
 "Add custom code and remove the unwanted meta tags, links from the source "
 "code and many more."
 msgstr ""
 
-#: admin/settings-page.php:252
+#: admin/settings-page.php:255
 msgid "Automatically republish you old evergreen content to grab better SEO."
 msgstr ""
 
@@ -753,7 +753,7 @@ msgstr ""
 msgid "Not Connected with Account Kit"
 msgstr ""
 
-#: includes/functions.php:109
+#: includes/functions.php:95
 msgid "Are you really want to disconnect this account from Account Kit?"
 msgstr ""
 
@@ -912,9 +912,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"🔥 Facebook Account Kit Login integration for WordPress. It helps to easily "
-"login or register to wordpress by using Secure SMS and Email Verification "
-"without any password."
+"🔥 The easiest and most secure solution for login or register to WordPress by "
+"using SMS or Email Verification without any password using Facebook's Secure "
+"Authentication. Fully integrated with WooCommerce."
 msgstr ""
 
 #. Author of the plugin/theme

@@ -158,6 +158,11 @@ jQuery(document).ready(function($) {
         $('#changetrigger').val('yes');
     });
     $("#fbak-woo-ep").trigger('change');
+
+    $("#fbak-woo-cus").click(function () {
+        $('#changetrigger').val('yes');
+    });
+    $("#fbak-woo-cus").trigger('change');
     
     $("#fbak-locale").change(function() {
         $(".fbaklocale").text( $("#fbak-locale").val() );

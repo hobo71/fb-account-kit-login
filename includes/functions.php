@@ -23,20 +23,6 @@ function fbak_guess_username_by_email( $email ) {
     return $username;
 }
 
-function fbak_guess_username_by_phone( $phone ) {
-    $username = sanitize_user( $phone, true );
-
-    // Ensure username is unique.
-    $append = 1;
-    $o_username = $username . '_';
-
-    while ( username_exists( $username ) ) {
-        $username = $o_username . $append;
-        $append++;
-    }
-    return $username;
-}
-
 function fbak_redirect_after_sms_login() {
     $fbak_settings = get_option( 'fbak_plugin_settings' );
     

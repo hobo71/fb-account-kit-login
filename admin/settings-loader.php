@@ -15,10 +15,10 @@ add_action( 'admin_init', 'fbak_register_plugin_settings' );
 function fbak_register_plugin_settings() {
 
     add_settings_section('fbak_plugin_general_section', '', null, 'fbak_plugin_general_option');
-        add_settings_field('fbak_app_id', __( 'Enter Facebook App ID:', 'fb-account-kit-login' ), 'fbak_app_id_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-appid' ));
-        add_settings_field('fbak_accountkit_secret_key', __( 'Enter Account Kit App Secret:', 'fb-account-kit-login' ), 'fbak_accountkit_secret_key_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-seckey' ));
-        add_settings_field('fbak_ac_locale', __( 'Enter Account Kit Locale:', 'fb-account-kit-login' ), 'fbak_ac_locale_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-locale' ));
-        add_settings_field('fbak_ac_res_url', __( 'Account Kit Redirect URL:', 'fb-account-kit-login' ), 'fbak_ac_res_url_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-resurl' ));
+        add_settings_field('fbak_app_id', __( 'Enter Facebook App ID:', 'fb-account-kit-login' ), 'fbak_app_id_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-appid', 'class' => 'fbak-appid' ));
+        add_settings_field('fbak_accountkit_secret_key', __( 'Enter Account Kit App Secret:', 'fb-account-kit-login' ), 'fbak_accountkit_secret_key_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-seckey', 'class' => 'fbak-seckey' ));
+        add_settings_field('fbak_ac_locale', __( 'Enter Account Kit Locale:', 'fb-account-kit-login' ), 'fbak_ac_locale_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-locale', 'class' => 'fbak-locale' ));
+        add_settings_field('fbak_ac_res_url', __( 'Account Kit Redirect URL:', 'fb-account-kit-login' ), 'fbak_ac_res_url_display', 'fbak_plugin_general_option', 'fbak_plugin_general_section', array( 'label_for' => 'fbak-resurl', 'class' => 'fbak-resurl' ));
         
     add_settings_section('fbak_plugin_sms_section', '', null, 'fbak_plugin_sms_option');
         add_settings_field('fbak_enable_sms_login', __( 'Enable SMS Login:', 'fb-account-kit-login' ), 'fbak_enable_sms_login_display', 'fbak_plugin_sms_option', 'fbak_plugin_sms_section', array( 'label_for' => 'fbak-enablesms' ));
@@ -61,7 +61,7 @@ function fbak_register_plugin_settings() {
         add_settings_field('fbak_auth_waiting_message', __( 'Authentication Waiting Text:', 'fb-account-kit-login' ), 'fbak_auth_waiting_message_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-waiting' ));
         add_settings_field('fbak_disable_user_reg_message', __( 'Registration Disable Message:', 'fb-account-kit-login' ), 'fbak_disable_user_reg_message_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-disablereg' ));
         add_settings_field('fbak_custom_css', __( 'Custom CSS Code:', 'fb-account-kit-login' ), 'fbak_custom_css_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-css' ));
-        add_settings_field('fbak_delete_data', __( 'Delete Plugin Data?', 'fb-account-kit-login' ), 'fbak_delete_data_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-delete-data' ));
+        add_settings_field('fbak_delete_data', __( 'Delete Plugin Data?', 'fb-account-kit-login' ), 'fbak_delete_data_display', 'fbak_plugin_misc_option', 'fbak_plugin_misc_section', array( 'label_for' => 'fbak-delete-data', 'class' => 'fbak-delete-data' ));
         
     //register settings
     register_setting( 'fbak_plugin_settings_fields', 'fbak_plugin_settings' );
