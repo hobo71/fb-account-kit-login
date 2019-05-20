@@ -236,6 +236,8 @@ function fbak_handle_email_login( $email, $account_id ) {
                     $user_id = wp_insert_user( $userdata );
                     $user = get_user_by( 'id', $user_id );
 
+                    update_user_meta( $user->ID, 'ackit_woo_passcode', $user_pass );
+
                     do_action( 'fbak_create_new_user_via_email', $user );
                 }
             }
@@ -286,6 +288,8 @@ function fbak_handle_phone_login( $phone_no, $account_id ) {
     
                 $user_id = wp_insert_user( $userdata );
                 $user = get_user_by( 'id', $user_id );
+
+                update_user_meta( $user->ID, 'ackit_woo_passcode', $user_pass );
 
                 update_user_meta( $user->ID, 'phone_number', $phone_no );
                 update_user_meta( $user->ID, 'billing_phone', $phone_no ); // update woocommerce phone number
