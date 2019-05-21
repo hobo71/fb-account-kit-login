@@ -40,6 +40,8 @@ function fbak_woocommerce_element_init() {
 
         add_action( 'woocommerce_edit_account_form', 'fbak_add_passcheck_to_edit_account_form' );
         add_action( 'woocommerce_save_account_details', 'fbak_save_ackit_account_details', 12, 1 );
+
+        add_action( 'wp_footer', 'fbak_autofill_woocommerce_new_user_password' );
     }
 }
 
@@ -131,14 +133,23 @@ function fbak_add_auto_redir_to_checkout( $redirect ) {
     return $redirect;
 }
 
+function fbak_autofill_woocommerce_new_user_password() {
+    $user = wp_get_current_user();
+    if( function_exists( 'is_account_page' ) && is_account_page() ) {
+        if( !empty( $user->ackit_woo_passcode ) && $user->ackit_woo_passcheck !== 'yes' ) { ?>
+        <script>
+            jQuery(document).ready(function($) {
+                $('input#password_current').attr('type', 'text').val('<?php echo esc_attr( $user->ackit_woo_passcode ); ?>').prop('disabled', true);
+            });
+        </script>
+        <?php }
+    }
+}
+
 function fbak_add_passcheck_to_edit_account_form() {
     $user = wp_get_current_user();
     if( !empty( $user->ackit_woo_passcode ) && $user->ackit_woo_passcheck !== 'yes' ) { ?>
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="fbak-auto-generated-password"><?php _e( 'Your current password (resaving will hide this field)', 'fb-account-kit-login' ); ?>
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="fbak-auto-generated-password" disabled value="<?php echo esc_attr( $user->ackit_woo_passcode ); ?>" />
-            <input type="hidden" name="ackit_woo_passcheck" id="ackit-woo-passcheck" />
-        </p><div class="clear"></div>
+        <input type="hidden" name="ackit_woo_passcheck" id="ackit-woo-passcheck" /><div class="clear"></div>
     <?php }
 }
 

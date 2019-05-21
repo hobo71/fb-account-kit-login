@@ -113,14 +113,14 @@ add_action( 'login_enqueue_scripts', 'fbak_plugin_register_scripts' );
 function fbak_load_admin_assets( $hook ) {
     // get current screen
     $current_screen = get_current_screen();
-    if ( strpos( $current_screen->base, 'fb-account-kit-login') !== false ) {
+    if( strpos( $current_screen->base, 'fb-account-kit-login') !== false ) {
         wp_enqueue_style( 'fbak-admin' );
         wp_enqueue_style( 'fbak-lightbox' );
 
         wp_enqueue_script( 'fbak-admin-js' );
         wp_enqueue_script( 'fbak-lightbox-js' );
     }
-    if ( 'profile.php' === $hook || 'user-edit.php' === $hook ) {
+    if( 'profile.php' === $hook || 'user-edit.php' === $hook ) {
         wp_enqueue_script( 'fbak-fb-account-kit' );
         wp_enqueue_script( 'fbak-fb-account-kit-admin' );
     }
@@ -130,13 +130,13 @@ function fbak_add_account_kit_scripts() {
     wp_enqueue_style( 'fbak-frontend' );
 
     // don't display if already logged in
-    if ( ! is_user_logged_in() ) {
+    if( ! is_user_logged_in() ) {
         wp_enqueue_script( 'fbak-fb-account-kit' );
         wp_enqueue_script( 'fbak-fb-account-kit-js' );
     }
 
     // check if woocommerce my account page
-    if ( function_exists( 'is_account_page' ) && is_account_page() ) {
+    if( function_exists( 'is_account_page' ) && is_account_page() ) {
         wp_enqueue_script( 'fbak-fb-account-kit' );
         wp_enqueue_script( 'fbak-fb-account-kit-admin' );
     }
@@ -144,7 +144,7 @@ function fbak_add_account_kit_scripts() {
 
 function fbak_add_defer_attribute( $tag, $handle ) {
     // if the unique handle/name of the registered script has 'defer' in it
-    if ( $handle === 'fbak-fb-account-kit' ) {
+    if( $handle === 'fbak-fb-account-kit' ) {
         return str_replace( '<script ', '<script defer ', $tag );
     } else {
         return $tag;
@@ -156,9 +156,9 @@ add_action( 'wp_enqueue_scripts', 'fbak_add_account_kit_scripts' );
 add_filter( 'script_loader_tag', 'fbak_add_defer_attribute', 10, 2 );
 
 function fbak_ajax_save_admin_scripts() {
-    if ( is_admin() ) { 
+    if( is_admin() ) { 
         // Embed the Script on our Plugin's Option Page Only
-        if ( isset($_GET['page']) && $_GET['page'] == 'fb-account-kit-login' ) {
+        if( isset($_GET['page']) && $_GET['page'] == 'fb-account-kit-login' ) {
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'jquery-form' );
         }
