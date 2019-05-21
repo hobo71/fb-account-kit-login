@@ -28,7 +28,8 @@ function fbak_rating_admin_notice() {
         <p><?php _e( 'Hey, I noticed you\'ve been using Facebook Account Kit Login for more than 1 week – that’s awesome! Could you please do me a BIG favor and give it a <strong>5-star</strong> rating on WordPress? Just to help me spread the word and boost my motivation.', 'fb-account-kit-login' ); ?></p>
         <p><a href="https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?filter=5#new-post" target="_blank" class="button button-secondary"><?php _e( 'Ok, you deserve it', 'fb-account-kit-login' ); ?></a>&nbsp;
         <a href="<?php echo $dismiss; ?>" class="already-did"><strong><?php _e( 'I already did', 'fb-account-kit-login' ); ?></strong></a>&nbsp;<strong>|</strong>
-        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'fb-account-kit-login' ); ?></strong></a></p>
+        <a href="<?php echo $no_thanks; ?>" class="later"><strong><?php _e( 'Nope&#44; maybe later', 'fb-account-kit-login' ); ?></strong></a>&nbsp;<strong>|</strong>
+        <a href="<?php echo $dismiss; ?>" class="dismiss"><strong><?php _e( 'I don\'t want to rate this plugin', 'fb-account-kit-login' ); ?></strong></a></p>
     </div>
 <?php
 }

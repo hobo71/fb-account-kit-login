@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Facebook Account Kit Login\n"
-"POT-Creation-Date: 2019-05-20 23:33+0530\n"
+"POT-Creation-Date: 2019-05-21 23:38+0530\n"
 "PO-Revision-Date: 2019-05-20 23:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,6 +42,10 @@ msgstr ""
 msgid "Nope&#44; maybe later"
 msgstr ""
 
+#: admin/donate.php:32
+msgid "I don't want to donate"
+msgstr ""
+
 #: admin/notice.php:28
 msgid ""
 "Hey, I noticed you've been using Facebook Account Kit Login for more than 1 "
@@ -56,6 +60,10 @@ msgstr ""
 
 #: admin/notice.php:30
 msgid "I already did"
+msgstr ""
+
+#: admin/notice.php:32
+msgid "I don't want to rate this plugin"
 msgstr ""
 
 #: admin/settings-fields.php:18
@@ -154,7 +162,7 @@ msgid ""
 msgstr ""
 
 #: admin/settings-fields.php:106 admin/settings-fields.php:217
-#: includes/public/shortcode.php:24 includes/public/woocommerce.php:49
+#: includes/public/shortcode.php:24 includes/public/woocommerce.php:51
 #: includes/widget.php:74 includes/widget.php:167
 msgid "Login with SMS"
 msgstr ""
@@ -207,8 +215,8 @@ msgstr ""
 msgid ""
 "Choose the contry code fromat from here. It becomes handy when you are "
 "migrating from some SMS login plugin like DIGITS. In this case you need to "
-"remove country codes to login to the existing account if the users created "
-"by DIGITS plugin."
+"remove country codes to login to the existing account if the users created by "
+"DIGITS plugin."
 msgstr ""
 
 #: admin/settings-fields.php:173
@@ -294,8 +302,8 @@ msgstr ""
 
 #: admin/settings-fields.php:344
 msgid ""
-"Choose the Enable option if you want to enable account kit login on "
-"WordPress Login Page."
+"Choose the Enable option if you want to enable account kit login on WordPress "
+"Login Page."
 msgstr ""
 
 #: admin/settings-fields.php:350
@@ -309,8 +317,8 @@ msgstr ""
 
 #: admin/settings-fields.php:368
 msgid ""
-"Enable this if you want to add passwordless login on WooCommerce "
-"Registration Form."
+"Enable this if you want to add passwordless login on WooCommerce Registration "
+"Form."
 msgstr ""
 
 #: admin/settings-fields.php:375
@@ -329,7 +337,7 @@ msgstr ""
 msgid "Set the authentication url endpoint here."
 msgstr ""
 
-#: admin/settings-fields.php:398 includes/public/woocommerce.php:86
+#: admin/settings-fields.php:398 includes/public/woocommerce.php:88
 msgid "Authentication"
 msgstr ""
 
@@ -337,7 +345,7 @@ msgstr ""
 msgid "Set the authentication url endpoint label here."
 msgstr ""
 
-#: admin/settings-fields.php:407 includes/public/woocommerce.php:97
+#: admin/settings-fields.php:407 includes/public/woocommerce.php:99
 msgid ""
 "If your Account is not linked with Facebook Account Kit, please connect your "
 "account with Facebook Account Kit for a secure and passwordless login."
@@ -348,7 +356,7 @@ msgid "Enter the text to show before authentication buttons."
 msgstr ""
 
 #: admin/settings-fields.php:418 includes/public/login.php:60
-#: includes/public/shortcode.php:27 includes/public/woocommerce.php:60
+#: includes/public/shortcode.php:27 includes/public/woocommerce.php:62
 #: includes/widget.php:79
 msgid "Please wait until we authenticate you."
 msgstr ""
@@ -548,9 +556,9 @@ msgstr ""
 #: admin/settings-page.php:55
 msgid ""
 "Please add this URL <code>https://sdk.accountkit.com/<span class=\"fbaklocale"
-"\">en_US</span>/sdk.js</code> in exception list of minifier or caching "
-"plugin if you are using any of it otherwise Account Kit may stop working as "
-"Facebook does not allow to host Account Kit SDK on your server."
+"\">en_US</span>/sdk.js</code> in exception list of minifier or caching plugin "
+"if you are using any of it otherwise Account Kit may stop working as Facebook "
+"does not allow to host Account Kit SDK on your server."
 msgstr ""
 
 #: admin/settings-page.php:56 admin/settings-page.php:68
@@ -619,8 +627,7 @@ msgid "set the sms button text, defaults to <strong>Login with SMS</strong>"
 msgstr ""
 
 #: admin/settings-page.php:132
-msgid ""
-"set the email button text, defaults to <strong>Login with Email</strong>"
+msgid "set the email button text, defaults to <strong>Login with Email</strong>"
 msgstr ""
 
 #: admin/settings-page.php:133
@@ -635,8 +642,7 @@ msgid ""
 msgstr ""
 
 #: admin/settings-page.php:139
-msgid ""
-"set the sms button text, defaults to <strong>Connect with Phone</strong>"
+msgid "set the sms button text, defaults to <strong>Connect with Phone</strong>"
 msgstr ""
 
 #: admin/settings-page.php:140
@@ -704,8 +710,8 @@ msgstr ""
 
 #: admin/settings-page.php:247
 msgid ""
-"Add custom code and remove the unwanted meta tags, links from the source "
-"code and many more."
+"Add custom code and remove the unwanted meta tags, links from the source code "
+"and many more."
 msgstr ""
 
 #: admin/settings-page.php:255
@@ -767,9 +773,9 @@ msgstr ""
 #: includes/notice.php:29
 #, php-format
 msgid ""
-"Your Account is not linked with Facebook Account Kit yet. Please connect "
-"your account with Facebook Account Kit from your <a href=\"%s\">profile</a> "
-"for a secure and passwordless login."
+"Your Account is not linked with Facebook Account Kit yet. Please connect your "
+"account with Facebook Account Kit from your <a href=\"%s\">profile</a> for a "
+"secure and passwordless login."
 msgstr ""
 
 #: includes/notice.php:30
@@ -777,17 +783,17 @@ msgid "Hide"
 msgstr ""
 
 #: includes/profile.php:26 includes/public/shortcode.php:54
-#: includes/public/woocommerce.php:103
+#: includes/public/woocommerce.php:105
 msgid "Connected"
 msgstr ""
 
 #: includes/profile.php:28 includes/public/shortcode.php:56
-#: includes/public/woocommerce.php:105
+#: includes/public/woocommerce.php:107
 msgid "Connected via Phone"
 msgstr ""
 
 #: includes/profile.php:30 includes/public/shortcode.php:58
-#: includes/public/woocommerce.php:107
+#: includes/public/woocommerce.php:109
 msgid "Connected via Email"
 msgstr ""
 
@@ -796,17 +802,17 @@ msgid "Facebook Account Kit"
 msgstr ""
 
 #: includes/profile.php:40 includes/public/shortcode.php:65
-#: includes/public/woocommerce.php:113
+#: includes/public/woocommerce.php:115
 msgid "Connect with Phone"
 msgstr ""
 
 #: includes/profile.php:43 includes/public/shortcode.php:66
-#: includes/public/woocommerce.php:116
+#: includes/public/woocommerce.php:118
 msgid "Connect with Email"
 msgstr ""
 
 #: includes/profile.php:47 includes/public/shortcode.php:82
-#: includes/public/woocommerce.php:120
+#: includes/public/woocommerce.php:122
 msgid "Disconnect"
 msgstr ""
 
@@ -835,7 +841,7 @@ msgstr ""
 msgid "Authentication Successful - "
 msgstr ""
 
-#: includes/public/shortcode.php:25 includes/public/woocommerce.php:50
+#: includes/public/shortcode.php:25 includes/public/woocommerce.php:52
 #: includes/widget.php:77 includes/widget.php:170
 msgid "Login with Email"
 msgstr ""
@@ -846,7 +852,7 @@ msgid ""
 "password."
 msgstr ""
 
-#: includes/public/views/wp-login.php:38 includes/public/woocommerce.php:58
+#: includes/public/views/wp-login.php:38 includes/public/woocommerce.php:60
 msgid "Or"
 msgstr ""
 
@@ -858,8 +864,12 @@ msgstr ""
 msgid "Login with SMS or Email"
 msgstr ""
 
-#: includes/public/woocommerce.php:138
-msgid "Your current password (resaving will hide this field)"
+#: includes/public/woocommerce.php:147
+msgid ""
+"This is the autogenerated password. Please remember it or change this "
+"password to relogin to your account using your username and password in the "
+"default login form. Note that, if you save changes your profile details, you "
+"cannot see this password again."
 msgstr ""
 
 #: includes/widget.php:27
