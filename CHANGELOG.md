@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 
 If you like Facebook Account Kit Login, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/fb-account-kit-login/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
+## 1.1.3
+Release Date: May 22, 2019
+
+* Added: Permanent Notice dismiss link.
+* Fixed: WooCommerce Customer Account Password Change problem since previous commit.
+
 ## 1.1.2
 Release Date: May 20, 2019
 
